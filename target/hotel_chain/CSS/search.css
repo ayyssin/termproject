@@ -1,0 +1,192 @@
+@font-face {
+    src:url("../fonts/Megrim-Regular.ttf") format("truetype");
+    font-family: Megrim;
+}
+@font-face {
+    src:url("../fonts/Mulish-Regular.ttf") format("truetype");
+    font-family: Mulish;
+}
+* {
+    color: #14213D;
+    font-family: Mulish, serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+#navbar {
+    background-color: rgba(255, 158, 0, 0.53);
+    color: white;
+    font-weight: bold;
+}
+.navbar-nav  a:hover{
+    border-bottom: 1px solid blanchedalmond;
+}
+#navbar > a:hover{
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+#navbar > a{
+    font-family: Megrim, serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+#navbar .link {
+    color: #1F1534;
+}
+
+/*.logo {
+    margin: 20px 40px;
+    font-family: "Megrim", serif;
+}*/
+
+#phone-num, #maill {
+    padding-top: 15px;
+    padding-left: 5px;
+}
+
+#cu {
+    margin-bottom: 0px;
+}
+
+.phone, .mail {
+    display: flex;
+    align-items: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.footer {
+    background-color: #14213D;
+    color: white;
+    margin: 0 auto;
+}
+
+.link {
+    color: white;
+}
+
+.footer-links, li {
+    margin: 20px 20px;
+}
+
+.footer-name {
+    margin: 20px 40px;
+}
+
+.copyright {
+    margin: 20px 40px;
+    opacity: 30%;
+}
+
+.booking-item {
+    min-width: 400px;
+    box-shadow: 0px 4px 10px 0 grey;
+    border-radius: 5%;
+    margin-top: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 50px;
+}
+
+.booking-item-pic{
+    margin: 20px 30px;
+    justify-content: center;
+}
+
+.booking-item-img{
+    width: 450px;
+    height: 300px;
+    border-radius: 10%;
+    flex-shrink: 0;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.search-hotel-name{
+    margin: 20px 40px;
+    font-weight: bold;
+}
+
+.room-type {
+    margin-top: 50px;
+    font-weight: bolder;
+}
+
+.facilities-list li{
+    display: inline;
+}
+.facilities-list{
+    margin-left: 10px;
+}
+
+.room-description {
+    font-size: 26px;
+    padding-right: 150px;
+}
+
+.room-price{
+    opacity: 50%;
+    position: absolute;
+    left: 58%;
+    top: 60%;
+    margin: 5px 5px;
+}
+
+.room-price-total {
+    position: absolute;
+    left: 55%;
+    top: 70%;
+    margin: 5px 5px;
+}
+
+.date-interval {
+    position: absolute;
+    left: 70.76%;
+    right: 6.78%;
+    top: 10.24%;
+    bottom: 83.16%;
+    font-size: 18px;
+}
+.book-btn {
+    position: absolute;
+    background: #14213D;
+    border-radius: 55px;
+    color: white;
+    width: 250px;
+    height: 45px;
+    left: 48%;
+    right: 10%;
+    top: 82.19%;
+    bottom: 15.82%;
+}
+
+@media only screen and (max-width: 1500px){
+    .room-type {
+        margin-top: 50px;
+        margin-left: 40px;
+        font-weight: bolder;
+    }
+
+    .room-description{
+        margin-left: 40px;
+        padding-right: 25px;
+    }
+
+    .booking-item-description{
+        margin-bottom: 160px;
+    }
+
+    .room-price-total{
+        left: 30%;
+    }
+
+    .room-price {
+        left: 32%;
+    }
+    .book-btn{
+        margin-top: 10px;
+        left: 27%;
+    }
+}
