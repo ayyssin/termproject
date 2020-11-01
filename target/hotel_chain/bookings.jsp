@@ -42,8 +42,8 @@
         My bookings
     </div>
     <div id="choose">
-        <a href="bookings.html">Upcoming</a>
-        <a href="finished.html">Finished</a>
+        <a href="bookings.jsp">Upcoming</a>
+        <a href="finished.jsp">Finished</a>
     </div>
     <div id="rectangles">
         <div class="rect">
