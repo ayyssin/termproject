@@ -4,14 +4,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Finished bookings</title>
+    <title>Log-in Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="CSS/finished.css">
-
+    <link rel="stylesheet" href="CSS/login-all.css">
 </head>
 <body>
-<div>
+<div id="bg">
     <nav class="navbar navbar-expand-sm " id="navbar">
         <a href="index.jsp" class="navbar-brand link">de Vieras</a>
         <button class="navbar-toggler navbar-dark" data-toggle="collapse" data-target="#navbarMenu">
@@ -22,7 +21,6 @@
                 <li class="nav-item" id="navbarItems">
                     <a href="index.jsp" class="nav-link link">Home</a>
                 </li>
-
                 <li class="nav-item">
                     <a href="bookings.jsp" class="nav-link link">Your Bookings</a>
                 </li>
@@ -33,28 +31,25 @@
                     <a href="signup.jsp" class="nav-link link">Sign-up</a>
                 </li>
             </ul>
+
         </div>
     </nav>
-</div>
 
-
-<div id="main">
-    <div id="main-title">
-        My bookings
-    </div>
-    <div id="choose">
-        <a href="bookings.jsp">Upcoming</a>
-        <a href="finished.jsp">Finished</a>
-    </div>
-    <div id="sorry">
-        Oops! You don't have any finished bookings.
-    </div>
-    <div id="act">
-        <a href="index.jsp"><button>Create a new booking</button></a>
+    <div class="container form-outer-container">
+        <h1 class="form-header">What type of user are you?</h1>
+        <div id="login">
+            <div class="login-btn">
+                <a href="#"><button type="submit" class="btn" id="clerk-btn">Desk clerk</button></a>
+            </div>
+            <div class="login-btn">
+                <a href="#"><button type="submit" class="btn" id="manager-btn">Manager</button></a>
+            </div>
+            <div class="login-btn">
+                <a href="login.jsp"><button type="submit" class="btn" id="guest-btn">Guest</button></a>
+            </div>
+        </div>
     </div>
 </div>
-
-
 <div class="footer">
     <div class="row footer">
         <div class="col-10">
@@ -74,6 +69,11 @@
         </div>
     </div>
 </div>
-
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
 </body>
 </html>

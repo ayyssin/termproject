@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +24,7 @@
                 <a href="bookings.jsp" class="nav-link link">Your Bookings</a>
             </li>
             <li class="nav-item">
-                <a href="login.jsp" class="nav-link link">Login</a>
+                <a href="login-all.jsp" class="nav-link link">Login</a>
             </li>
             <li class="nav-item">
                 <a href="signup.jsp" class="nav-link link">Sign-up</a>
@@ -220,7 +220,7 @@
     If you select the option to pay online immediately, you will be charged the amount in the currency that you select
     immediately The company taking that payment and charging your credit card will be either: (1) Travel Partner Exchange or
     another member of the Hotels.com Companies doing business as Hotels.com, taking such payment on behalf of the travel
-    service provider, or (2) the travel service provider directly. âTPXâ means Travel Partner Exchange S.L. whose registered
+    service provider, or (2) the travel service provider directly. ‘TPX’ means Travel Partner Exchange S.L. whose registered
     office is Calle Villalba Hervas 9, Planta 8, 38002 Santa Cruz de Tenerife, Canary Islands, Spain
     <br><br>
     If you select to pay later at the hotel itself, the hotel will charge you in the local currency of the relevant hotel at
@@ -240,16 +240,16 @@
     FLIGHTS, PACKAGES AND OTHER ACTIVITIES
     <br><br>
     The bookings of standalone flights, package holidays (flight + accommodation) and other activities offered on the
-    Hotels.comâs âFlight Onlyâ, âFlight + Hotelâ and âThings to doâ tab (https://travel.uk.hotels.com/Packages-Flights) are
+    Hotels.com’s “Flight Only”, “Flight + Hotel” and “Things to do” tab (https://travel.uk.hotels.com/Packages-Flights) are
     made via Expedia (as defined in the following terms and conditions) and are subject to separate terms and conditions
     available at the following link: https://travel.uk.hotels.com/g/rf/terms-of-use
     <br><br>
     LINKED TRAVEL ARRANGEMENTS STANDARD INFORMATION FORM
     <br><br>
     Important information regarding Linked Travel Arrangements
-    'Linked Travel Arrangementâ means the same as the definition of a âlinked travel arrangementâ in the Directive (EU)
+    'Linked Travel Arrangement’ means the same as the definition of a “linked travel arrangement” in the Directive (EU)
     2015/2302 of the European Parliament and of the Council of 25 November 2015 on Package Travel and Linked Travel
-    Arrangements as may be implemented into national law (âDirective (EU) 2015/2302â).
+    Arrangements as may be implemented into national law (‘Directive (EU) 2015/2302’).
     In certain circumstances, a Linked Travel Arrangement may be formed as a result of travel services you decide to book
     from other companies. Where this possibility arises, you will be directed to read the important information below.
     <br><br>
@@ -267,7 +267,7 @@
     More information on insolvency protection is set out below:
     <br><br>
     Hotels.com has taken out insolvency protection by way of an insurance with International Passenger Protection Limited
-    and underwritten by certain underwriters at Lloydâs Syndicates, for any monies paid directly to Hotels.com. Travellers
+    and underwritten by certain underwriters at Lloyd’s Syndicates, for any monies paid directly to Hotels.com. Travellers
     may contact International Passenger Protection Limited (Claims Office, IPP House, 22-26 Station Road, West Wickham,
     Kent, BR4 0PR, Tel +31 103120666, Email: Insolvency-claims@ipplondon.co.uk) if the services are denied because of
     Hotels.com's insolvency.
@@ -281,7 +281,7 @@
     PRICES
     <br><br>
     The price of the travel services will be as quoted on the website from time to time, except in cases of obvious error.
-    Prices are liable to change at any time, but changes will not affect bookings already accepted. Despite Hotels.comâs
+    Prices are liable to change at any time, but changes will not affect bookings already accepted. Despite Hotels.com’s
     best efforts, some of the travel services listed on the website may be incorrectly priced. HOTELS.COM EXPRESSLY RESERVES
     THE RIGHT TO CORRECT ANY PRICING ERRORS ON OUR WEBSITE AND/OR ON PENDING RESERVATIONS MADE UNDER AN INCORRECT PRICE. IN
     SUCH EVENT, IF AVAILABLE, WE WILL OFFER YOU THE OPPORTUNITY TO KEEP YOUR PENDING RESERVATION AT THE CORRECT PRICE OR WE
@@ -301,15 +301,15 @@
     <br><br>
     HOW WE DISPLAY PRODUCTS AND SERVICES ON HOTELS.COM
     <br><br>
-    Travelers have many options on Hotels.com to help them find the perfect hotel. The âsortâ settings allow travellers to
-    order search results to their preference, whether based on price, verified review score, or other criteria. The âfilterâ
+    Travelers have many options on Hotels.com to help them find the perfect hotel. The “sort” settings allow travellers to
+    order search results to their preference, whether based on price, verified review score, or other criteria. The “filter”
     settings also allow travellers to include or exclude various options to suit their travel needs. If no options are
     selected, Hotels.com will show a range of relevant options in the search results, based on the criteria outlined below.
-    In our default sort of âOur Favouritesâ, the sort order reflects the relevance of properties to your search criteria, as
+    In our default sort of “Our Favourites”, the sort order reflects the relevance of properties to your search criteria, as
     we want to make sure you are able to quickly and easily find the offer that is right for you. We measure relevance by
-    taking into account factors like a propertyâs location, its review scores, the popularity of the property (measured by
+    taking into account factors like a property’s location, its review scores, the popularity of the property (measured by
     how many travellers on our sites make bookings at that property), the quality of the content provided by the property,
-    and the competitiveness of the propertyâs rates and availability, all relative to other properties meeting your chosen
+    and the competitiveness of the property’s rates and availability, all relative to other properties meeting your chosen
     search criteria. The compensation which a property pays us for bookings made through our sites is also a factor for the
     relative ranking of properties with similar offers, based on the relevance factors described above. On our non-default
     sorts (e.g., by price or by star rating), properties with similar results will be ordered based on the factors above.
@@ -340,14 +340,14 @@
     notified in the booking process.<br>
     These terms and conditions may not be changed by any unauthorized person, including employees of Hotels.com.
     <br><br>
-    The European Commissionâs Online Dispute Resolution Platform is available at http://ec.europa.eu/odr
+    The European Commission’s Online Dispute Resolution Platform is available at http://ec.europa.eu/odr
     <br><br>
-    HOTELS.COMâ¢ REWARDS TERMS AND CONDITIONS
+    HOTELS.COM™ REWARDS TERMS AND CONDITIONS
     <br><br>
-    Hotels.com Rewards is a Hotels.com loyalty program (the âProgramâ). For each night you book and stay at an eligible
-    Hotels.com Rewards hotel you collect one stamp (âStampâ). When you collect 10 Stamps with us, we give you 1 reward night
-    to redeem (âReward Nightâ). This Reward Night does not include taxes and fees, which you must pay when redeeming your
-    Reward Night. You will also need to pay a redemption fee (âRedemption Feeâ) when redeeming your Reward Night on our
+    Hotels.com Rewards is a Hotels.com loyalty program (the “Program”). For each night you book and stay at an eligible
+    Hotels.com Rewards hotel you collect one stamp (“Stamp”). When you collect 10 Stamps with us, we give you 1 reward night
+    to redeem (“Reward Night”). This Reward Night does not include taxes and fees, which you must pay when redeeming your
+    Reward Night. You will also need to pay a redemption fee (“Redemption Fee”) when redeeming your Reward Night on our
     desktop/mobile web site. You will not be charged a Redemption Fee when redeeming your Reward Night on our mobile app.
     All bookings must be made online or on our mobile app. You can only collect Stamps or redeem Reward Nights at an
     eligible Hotels.com Rewards property.
@@ -368,7 +368,7 @@
     the Program.
     <br><br>
     We will add any Stamps you collect to your account up to 72 hours after you check out of the Hotels.com Rewards
-    property. If you collect Stamps but we later believe that you did not complete your hotel stay (an âInvalid Stampâ), we
+    property. If you collect Stamps but we later believe that you did not complete your hotel stay (an “Invalid Stamp”), we
     reserve the right to remove these Invalid Stamps from your account. This could happen if you cancel your booking or did
     not turn up at the hotel, which would make the Stamps invalid.
     <br><br>
@@ -385,7 +385,7 @@
     1. Bookings made with an affiliate Hotels.com site<br>
     2. Bookings made before you joined the Program<br>
     3. Package bookings i.e. hotel + flight<br>
-    4. Some bookings made using a discount coupon, voucher or code â you will need to check the terms for each of these<br>
+    4. Some bookings made using a discount coupon, voucher or code – you will need to check the terms for each of these<br>
     5. Bookings made through Group Travel Services<br>
     6. Bookings that do not cost you anything, i.e. are free<br>
     <br><br>
@@ -409,7 +409,7 @@
     <br><br>
     If you redeem your Reward Night on a stay that is less than the maximum value of your Reward Night, you will not get the
     difference in cash, credit or anything else. You can redeem your Reward Night on a stay that costs more than the maximum
-    value of your Reward Night â you just pay the difference.
+    value of your Reward Night – you just pay the difference.
     <br><br>
     If you have more than 1 Reward Night to redeem, you can choose which booking you want to apply it to. If you opt to use
     multiple Reward Nights on the same booking you will be charged a Redemption Fee for each Reward Night you redeem. You
@@ -478,7 +478,7 @@
     <br><br>
     While you are signed up to Hotels.com Rewards, we may communicate any updates to your account or transactions to you by
     email. We may take back your Stamps at any time. You cannot sell or transfer your Stamps, or combine them with another
-    memberâs Stamps. Stamps and Reward Nights are not transferable if a member dies, if there is a domestic relations issue,
+    member’s Stamps. Stamps and Reward Nights are not transferable if a member dies, if there is a domestic relations issue,
     or otherwise by operation of law. You agree that all disputes, claims and causes of action like these are resolved
     individually exclusively by the appropriate court of England and Wales.
     <br><br>
@@ -508,7 +508,7 @@
     <br><br><br><br>
     Properties participating in the VIP Access property network that offer benefits are subject to change at any time
     without notice. The amenities are intended for the primary account holder and will only be extended to additional
-    travellers booked via the Silver and Gold member's account at the propertyâs discretion and subject to availability.
+    travellers booked via the Silver and Gold member's account at the property’s discretion and subject to availability.
     Silver and Gold members are guaranteed complimentary WiFi at VIP Access properties. This refers to standard WiFi.
     Premium WiFi may be available for an extra charge. This is subject to change at any time.
 
@@ -516,7 +516,7 @@
     Gold members may qualify to receive upgrades at check-in at participating VIP Access properties, subject to
     availability. Eligibility for the room upgrade is based on Hotels.com Rewards tier at time of booking. VIP Access
     property upgrades are intended for the primary account holder and will only be extended to additional rooms booked via
-    the Gold member's account at the propertyâs discretion and subject to availability. Room upgrades may include
+    the Gold member's account at the property’s discretion and subject to availability. Room upgrades may include
     complimentary upgrades to a room category of greater value or quality. Instead of a room upgrade, travellers may receive
     assignment to a preferred floor or assignment to a preferred location on a floor, such as away from the lifts or ice
     machine. Room upgrade cannot be reserved.
@@ -531,12 +531,12 @@
     SECRET PRICES
     <br><br>
     Hotels.com Secret Prices ("Secret Prices") are available to the following customers:<br>
-    â¢ Hotels.com Rewards members;<br>
-    â¢ users who unlock Secret Prices on the website by subscribing to receive emails from Hotels.com; and
-    â¢ users of the Mobile Application (as defined in these terms and conditions below).<br>
-    Hotels.com Rewards members â If you are signed in to your Hotels.com account when browsing the website, you will
+    • Hotels.com Rewards members;<br>
+    • users who unlock Secret Prices on the website by subscribing to receive emails from Hotels.com; and
+    • users of the Mobile Application (as defined in these terms and conditions below).<br>
+    Hotels.com Rewards members – If you are signed in to your Hotels.com account when browsing the website, you will
     automatically be shown Secret Prices on selected hotels where the "Your Secret Price" banner is displayed.<br>
-    Email subscribers â If you are browsing the website and you are not signed in as a Hotels.com Rewards member, you can
+    Email subscribers – If you are browsing the website and you are not signed in as a Hotels.com Rewards member, you can
     still unlock Secret Prices by subscribing to receive emails from Hotels.com. Click 'Unlock now' where Secret Prices are
     mentioned on your hotel search results and enter your email address to do so. Your search results will then show Secret
     Prices on selected hotels where the "Your Secret Price" banner is displayed. If you have previously subscribed by email,
@@ -544,14 +544,14 @@
     Secret Prices will already be displayed. By providing your email address, you agree to receive great deals and sale
     alerts via email, although you can unsubscribe at any time by clicking the 'Unsubscribe' link on one of our emails. If
     you unsubscribe, you will no longer get access to Secret Prices via this method unless you re-subscribe.<br>
-    Mobile Application users â When using the Mobile Application, you will automatically be shown Secret Prices on selected
+    Mobile Application users – When using the Mobile Application, you will automatically be shown Secret Prices on selected
     hotels where the "Your Secret Price" banner is displayed. A user of the Mobile Application will not see Secret Prices
     when accessing the website via other platforms, unless they are signed in as a Hotels.com Rewards Member or have
     subscribed to Hotels.com by email.<br>
     General Secret Prices Terms and Conditions<br>
     Secret Prices are available on selected hotels and on selected dates only. Secret Prices will only be displayed where
     applicable to your hotel search.<br>
-    Where a Secret Price is displayed next to a price which has been struck out (e.g. "Â£150 Â£100"), the price which has been
+    Where a Secret Price is displayed next to a price which has been struck out (e.g. "£150 £100"), the price which has been
     struck out is the regular price for that hotel on Hotels.com with no other discount applied.<br>
     The "Prices" section of these terms and conditions will also apply to Secret Prices. Secret Prices are liable to change
     at any time, but changes will not affect bookings already accepted.<br>
@@ -564,12 +564,12 @@
     conditions apply, as per the below.
     <br><br>
     Submitting a Claim -<br>
-    â¢ For non-refundable bookings: Hotels.com will compensate you by issuing a coupon with a value corresponding to the
+    • For non-refundable bookings: Hotels.com will compensate you by issuing a coupon with a value corresponding to the
     price difference. The coupon can be used on a future booking on the Hotels.com site. You must contact the customer call
     centre or submit your request using the online Price Guarantee form by 23:59 local time the day before your stay. The
     room with the lower rate must be available for booking at the time you contact us, as determined by our customer service
     representatives.<br>
-    â¢ For refundable bookings:<br>
+    • For refundable bookings:<br>
     a) Where the cheaper rate is found on Hotels.com: You can either call the customer call centre by 23:59 local time the
     day before your stay or cancel your existing booking online under Your Bookings when signed into your Hotels.com account
     and rebook online at the cheaper price. If you call us, the room with the lower rate must be available for booking at
@@ -578,7 +578,7 @@
     original booking will be cancelled by our customer service representative, and you will receive a refund for the price
     originally paid. Refunds will be processed by Hotels.com immediately, but your bank can take up to 30 days to process
     the refund.<br>
-    b) Where the cheaper rate is found on a competitorâs site: Hotels.com will refund the price difference. You must contact
+    b) Where the cheaper rate is found on a competitor’s site: Hotels.com will refund the price difference. You must contact
     the customer call centre or submit your request using the online Price Guarantee form by 23:59 local time the day before
     your stay. The room with the lower rate must be available for booking at the time you contact us, as determined by our
     customer service representatives. Refunds will be processed by Hotels.com upon verification of your request, but your
@@ -614,8 +614,8 @@
     on your statement.
     <br><br>
     Coupons (for non-refundable bookings only) - Coupons will be sent to you by email immediately after your request has
-    been made and verified by Hotels.com. Coupon terms and conditions will apply (see above under âConditions of use for
-    discount codesâ).
+    been made and verified by Hotels.com. Coupon terms and conditions will apply (see above under ‘Conditions of use for
+    discount codes’).
     <br><br>
     Changes - We reserve the right in our sole discretion to modify or discontinue the Price Guarantee or to restrict its
     availability to any person, at any time, for any or no reason, and without prior notice or liability to you. The terms
@@ -709,7 +709,7 @@
     You may not book more than 8 rooms online for the same hotel/stay dates. If we determine that you have booked more than
     8 rooms in total in separate reservations, we may cancel your reservations, and charge you a cancellation fee, if
     applicable. If you paid a non-refundable deposit, your deposit will be forfeited. If you wish to book 9 or more rooms,
-    you must contact Expediaâs group travel specialists by phone or by filling out the group travel form online. One of our
+    you must contact Expedia’s group travel specialists by phone or by filling out the group travel form online. One of our
     group travel specialists will research your request and contact you to complete your reservation. You may be asked to
     sign a written contract and/or pay a non-refundable deposit.
     <br><br>
@@ -718,7 +718,7 @@
     You may not book more than 28 nights online for the same hotel. If we determine that you have booked more than 28 nights
     in total in separate reservations, we may cancel your reservations, and charge you a cancellation fee, if applicable. If
     you paid a non-refundable deposit, your deposit will be forfeited. If you wish to book 29 nights or more, you must
-    contact Hotels.comâs long stay travel specialists by phone or by filling out the long stay travel form online. One of
+    contact Hotels.com’s long stay travel specialists by phone or by filling out the long stay travel form online. One of
     our long stay travel specialists will research your request and contact you to complete your reservation. You may be
     asked to sign a written contract and/or pay a non-refundable deposit.
 
@@ -752,24 +752,24 @@
     at our discretion, and that such User Reviews may be shared with our supplier partners. You further grant the Hotels.com
     Companies the right to pursue at law any person or entity that violates your or the Hotels.com Companies' rights in the
     User Reviews by a breach of these Terms of Use. You acknowledge and agree that User Reviews are non-confidential and
-    non-proprietary. You expressly waive any and all âmoral rightsâ (including rights of attribution or integrity) that may
+    non-proprietary. You expressly waive any and all ‘moral rights’ (including rights of attribution or integrity) that may
     subsist in your User Reviews and agree that you have no objection to the publication, use, modification, deletion or
     exploitation of your User Reviews by us, the Hotels.com Affiliates or any of our partners or licensees.
     <br><br>
     Specifically, by using such a service, you represent and warrant that:
     <br><br>
-    â¢ you own or otherwise control all of the rights to the User Reviews that you post;<br>
-    â¢ as at the date of posting, the User Reviews submitted are accurate;<br>
-    â¢ User Reviews that you supply do not breach any Hotels.com terms and conditions of use, guidelines or policies (as
+    • you own or otherwise control all of the rights to the User Reviews that you post;<br>
+    • as at the date of posting, the User Reviews submitted are accurate;<br>
+    • User Reviews that you supply do not breach any Hotels.com terms and conditions of use, guidelines or policies (as
     applicable from time to time);<br>
-    â¢ you will not intentionally or recklessly post information that could cause injury or offend any person or their
+    • you will not intentionally or recklessly post information that could cause injury or offend any person or their
     business and in particular: you will not post any comments, information or material that is untrue; malicious;<br>
     defamatory; abusive; obscene or could reasonably be taken as such;<br>
-    â¢ you will not act in any way to deceive or mislead and will not engage in or encourage any fraudulent or illegal
+    • you will not act in any way to deceive or mislead and will not engage in or encourage any fraudulent or illegal
     activity;<br>
-    â¢ you will not to post or distribute any information or material that is owned by any third party without the express
+    • you will not to post or distribute any information or material that is owned by any third party without the express
     written consent of such party to do so;<br>
-    â¢ All photos submitted are subject to our photo submission guidelines
+    • All photos submitted are subject to our photo submission guidelines
     <br><br>
     We draw your attention to the fact that the reviews displayed on this web page originate from verified users who stayed
     in a hotel booked on Hotels.com or on the website of other brands of the Expedia group. Hotels.com claims no ownership,
@@ -798,72 +798,72 @@
     <br><br>
     Any photos you submit must be:
     <br><br>
-    â¢ On topic â All photos must be relevant to accommodation, restaurant, location, or general travel experiences.<br>
-    â¢ Community/family friendly â<br>
-    Ã Do not submit any photos or materials that are illegal, obscene, pornographic, profane, vulgar, offensive or
+    • On topic – All photos must be relevant to accommodation, restaurant, location, or general travel experiences.<br>
+    • Community/family friendly –<br>
+    Ø Do not submit any photos or materials that are illegal, obscene, pornographic, profane, vulgar, offensive or
     insulting.<br>
-    Ã Do not submit photos or materials that invade the privacy or violate any personal right of any person or entity.<br>
-    Ã Do not submit photos or information about children or any third parties without their consent (or their parentâs
+    Ø Do not submit photos or materials that invade the privacy or violate any personal right of any person or entity.<br>
+    Ø Do not submit photos or information about children or any third parties without their consent (or their parent’s
     consent in the case of a child under 13 years of age).<br>
-    Ã Children under 13 may not submit photos or other materials.<br>
-    â¢ Original â You may only submit your own photos. Do not submit photos from any other source (personal or commercial).
+    Ø Children under 13 may not submit photos or other materials.<br>
+    • Original – You may only submit your own photos. Do not submit photos from any other source (personal or commercial).
     Do not submit photos that infringe the copyright, trademark, or other property right of any third party.<br>
-    â¢ Non-commercial â Do not submit photos that include logos, branding, promotional material, or any other content
+    • Non-commercial – Do not submit photos that include logos, branding, promotional material, or any other content
     intended for commercial purposes.<br>
-    â¢ No harmful files â Do not submit photos that contain viruses or other harmful code that is either intended or may
+    • No harmful files – Do not submit photos that contain viruses or other harmful code that is either intended or may
     result in damage to the computers and systems of Hotels.com and/or those using it.<br>
-    â¢ File properties: No individual photo may exceed 5MB file size. Photos submitted must be either .jpg, .bmp, .gif or
+    • File properties: No individual photo may exceed 5MB file size. Photos submitted must be either .jpg, .bmp, .gif or
     .png format.<br>
-    â¢ NOTICE OF INFRINGING MATERIAL<br>
-    â¢ If you believe in good faith that materials hosted by us infringe your copyright, you (or your agent) may send us a
+    • NOTICE OF INFRINGING MATERIAL<br>
+    • If you believe in good faith that materials hosted by us infringe your copyright, you (or your agent) may send us a
     written notice that includes the following information. Please note that we will not process your complaint if it is not
     properly filled out or is incomplete. Any misrepresentations in your notice regarding whether content or activity is
     infringing may expose you to liability for damages.<br>
-    â¢ 1. A clear identification of the copyrighted work you claim was infringed.<br>
-    â¢ 2. A clear identification of the material your claim is infringing is on the Website, such as a link to the infringing
+    • 1. A clear identification of the copyrighted work you claim was infringed.<br>
+    • 2. A clear identification of the material your claim is infringing is on the Website, such as a link to the infringing
     material.<br>
-    â¢ 3. Your address, email address and telephone number.<br>
-    â¢ 4. A statement that you have a "good faith belief that the material that is claimed as copyright infringement is not
+    • 3. Your address, email address and telephone number.<br>
+    • 4. A statement that you have a "good faith belief that the material that is claimed as copyright infringement is not
     authorized by the copyright owner, its agent, or the law."<br>
-    â¢ 5. A statement that "the information in the notification is accurate, and under penalty of perjury, the complaining
+    • 5. A statement that "the information in the notification is accurate, and under penalty of perjury, the complaining
     party is authorized to act on behalf of the owner of an exclusive right that is allegedly infringed."<br>
-    â¢ 6. A signature by the person authorized to act on behalf of the owner of an exclusive right that is allegedly
+    • 6. A signature by the person authorized to act on behalf of the owner of an exclusive right that is allegedly
     infringed.<br>
-    â¢<br>
-    â¢ You may send us your notice by email to hotels-copyright@hotels.com, by fax to (+11) 425 679-7251, Attn: IP/Trademark
+    •<br>
+    • You may send us your notice by email to hotels-copyright@hotels.com, by fax to (+11) 425 679-7251, Attn: IP/Trademark
     Legal Dept., DMCA Complaints or by using the contact information below:<br>
-    â¢ Hotels.com, L.P.<br>
-    â¢ Attn: IP/Trademark Legal Dept., DMCA Complaints<br>
-    â¢ c/o NRAI<br>
-    â¢ 16055 Space Center Blvd., Suite 235<br>
-    â¢ Houston, TX 77062<br>
-    â¢ COUNTER NOTICES<br>
-    â¢ If material you have posted has been taken down, you may file a counter-notification by fax or regular mail that sets
+    • Hotels.com, L.P.<br>
+    • Attn: IP/Trademark Legal Dept., DMCA Complaints<br>
+    • c/o NRAI<br>
+    • 16055 Space Center Blvd., Suite 235<br>
+    • Houston, TX 77062<br>
+    • COUNTER NOTICES<br>
+    • If material you have posted has been taken down, you may file a counter-notification by fax or regular mail that sets
     forth the items specified below. You may want to seek legal counsel prior to doing so. Please include the following
     details:<br><br>
     1. Identification of the specific content that was removed or disabled and the location where that content appeared on
     the Website. Please provide the URL address if possible.<br>
-    â¢ 2. Your name, mailing address, telephone number and email address.<br>
-    â¢ 3. A statement that you consent to the jurisdiction of Federal District Court for the judicial district in which your
+    • 2. Your name, mailing address, telephone number and email address.<br>
+    • 3. A statement that you consent to the jurisdiction of Federal District Court for the judicial district in which your
     address is located, or if your address is outside of the United States, for any judicial district in which Hotels.com
-    may be found, and that you will accept service of process from the party who reported your content, or that partyâs
+    may be found, and that you will accept service of process from the party who reported your content, or that party’s
     agent.<br>
-    â¢ 4. The following statement: "I swear, under penalty of perjury, that I have a good faith belief that the content
-    identified above was removed or disabled as a result of a mistake or misidentification.â<br>
-    â¢ Sign the paper and send the written communication to the following address:<br>
-    â¢ Hotels.com, L.P.<br>
-    â¢ Attn: IP/Trademark Legal Dept., DMCA Complaints<br>
-    â¢ c/o NRAI<br>
-    â¢ 16055 Space Center Blvd., Suite 235<br>
-    â¢ Houston, TX 77062<br>
-    â¢ OR you may fax it to: (425) 679-7251, Attn: IP/Trademark Legal Dept., DMCA Complaints<br>
+    • 4. The following statement: "I swear, under penalty of perjury, that I have a good faith belief that the content
+    identified above was removed or disabled as a result of a mistake or misidentification.”<br>
+    • Sign the paper and send the written communication to the following address:<br>
+    • Hotels.com, L.P.<br>
+    • Attn: IP/Trademark Legal Dept., DMCA Complaints<br>
+    • c/o NRAI<br>
+    • 16055 Space Center Blvd., Suite 235<br>
+    • Houston, TX 77062<br>
+    • OR you may fax it to: (425) 679-7251, Attn: IP/Trademark Legal Dept., DMCA Complaints<br>
     For any additional questions regarding the DMCA process for Hotels.com, please contact us at (425) 679-3751.<br>
 
     <br><br><br><br>
     ACCOUNT TERMINATION
     <br><br>
     In accordance with the Digital Millennium Copyright Act ("DMCA") and other applicable law, Hotels.com has adopted a
-    policy of terminating, in appropriate circumstances and at Hotels.comâs sole discretion, subscribers or account holders
+    policy of terminating, in appropriate circumstances and at Hotels.com’s sole discretion, subscribers or account holders
     who are deemed to be repeat infringers. Hotels.com may also at its sole discretion limit access to the Site and/or
     terminate the accounts of any users who infringe any intellectual property rights of others, whether or not there is any
     repeat infringement. If you believe that an account holder or subscriber is a repeat infringer, please provide
@@ -872,8 +872,8 @@
     <br><br>
     ADDITIONAL TERMS OF USE FOR HOTELS.COM MOBILE APPLICATION
     <br><br>
-    This section sets out the additional terms and conditions (âApp Terms of Useâ) governing your use on your mobile phone,
-    smartphone or other mobile device, of our application called âHotels.com Mobileâ (the âMobile Applicationâ). By
+    This section sets out the additional terms and conditions (“App Terms of Use”) governing your use on your mobile phone,
+    smartphone or other mobile device, of our application called “Hotels.com Mobile” (the “Mobile Application”). By
     selecting the "Accept" button using the Application you are agreeing to be bound by:
 <ol>
     <li>the terms and conditions</li>
@@ -881,12 +881,12 @@
     <li>our Privacy Policy (https://uk.hotels.com/customer_care/privacy.html);</li>
 </ol>
     <br><br>
-    together being referred to below as âour Policiesâ. If you do not agree to be bound by our Policies, you may not use the
-    Mobile Application and you must select the âDeclineâ button and remove the Mobile Application from your device.
+    together being referred to below as “our Policies”. If you do not agree to be bound by our Policies, you may not use the
+    Mobile Application and you must select the “Decline” button and remove the Mobile Application from your device.
     <br><br>
     In consideration of you agreeing to be bound by our Policies, we grant to you a non-exclusive non-transferable license
     to download, install and use the Mobile Application and access the content and information available within the Mobile
-    Application (âthe Contentâ) (including, without limitation, price and availability of travel services) in accordance
+    Application (“the Content”) (including, without limitation, price and availability of travel services) in accordance
     with the provisions of our Policies.
 
     <br><br><br><br>
@@ -903,9 +903,9 @@
 </ol>
     <br><br>
     shall equally and fully apply and shall govern the basis upon which Hotels.com makes the Mobile Application and the
-    Content available for your use. All references to âwebsiteâ in the above terms and conditions shall be deemed to include
+    Content available for your use. All references to “website” in the above terms and conditions shall be deemed to include
     references to the Mobile Application and/or Content and shall apply to your use of the Mobile Application and/or Content
-    as the context requires. All references to âagreementâ or âterms and conditionsâ shall also be deemed to include
+    as the context requires. All references to “agreement” or “terms and conditions” shall also be deemed to include
     references to these App Terms of Use as the context requires.
     <br><br>
     This Mobile Application is for your personal and non-commercial use.
@@ -917,7 +917,7 @@
     making all arrangements necessary for your device to have internet connectivity and are responsible for all sums your
     service provider may charge you arising out of the Mobile Application transmitting and receiving data (including but not
     limited to data roaming charges). Please note, the Mobile Application will automatically transfer a small amount of data
-    as part of its normal operation, please see the âInformation about you and your use of the Mobile Applicationâ section
+    as part of its normal operation, please see the “Information about you and your use of the Mobile Application” section
     below for further information.
     <br><br>
     Except as expressly set out in these terms and conditions or as permitted by any local law, you, undertake:
@@ -970,12 +970,12 @@
     <br><br>
     By using the Mobile Application, you acknowledge, agree and consent to the automatic collection of this information.
     <br><br>
-    When you use the âfind hotels near youâ feature of the Mobile Application, we use available geo-location data from your
+    When you use the ‘find hotels near you’ feature of the Mobile Application, we use available geo-location data from your
     device using GPS or cellular network data to determine hotels near your location. Although this information is collected
     anonymously, this information may reveal to us your precise or approximate location for the Mobile Application. We only
     use this information to locate hotels, as further described in our Privacy Policy. We do not collect location data
-    through the Mobile Application unless you activate the âfind hotels near youâ feature within the Mobile Application. By
-    using the âfind hotels near youâ feature you acknowledge, agree and consent to Hotels.com using the aforementioned
+    through the Mobile Application unless you activate the ‘find hotels near you’ feature within the Mobile Application. By
+    using the ‘find hotels near you’ feature you acknowledge, agree and consent to Hotels.com using the aforementioned
     location data to provide Content and services relevant to your location through the Mobile Application. Sharing of
     location data through the Mobile Application can be switched off at any time in the settings menu.
     <br><br>
@@ -1015,7 +1015,7 @@
     of Use you also agree as follows:
 <ol>
     <li>you acknowledge that the Terms of Use are between us and you only, and not with Apple Inc. of One Infinite Loop,
-        Cupertino, California 95014, U.S.A. (âAppleâ);</li>
+        Cupertino, California 95014, U.S.A. (“Apple”);</li>
     <li>the license granted to you to use the Mobile Application is limited to a non-transferable license to use the Mobile
         Application on an Apple mobile operating system (iOS) product that you own or control;</li>
     <li>you acknowledge that Apple has no obligation whatsoever to furnish any maintenance and support services with respect
@@ -1026,12 +1026,12 @@
     <li>you acknowledge that we, not Apple, are responsible for addressing any claims of yours or any third party relating to
         the Mobile Application;</li>
     <li>you acknowledge that, in the event of any third party claim that the Mobile Application or your possession and use of
-        that Application infringes that third partyâs intellectual property rights, Apple will not be responsible for the
+        that Application infringes that third party’s intellectual property rights, Apple will not be responsible for the
         investigation, defence, settlement and discharge of any such intellectual property infringement claim;</li>
     <li>you represent and warrant that you are not located in a country that is subject to a U.S. Government embargo or that
-        has been designated by the U.S. Government as a âterrorist supportingâ country and you are not listed on any U.S.
+        has been designated by the U.S. Government as a “terrorist supporting” country and you are not listed on any U.S.
         Government list of prohibited or restricted parties; and</li>
-    <li>you acknowledge and agree that Apple, and Appleâs subsidiaries, are third party beneficiaries of the Terms of Use,
+    <li>you acknowledge and agree that Apple, and Apple’s subsidiaries, are third party beneficiaries of the Terms of Use,
         and that, upon your acceptance of the Terms of Use, Apple will have the right (and will be deemed to have accepted the
         right) to enforce the Terms of Use against you as a third party beneficiary thereof.</li>
 </ol>
@@ -1039,7 +1039,7 @@
     Revised 20 May 2020
     <br><br><br><br>
 
-    Â© 2020 de Viera, L.P. All rights reserved.
+    © 2020 de Viera, L.P. All rights reserved.
 </div>
 </div>
 
@@ -1057,7 +1057,7 @@
                     <img src="images/mail.png" id="mml">
                     <p class="link" id="maill"> devieras@nu.edu.kz</p>
                 </li>
-                <li><h6 class="link">Â©SWE project 2020. All rights reserved</h6></li>
+                <li><h6 class="link">©SWE project 2020. All rights reserved</h6></li>
             </ul>
         </div>
     </div>
