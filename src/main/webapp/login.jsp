@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +25,7 @@
                         <a href="bookings.jsp" class="nav-link link">Your Bookings</a>
                     </li>
                     <li class="nav-item">
-                        <a href="login.jsp" class="nav-link link">Login</a>
+                        <a href="login-all.jsp" class="nav-link link">Login</a>
                     </li>
                     <li class="nav-item">
                         <a href="signup.jsp" class="nav-link link">Sign-up</a>
@@ -78,7 +78,7 @@
                             <img src="images/mail.png" id="mml">
                             <p class="link" id="maill"> devieras@nu.edu.kz</p>
                         </li>
-                        <li><h6 class="link">Â©SWE project 2020. All rights reserved</h6></li>
+                        <li><h6 class="link">©SWE project 2020. All rights reserved</h6></li>
                     </ul>
                 </div>
             </div>

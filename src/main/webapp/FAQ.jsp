@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +12,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-sm " id="navbar">
-    <a href="index.jsp" class="navbar-brand link">de Vieras</a>
+    <a href="index.html" class="navbar-brand link">de Vieras</a>
     <button class="navbar-toggler navbar-dark" data-toggle="collapse" data-target="#navbarMenu">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -25,7 +26,7 @@
                 <a href="bookings.jsp" class="nav-link link">Your Bookings</a>
             </li>
             <li class="nav-item">
-                <a href="login.jsp" class="nav-link link">Login</a>
+                <a href="login-all.jsp" class="nav-link link">Login</a>
             </li>
             <li class="nav-item">
                 <a href="signup.jsp" class="nav-link link">Sign-up</a>
@@ -43,7 +44,7 @@
                 Beware of phone call scams
             </div>
             <div class="FAQ-descr">
-                Have you received an automated phone call claiming that youâve won a prize from a well-known travel
+                Have you received an automated phone call claiming that you’ve won a prize from a well-known travel
                 company?
                 This is a scam. Hang up and do not give the caller any information.
                 <br>
@@ -51,10 +52,10 @@
                 <b>What it is</b>
                 <br>
 
-                The scammers typically use âspoofingâ technology to make the incoming telephone number falsely appear to
+                The scammers typically use “spoofing” technology to make the incoming telephone number falsely appear to
                 originate from a local area code.
                 Calls usually begin with a pre-recorded message claiming the caller is a well-known travel company, and
-                promising the recipient has âwonâ some type of prize or discount off travel services. These prizes,
+                promising the recipient has “won” some type of prize or discount off travel services. These prizes,
                 which
                 are also fake, can range from cash cards, trips, or credit for future travel.
 
@@ -95,7 +96,7 @@
                 <br>
                 The emails can be quite convincing, since they appear to come from established businesses or
                 organizations, and sometimes even link to legitimate-looking websites. However, the information you
-                provideâsuch as a social security or credit card numberâgoes directly to the criminal, who can then use
+                provide—such as a social security or credit card number—goes directly to the criminal, who can then use
                 the information to his or her own advantage.
                 <br>
                 <br>
@@ -220,7 +221,7 @@
                     <img src="images/mail.png" id="mml">
                     <p class="link" id="maill"> devieras@nu.edu.kz</p>
                 </li>
-                <li><h6 class="link">Â©SWE project 2020. All rights reserved</h6></li>
+                <li><h6 class="link">©SWE project 2020. All rights reserved</h6></li>
             </ul>
         </div>
     </div>

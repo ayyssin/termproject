@@ -1,0 +1,349 @@
+@font-face {
+    src: url("../fonts/Megrim-Regular.ttf") format("truetype");
+    font-family: Megrim;
+}
+
+@font-face {
+    src: url("../fonts/Mulish-Regular.ttf") format("truetype");
+    font-family: Mulish;
+}
+
+* {
+    color: #14213D;
+    font-family: Mulish, serif;
+    font-size: 16px;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+#navbar {
+    background-color: rgba(255, 158, 0, 0.53);
+    color: white;
+    font-weight: bold;
+}
+
+.navbar-nav a:hover {
+    border-bottom: 1px solid blanchedalmond;
+}
+
+#navbar > a:hover {
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#navbar > a {
+    font-family: Megrim, serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#navbar .link {
+    color: #1F1534;
+}
+
+#phone-num, #maill {
+    padding-top: 15px;
+    padding-left: 5px;
+}
+
+#cu {
+    margin-bottom: 0px;
+}
+
+.phone, .mail {
+    display: flex;
+    align-items: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.footer {
+    background-color: #14213D;
+    color: white;
+    margin: 0 auto;
+}
+
+.link {
+    color: white;
+}
+
+.footer-links, li {
+    margin: 20px 20px;
+}
+
+.footer-name {
+    margin: 20px 40px;
+}
+
+.copyright {
+    margin: 20px 40px;
+    opacity: 30%;
+}
+
+#main-title {
+    font-family: Mulish, sans-serif;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 45px;
+    color: #1F1534;
+}
+
+#main {
+    margin: 60px auto 80px auto;
+}
+
+#main-title {
+    margin-left: 80px;
+}
+
+#choose {
+    margin: 45px auto 100px 80px;
+}
+
+#choose a {
+    font-family: Mulish, sans-serif;
+    font-weight: 500;
+    font-size: 23px;
+    line-height: 40px;
+    color: #1F1534;
+    margin-right: 175px;
+    text-decoration-line: underline;
+}
+
+#choose a:not(:first-child) {
+    text-decoration: none;
+}
+
+#choose a:last-child {
+    opacity: 0.5;
+}
+
+#choose a:hover {
+    text-decoration-line: underline;
+}
+
+#rectangles {
+    text-align: center;
+}
+
+.rect {
+    width: 418px;
+    height: 372px;
+    background: #FFFFFF;
+    border-radius: 40px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    display: inline-block;
+    /*vertical-align: middle;*/
+    text-align: center;
+    font-size: 0;
+}
+
+.rect:not(:last-child) {
+    margin-right: 50px;
+    margin-bottom: 25px;
+}
+
+#act {
+    text-align: center;
+}
+
+#act button {
+    background: #14213D;
+    border-radius: 55px;
+    font-family: Mulish, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    color: #FFFFFF;
+    width: 375px;
+    height: 80px;
+    margin: 120px auto 80px auto;
+}
+
+#act button:hover {
+    text-decoration-line: underline;
+}
+
+.rect img {
+    padding-top: 16px;
+}
+
+.card-title {
+    font-family: Mulish, sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    color: #1F1534;
+    margin-top: 10px;
+}
+
+.card-date, .more {
+    font-family: Mulish, sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #1F1534;
+    opacity: 0.5;
+    margin-bottom: 5px;
+}
+
+/*POP UP WINDOW CONTENT STYLE*/
+
+button{
+  border: 0;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: white;
+  text-decoration: underline;
+}
+
+.modal {
+  display: none; 
+  justify-content: center;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  position: relative;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,.8);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 70%; 
+  border-radius: 10px;
+  position: relative;
+}
+.modal-body{
+    margin: 20px auto 40px auto;
+}
+
+/* The Close Button */
+
+.close {
+  color: #aaa;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: right;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#room-img{
+    position: relative;
+    width: 100%;
+}
+
+/*INFO_TITLE BOX*/
+.room-type{
+    font-weight: 600;
+    font-size: 2.5em;
+    color: #000000;
+    width: 100%;
+    text-align: left;
+    padding-top: 10px;
+}
+
+/*LOCATION BOX*/
+ .location-box{
+    display: inline-block;
+    opacity: 0.8;
+    width: 100%;
+    text-align: left;
+}
+
+.location{
+    color: rgba(0,0,0,0.6);
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+#location-img{
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* INFO BOX*/
+
+.titles{
+    color: #7E6D6D;
+    font-weight: 900;
+    font-size: 1.5em;
+}
+
+#dates .date, .time, .capacity, .price{
+    width: 100%;
+    font-size: 1.5em;
+}
+
+span.room-capacity, span.room-price{
+    font-size: 1em;
+}
+
+.check-in{
+    display: inline-block;
+    padding-right: 25%;
+}
+.check-out{
+    display: inline-block;
+    padding-left: 15%;
+    border-left: 1px solid rgba(0, 0, 0, 0.4);
+}
+#dates{
+    padding-bottom: 10px;
+}
+
+.gen-info{
+    width: 100%;
+    text-align: left;
+    padding-top: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.cancel {
+    color:red;
+}
+
+
+/*RESPONSIVENESS*/
+
+@media screen and (max-width: 1060px) {
+    .room-type{
+    font-size: 2em;
+    }
+}
+
+@media screen and (max-width: 1060px) {
+    #dates .check-out, .check-in, .gen-info{
+        border: 0;
+    }
+
+    #dates .check-out{
+        padding-left: 10%;
+    }
+}
+
+@media screen and (max-width: 863px) {
+    .room-type{
+    font-size: 1.5em;
+    }
+
+    #dates .check-out{
+        padding-left: 0%;
+    }
+}

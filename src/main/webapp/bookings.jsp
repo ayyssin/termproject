@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +27,7 @@
                     <a href="bookings.jsp" class="nav-link link">Your Bookings</a>
                 </li>
                 <li class="nav-item">
-                    <a href="login.jsp" class="nav-link link">Login</a>
+                    <a href="login-all.jsp" class="nav-link link">Login</a>
                 </li>
                 <li class="nav-item">
                     <a href="signup.jsp" class="nav-link link">Sign-up</a>
@@ -42,45 +43,60 @@
         My bookings
     </div>
     <div id="choose">
-        <a href="bookings.html">Upcoming</a>
-        <a href="finished.html">Finished</a>
+        <a href="bookings.jsp">Upcoming</a>
+        <a href="finished.jsp">Finished</a>
     </div>
     <div id="rectangles">
-        <div class="rect">
-            <img src="images/image%201.png">
-            <div class="card-title">
-                Almaty
-            </div>
-            <div class="card-date">
-                2 Nov - 10 Dec
-            </div>
-            <a href="popup.jsp" class="more">More details</a>
-        </div>
-        <div class="rect">
-            <img src="images/image%201.png">
-            <div class="card-title">
-                Almaty
-            </div>
-            <div class="card-date">
-                2 Nov - 10 Dec
-            </div>
-            <a href="popup.jsp" class="more">More details</a>
-        </div>
-        <div class="rect">
-            <img src="images/image%201.png">
-            <div class="card-title">
-                Almaty
-            </div>
-            <div class="card-date">
-                2 Nov - 10 Dec
-            </div>
-            <a href="popup.jsp" class="more">More details</a>
+        <div class="oops">
+            You don't have any upcoming bookings!
         </div>
     </div>
+
     <div id="act">
-        <a href="index.jsp">
-            <button>Create a new booking</button>
+        <a href="search.jsp">
+            <button class="newbooking-btn">Create a new booking</button>
         </a>
+    </div>
+</div>
+<!--POP UP WINDOW-->
+<div class="modals">
+    <div class="modal" id="myModal">
+        <!-- Modal content -->
+        <div class="close">&times;</div>
+        <div class="modal-content">
+            <div class="modal-body">
+                <img id="room-img" src="images/popup.png">
+                <div class="info-body">
+                    <div class="info-title">
+                        <div class="room-type" >Room-type</div>
+                        <div class="location-box">
+                            <img id="location-img" src="images/place.svg">
+                            <div class="location">City, Country</div>
+                        </div>
+                    </div>
+                    <div id="info">
+                        <div id="dates">
+                            <div class="check-in">
+                                <span class="titles">Check-in</span>
+                                <div class="date">Weekday, Date</div>
+                                <div class="time">Time</div>
+                            </div>
+                            <div class="check-out">
+                                <div class="titles">Check-out</div>
+                                <div class="date">Weekday, Date</div>
+                                <div class="time">Time</div>
+                            </div>
+                        </div>
+                        <div class="gen-info">
+                            <div class="titles">General Information</div>
+                            <div class="capacity">Number of occupants: <span class="room-capacity"> 3 </span> person(s)</div>
+                            <div class="price">Price: $ <span class="room-price">150.0</span></div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -99,11 +115,20 @@
                     <img src="images/mail.png" id="mml">
                     <p class="link" id="maill"> devieras@nu.edu.kz</p>
                 </li>
-                <li><h6 class="link">Â©SWE project 2020. All rights reserved</h6></li>
+                <li><h6 class="link">©SWE project 2020. All rights reserved</h6></li>
             </ul>
         </div>
     </div>
 </div>
+<script src="constants/catalog.js"></script>
 
+<script src="components/Header/Header.js"></script>
+
+<script src="components/Products/Products.js"></script>
+
+<script src="components/Shopping/Shopping.js"></script>
+
+<script src="utils/localStorageUtil.js"></script>
+<script src="bookings.js"></script>
 </body>
 </html>

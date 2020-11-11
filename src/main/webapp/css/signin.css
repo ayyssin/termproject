@@ -1,0 +1,148 @@
+@font-face {
+    src:url("../fonts/Megrim-Regular.ttf") format("truetype");
+    font-family: Megrim;
+}
+@font-face {
+    src:url("../fonts/Mulish-Regular.ttf") format("truetype");
+    font-family: Mulish;
+}
+* {
+    color: #14213D;
+    font-family: Mulish, serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+#navbar {
+    background-color: rgba(255, 158, 0, 0.53);
+    color: white;
+    font-weight: bold;
+}
+
+#navbar > a{
+    font-family: Megrim, serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+#navbar > a:hover{
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.navbar-nav  a:hover{
+    border-bottom: 1px solid blanchedalmond;
+}
+#navbar .link {
+    color: #1F1534;
+}
+
+.logo {
+    margin: 20px 40px;
+}
+
+#phone-num, #maill {
+    padding-top: 15px;
+    padding-left: 5px;
+}
+
+#cu {
+    margin-bottom: 0px;
+}
+
+.phone, .mail {
+    display: flex;
+    align-items: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.footer {
+    background-color: #14213D;
+    color: white;
+    margin: 0 auto;
+}
+
+.link {
+    color: white;
+}
+
+.footer-links, li {
+    margin: 20px 20px;
+}
+
+.footer-name {
+    margin: 20px 40px;
+}
+
+.copyright {
+    margin: 20px 40px;
+    opacity: 30%;
+}
+
+#bg {
+    height: 100%;
+    background: url(../images/bg.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+.form-outer-container {
+    margin: 40px auto;
+    padding: 40px 40px;
+    background-color: #EAEAEA;
+    opacity: 92%;
+}
+
+/*
+.form-inside-container{
+    margin: 0 auto;
+    display: inline-block;
+    justify-content: center;
+}*/
+.form-header {
+    text-align: center;
+}
+
+.login-btn {
+    margin: 15px auto;
+    text-align: center;
+}
+
+.form-password-recovery {
+    margin: 0 auto;
+}
+
+.form-create-new {
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+    padding: 10px 10px;
+}
+
+.terms-ud {
+    text-decoration: underline;
+}
+
+#login-btn {
+    height: 40px;
+    width: 140px;
+    left: 343px;
+    top: 454.78125px;
+    border-radius: 55px;
+    background-color: #14213D;
+    color: white;
+}
+
+#signup-btn {
+    height: 40px;
+    width: 140px;
+    left: 343px;
+    top: 454.78125px;
+    border-radius: 55px;
+    background-color: #4D4A55;
+    color: white;
+}
