@@ -11,11 +11,13 @@
 * {
     color: #14213D;
     font-family: Mulish, serif;
+    font-size: 16px;
 }
 
 html, body {
     margin: 0;
     padding: 0;
+
 }
 
 #navbar {
@@ -186,6 +188,163 @@ html, body {
     margin-bottom: 5px;
 }
 
-.more {
-    text-decoration-line: underline;
+/*POP UP WINDOW CONTENT STYLE*/
+
+button{
+  border: 0;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: white;
+  text-decoration: underline;
+}
+
+.modal {
+  display: none; 
+  justify-content: center;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  position: relative;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,.8);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 70%; 
+  border-radius: 10px;
+  position: relative;
+}
+.modal-body{
+    margin: 20px auto 40px auto;
+}
+
+/* The Close Button */
+
+.close {
+  color: #aaa;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: right;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#room-img{
+    position: relative;
+    width: 100%;
+}
+
+/*INFO_TITLE BOX*/
+.room-type{
+    font-weight: 600;
+    font-size: 2.5em;
+    color: #000000;
+    width: 100%;
+    text-align: left;
+    padding-top: 10px;
+}
+
+/*LOCATION BOX*/
+ .location-box{
+    display: inline-block;
+    opacity: 0.8;
+    width: 100%;
+    text-align: left;
+}
+
+.location{
+    color: rgba(0,0,0,0.6);
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+#location-img{
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* INFO BOX*/
+
+.titles{
+    color: #7E6D6D;
+    font-weight: 900;
+    font-size: 1.5em;
+}
+
+#dates .date, .time, .capacity, .price{
+    width: 100%;
+    font-size: 1.5em;
+}
+
+span.room-capacity, span.room-price{
+    font-size: 1em;
+}
+
+.check-in{
+    display: inline-block;
+    padding-right: 25%;
+}
+.check-out{
+    display: inline-block;
+    padding-left: 15%;
+    border-left: 1px solid rgba(0, 0, 0, 0.4);
+}
+#dates{
+    padding-bottom: 10px;
+}
+
+.gen-info{
+    width: 100%;
+    text-align: left;
+    padding-top: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.cancel {
+    color:red;
+}
+
+
+/*RESPONSIVENESS*/
+
+@media screen and (max-width: 1060px) {
+    .room-type{
+    font-size: 2em;
+    }
+}
+
+@media screen and (max-width: 1060px) {
+    #dates .check-out, .check-in, .gen-info{
+        border: 0;
+    }
+
+    #dates .check-out{
+        padding-left: 10%;
+    }
+}
+
+@media screen and (max-width: 863px) {
+    .room-type{
+    font-size: 1.5em;
+    }
+
+    #dates .check-out{
+        padding-left: 0%;
+    }
 }

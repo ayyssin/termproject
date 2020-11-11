@@ -231,5 +231,4 @@ displayCards.forEach(({id, name, img, price}) => {
     runModal(id);
     runRemove(id);
     oopsDisplay();
-
 });
