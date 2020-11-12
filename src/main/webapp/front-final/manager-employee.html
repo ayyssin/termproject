@@ -2,8 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Results</title>
-
+    <title>Employees List</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/manager-employee.css">
@@ -43,9 +42,7 @@
                 </div>
                 <div class="staff-type">Cleaning staff</div>
                 <div class="hours">Working hours: 12 hours/week</div>
-                <div class="see-more"><a href="#">
-                    <button>See more</button>
-                </a></div>
+                <button>See more</button>
             </div>
             <div class="rect">
                 <img src="images/ava.png">
@@ -54,9 +51,7 @@
                 </div>
                 <div class="staff-type">Cleaning staff</div>
                 <div class="hours">Working hours: 6 hours/week</div>
-                <div class="see-more"><a href="#">
-                    <button>See more</button>
-                </a></div>
+                <button>See more</button>
             </div>
             <div class="rect">
                 <img src="images/ava.png">
@@ -65,12 +60,11 @@
                 </div>
                 <div class="staff-type">Cleaning staff</div>
                 <div class="hours">Working hours: 3 hours/week</div>
-                <div class="see-more"><a href="#">
-                    <button>See more</button>
-                </a></div>
+                <button>See more</button>
             </div>
         </div>
     </div>
+
     <div id="reception">
         <h2>Reception</h2>
         <div class="flex">
@@ -81,9 +75,7 @@
                 </div>
                 <div class="staff-type">Desk clerk</div>
                 <div class="hours">Working hours: 12 hours/week</div>
-                <div class="see-more"><a href="#">
-                    <button>See more</button>
-                </a></div>
+                <button>See more</button>
             </div>
             <div class="rect">
                 <img src="images/ava.png">
@@ -92,28 +84,40 @@
                 </div>
                 <div class="staff-type">Desk clerk</div>
                 <div class="hours">Working hours: 6 hours/week</div>
-                <div class="see-more">
-                    <button data-modal-target="#modal-last">See more</button>
+                <button data-modal-target="#modal">See more</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../manager-employee.js"></script>
+<script src="../employees.js"></script>
+
+
+<!--POP UP WINDOW-->
+<div class="modals">
+    <div class="modal" id="myModal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="close">&times;</div>
+                <div class="staff-name">
+
                 </div>
+                <a href="edit.html" class="edit">Edit</a>
+            </div>
+            <div class="info-body">
+                <div class="positions">Position: </div>
+                <div class="schedules">Working schedule: </div>
+                <div class="hour">Working hours: </div>
+                <div class="salaries">Salary: </div>
+                <div class="total">Total payroll: </div>
             </div>
         </div>
     </div>
 </div>
 
 
-<!--Popup -->
-    <div class="modal" id="modal-last">
-        <div class="modal-header">
-            <button data-close-button class="close-button">&times;</button>
-            <div class="title">
-                Anne Summers
-            </div>
-        </div>
-        <div class="modal-body">
-Lorem ipsumbhjl nj nj nj pn nk hjip nk;lmkjo nkmk [m mk mk[k mko
-        </div>
-    </div>
-    <div id="overlay"></div>
 
 <div class="footer">
     <div class="row footer">
@@ -134,7 +138,7 @@ Lorem ipsumbhjl nj nj nj pn nk hjip nk;lmkjo nkmk [m mk mk[k mko
         </div>
     </div>
 </div>
-<script src="manager-employee.js"></script>
+
 
 </body>
 </html>

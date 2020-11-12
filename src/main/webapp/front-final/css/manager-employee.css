@@ -155,7 +155,7 @@ h2 {
     margin-bottom: 30px;
 }
 
-.see-more button {
+.rect button {
     font-weight: bold;
     font-size: 24px;
     text-align: center;
@@ -168,36 +168,38 @@ h2 {
 }
 
 /*MODAL*/
-.modal{
+.modalMain {
     position: fixed;
     top: 50%;
-    left:50%;
-    transition: 200ms ease-in-out;
+    left: 50%;
     transform: translate(-50%, -50%) scale(0);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
     z-index: 10;
     background-color: white;
     width: 500px;
     max-width: 80%;
 }
-.modal.active{
+
+.modalMain.active {
     transform: translate(-50%, -50%) scale(1);
 }
 
-.modal-header{
+.modal-header {
+    padding: 10px 15px;
     display: flex;
     justify-content: space-between;
-    align-content: center;
-    padding: 10px 15px;
+    align-items: center;
     border-bottom: 1px solid black;
 }
-.modal-header .title{
-    font-size: 1.2rem;
+
+.modal-header .title {
+    font-size: 1.25rem;
     font-weight: bold;
 }
 
-.modal-header .close-button{
+.modal-header .close-button {
     cursor: pointer;
     border: none;
     outline: none;
@@ -206,26 +208,26 @@ h2 {
     font-weight: bold;
 }
 
-.modal-body{
+.modal-body {
     padding: 10px 15px;
 }
 
-#overlay{
+#overlay {
     position: fixed;
     opacity: 0;
-    top:0;
-    left:0;
-    right:0;
     transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
     bottom: 0;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, .5);
     pointer-events: none;
 }
-#overlay.active{
-    pointer-events: all;
-    opacity: 1;
-}
 
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
 
 @media screen and (max-width: 1100px) {
     .staff-name {
@@ -237,7 +239,7 @@ h2 {
         font-size: 14px;
     }
 
-    .see-more button {
+    .rect button {
         font-size: 18px;
     }
 
