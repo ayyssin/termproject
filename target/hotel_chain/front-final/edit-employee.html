@@ -22,7 +22,7 @@
                 <a href="bookings.html" class="nav-link link">Your Bookings</a>
             </li>
             <li class="nav-item">
-                <a href="login.html" class="nav-link link">Login</a>
+                <a href="login-all.html" class="nav-link link">Login</a>
             </li>
             <li class="nav-item">
                 <a href="signup.html" class="nav-link link">Sign-up</a>
@@ -32,7 +32,41 @@
 </nav>
 
 <div id="main">
-    <
+    <h1>Edit information</h1>
+    <form action="#">
+        <div id="staff">
+            <div class="staff-name">Anne Summers</div>
+            <div class="flex">
+                <div class="position-label">Position:</div>
+                <div class="position light">Cleaning staff</div>
+            </div>
+            <div class="flex">
+                <div class="schedule-label">Work schedule</div>
+                <div class="schedule light">
+                    <input type="checkbox" id="monday" value="M" name="days[]" class="days-circle" checked><label for="monday">M</label>
+                    <input type="checkbox" id="tuesday" value="T" name="days[]" class="days-circle"><label for="tuesday">T</label>
+                    <input type="checkbox" id="wednesday" value="W" name="days[]" class="days-circle" checked><label for="wednesday">W</label>
+                    <input type="checkbox" id="thursday" value="R" name="days[]" class="days-circle"><label for="thursday">R</label>
+                    <input type="checkbox" id="friday" value="F" name="days[]" class="days-circle" checked><label for="friday">F</label>
+                    <input type="checkbox" id="saturday" value="St" name="days[]" class="days-circle"><label for="saturday">St</label>
+                    <input type="checkbox" id="sunday" value="S" name="days[]" class="days-circle"><label for="sunday">S</label>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="hours-label">Working hours</div>
+                <div class="hours light">
+                    <input type="number" value="3">
+                </div>
+            </div>
+            <div class="flex">
+                <div class="salary-label">Salary ($/hour)</div>
+                <div class="salary light">
+                    <input type="number" value="10">
+                </div>
+            </div>
+        </div>
+        <input type="submit" value="Save" id="edit-submit">
+    </form>
 </div>
 
 <div class="footer">

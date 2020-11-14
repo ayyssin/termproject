@@ -39,10 +39,10 @@
         <h1 class="form-header">What type of user are you?</h1>
         <div id="login">
             <div class="login-btn">
-                <a href="#"><button type="submit" class="btn" id="clerk-btn">Desk clerk</button></a>
+                <a href="login-desk-man.jsp"><button type="submit" class="btn" id="clerk-btn">Desk clerk</button></a>
             </div>
             <div class="login-btn">
-                <a href="#"><button type="submit" class="btn" id="manager-btn">Manager</button></a>
+                <a href="login-desk-man.jsp"><button type="submit" class="btn" id="manager-btn">Manager</button></a>
             </div>
             <div class="login-btn">
                 <a href="login.jsp"><button type="submit" class="btn" id="guest-btn">Guest</button></a>
