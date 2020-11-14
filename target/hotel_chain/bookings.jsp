@@ -93,7 +93,6 @@ pageEncoding="UTF-8"%>
                             <div class="price">Price: $ <span class="room-price">150.0</span></div>
                         </div>
                     </div>
-                    
                 </div>
             </div>
         </div>
