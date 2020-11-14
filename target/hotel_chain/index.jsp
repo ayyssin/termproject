@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +7,7 @@
     <title>deVieras</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="CSS/main.css"/>
+    <link rel="stylesheet" href="CSS/main.css">
 </head>
 <body>
 <div class="bg">
@@ -26,7 +26,7 @@
                         <a href="bookings.jsp" class="nav-link link">Your Bookings</a>
                     </li>
                     <li class="nav-item">
-                        <a href="login.jsp" class="nav-link link">Login</a>
+                        <a href="login-all.jsp" class="nav-link link">Login</a>
                     </li>
                     <li class="nav-item">
                         <a href="signup.jsp" class="nav-link link">Sign-up</a>
@@ -84,8 +84,8 @@
                     <p>The hotels offer guests a range of services and amenities designed to provide comfort and
                         convenience. 24-hour front desk, facilities for disabled guests, luggage storage, Wi-Fi in
                         public areas,
-                        car park are on the list of things guests can enjoy. Internet access â wireless, internet access
-                        â
+                        car park are on the list of things guests can enjoy. Internet access – wireless, internet access
+                        –
                         wireless (complimentary), non smoking rooms, air conditioning, heating can be found in selected
                         guestrooms. The hotel's peaceful atmosphere extends to its recreational facilities which include
                         fitness
@@ -116,7 +116,7 @@
                     <img src="images/mail.png" id="mml">
                     <p class="link" id="maill"> devieras@nu.edu.kz</p>
                 </li>
-                <li><h6 class="link">Â©SWE project 2020. All rights reserved</h6></li>
+                <li><h6 class="link">©SWE project 2020. All rights reserved</h6></li>
             </ul>
         </div>
     </div>

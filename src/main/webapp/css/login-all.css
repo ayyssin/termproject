@@ -136,3 +136,9 @@ html, body {
     margin-top: 80px;
     padding-bottom: 50px;
 }
+
+@media screen and (max-width: 990px){
+    .login-btn button{
+        width: 130px;
+    }
+}

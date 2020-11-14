@@ -1,0 +1,144 @@
+@font-face {
+    src: url("../fonts/Megrim-Regular.ttf") format("truetype");
+    font-family: Megrim;
+}
+
+@font-face {
+    src: url("../fonts/Mulish-Regular.ttf") format("truetype");
+    font-family: Mulish;
+}
+
+* {
+    color: #14213D;
+    font-family: Mulish, serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-nav a:hover {
+    border-bottom: 1px solid blanchedalmond;
+}
+
+#navbar > a:hover {
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#navbar > a {
+    font-family: Megrim, serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#navbar {
+    background-color: rgba(255, 158, 0, 0.53);
+    color: white;
+    font-weight: bold;
+}
+
+#navbar .link {
+    color: #1F1534;
+}
+
+.logo {
+    margin: 20px 40px;
+}
+
+.footer {
+    background-color: #14213D;
+    color: white;
+    margin: 0 auto;
+}
+
+#cu {
+    margin-bottom: 0px;
+}
+
+.phone, .mail {
+    display: flex;
+    align-items: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#phone-num, #maill {
+    padding-top: 15px;
+    padding-left: 5px;
+}
+
+.link {
+    color: white;
+}
+
+.footer-links, li {
+    margin: 20px 20px;
+}
+
+.footer-name {
+    margin: 20px 40px;
+}
+
+.copyright {
+    margin: 20px 40px;
+    opacity: 30%;
+}
+
+#bg {
+    height: 100%;
+    background-image: url(../images/bg.png);
+    background-position: center;
+    background-size: cover;
+    overflow-x: hidden;
+    position: relative;
+    background-attachment: fixed;
+}
+
+.form-outer-container {
+    margin: 40px auto;
+    padding: 40px 40px;
+    background-color: #EAEAEA;
+    opacity: 92%;
+}
+
+.form-header {
+    font-family: Mulish, sans-serif;
+    font-size: 55px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.login-btn {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.login-btn button {
+    width: 202px;
+    border-radius: 43px;
+    background-color: #14213D;
+    color: white;
+    padding: 40px 0;
+    font-weight: bold;
+    font-family: Mulish, sans-serif;
+    font-size: 24px;
+}
+.login-btn button:hover{
+    background-color: #bab9b9;
+    color: #14213D;
+}
+#login{
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    margin-top: 80px;
+    padding-bottom: 50px;
+}
+
+@media screen and (max-width: 990px){
+    .login-btn button{
+        width: 130px;
+    }
+}

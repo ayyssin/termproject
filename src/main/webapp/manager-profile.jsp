@@ -40,7 +40,7 @@
             <div class="row">
                 <div class="col-sm">
                     <div class="choose-btn">
-                        <a href="#"><button type="submit" class="btn" id="employees-btn">See employee list</button></a>
+                        <a href="manager-employee.jsp"><button type="submit" class="btn" id="employees-btn">See employee list</button></a>
                     </div>
                 </div>
                 <div class="col-sm">
@@ -52,7 +52,7 @@
             <div class="row">
                 <div class="col-sm">
                     <div class="choose-btn">
-                        <a href="#"><button type="submit"s class="btn" id="advisory-btn">Issue advisory </button></a>
+                        <a href="#"><button type="submit" class="btn" id="advisory-btn">Issue advisory </button></a>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,144 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employees List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/manager-employee.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-sm " id="navbar">
+    <a href="index.html" class="navbar-brand link">de Vieras</a>
+    <button class="navbar-toggler navbar-dark" data-toggle="collapse" data-target="#navbarMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item" id="navbarItems">
+                <a href="index.html" class="nav-link link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="bookings.html" class="nav-link link">Your Bookings</a>
+            </li>
+            <li class="nav-item">
+                <a href="login-all.html" class="nav-link link">Login</a>
+            </li>
+            <li class="nav-item">
+                <a href="signup.html" class="nav-link link">Sign-up</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div id="main">
+    <div id="cleaning">
+        <h2>Cleaning staff</h2>
+        <div class="flex">
+            <div class="rect">
+                <img src="images/ava.png">
+                <div class="staff-name">
+                    Anne Summers
+                </div>
+                <div class="staff-type">Cleaning staff</div>
+                <div class="hours">Working hours: 12 hours/week</div>
+                <button>See more</button>
+            </div>
+            <div class="rect">
+                <img src="images/ava.png">
+                <div class="staff-name">
+                    Aomine Daiki
+                </div>
+                <div class="staff-type">Cleaning staff</div>
+                <div class="hours">Working hours: 6 hours/week</div>
+                <button>See more</button>
+            </div>
+            <div class="rect">
+                <img src="images/ava.png">
+                <div class="staff-name">
+                    Kaneki Ken
+                </div>
+                <div class="staff-type">Cleaning staff</div>
+                <div class="hours">Working hours: 3 hours/week</div>
+                <button>See more</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="reception">
+        <h2>Reception</h2>
+        <div class="flex">
+            <div class="rect">
+                <img src="images/ava.png">
+                <div class="staff-name">
+                    Hermione Lovelace
+                </div>
+                <div class="staff-type">Desk clerk</div>
+                <div class="hours">Working hours: 12 hours/week</div>
+                <button>See more</button>
+            </div>
+            <div class="rect">
+                <img src="images/ava.png">
+                <div class="staff-name">
+                    Jimmy Neutron
+                </div>
+                <div class="staff-type">Desk clerk</div>
+                <div class="hours">Working hours: 6 hours/week</div>
+                <button data-modal-target="#modal">See more</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../manager-employee.js"></script>
+<script src="../employees.js"></script>
+
+
+<!--POP UP WINDOW-->
+<div class="modals">
+    <div class="modal" id="myModal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="close">&times;</div>
+                <div class="staff-name">
+
+                </div>
+                <a href="edit.html" class="edit">Edit</a>
+            </div>
+            <div class="info-body">
+                <div class="positions">Position: </div>
+                <div class="schedules">Working schedule: </div>
+                <div class="hour">Working hours: </div>
+                <div class="salaries">Salary: </div>
+                <div class="total">Total payroll: </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="footer">
+    <div class="row footer">
+        <div class="col-10">
+            <ul class="list-unstyled footer-links">
+                <li><a href="FAQ.html" class="link">FAQ</a></li>
+                <li id="cu" class="link">Contact us:</li>
+                <li class="phone">
+                    <img src="images/phone.png" height="30" width="30">
+                    <p class="link" id="phone-num">+7 777 777 77 77</p>
+                </li>
+                <li class="mail">
+                    <img src="images/mail.png" id="mml">
+                    <p class="link" id="maill"> devieras@nu.edu.kz</p>
+                </li>
+                <li><h6 class="link">©SWE project 2020. All rights reserved</h6></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
