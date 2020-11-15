@@ -1,10 +1,7 @@
-let list = localStorageUtil.getProducts();
 let displayCards = [];
 
 employees.forEach(({id, name, position, schedule, hours, salary, total_payroll}) => {
-    if(list.indexOf(id) != -1){
-        displayCards.push({id, name, position, schedule, hours, salary, total_payroll});
-    }
+    displayCards.push({id, name, position, schedule, hours, salary, total_payroll});
 });
 
 function runModal(employeeID){
@@ -28,7 +25,6 @@ function runModal(employeeID){
         }
     }
 }
-
 //Script on appending/deleting bookings
 
 //we neeed to pass variables to this function so 
@@ -99,41 +95,8 @@ function generateModal(employeeID, name, position, schedule, hours, salary, tota
     content.appendChild(payroll);
 }
 
-displayCards.forEach(({id, name, img, position,  hours}) => {
-
-    let employeeID = id;
-
-    let main = document.querySelector("#rectangles");
-
-    let node = document.createElement("div");
-    node.className += ("rect" + " " + id);
-
-    let image = document.createElement("img");
-    image.setAttribute("src", img);
-
-    let title = document.createElement("div");
-    title.className += "card-title";
-    title.innerHTML = name;
-
-    let positions = document.createElement("div");
-    positions.className += "positions";
-    positions.innerHTML = position;
-
-    let hour = document.createElement("div");
-    hour.className += "hour";
-    hour.innerHTML = hours;
-
-    let moreDetails = document.createElement("button");
-    moreDetails.id += "myBtn" + " " + id;
-    moreDetails.innerHTML = "See more";
-
-    node.appendChild(image);
-    node.appendChild(title);
-    node.appendChild(positions);
-    node.appendChild(hour);
-    node.appendChild(moreDetails);
-    main.appendChild(node);
-
+displayCards.forEach(({id, name, position, schedule, hours, salary, total_payroll, img}) => {
+    
     //we have to pass some variables to generate specific modals and make sure they're working
     generateModal(id, name, position, schedule, hours, salary, total_payroll);
     runModal(id);
