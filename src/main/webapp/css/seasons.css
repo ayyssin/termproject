@@ -143,12 +143,8 @@ html, body {
 	margin-top: 40px;
 }
 
-#input-dows{
-	margin-left: 50px;
-}
-
 #input-dow-rate{
-	margin-left: 55px;
+	margin-left: 95px;
 }
 
 #input-season-rate{
@@ -200,9 +196,9 @@ input[type="checkbox"]{
 	font-size: 20px;
 }
 
-@media screen and (max-width: 900px){
+@media screen and (max-width: 700px){
 	#input-dow-rate{
-		margin-left: 15px;
+		margin-left: 50px;
 	}
 
 	#input-season-rate{
