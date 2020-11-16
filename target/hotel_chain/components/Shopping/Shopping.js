@@ -30,6 +30,9 @@ class Shopping {
                         <td class="shopping-element__price">${sumCatalog.toLocaleString()} USD</td>
                     </tr>
                 </table>
+                <div class="shopping__confirm">
+                    <button>Confirm</button>
+                </div>
             </div>
         `;
 
