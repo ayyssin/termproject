@@ -38,29 +38,29 @@
 
     <div class="container main-cnt">
         <div class="search-bar">
-            <form>
+            <form action="<%= request.getContextPath() %>/search" method="post">
                 <fieldset>
                     <legend>Discover new places with us</legend>
                 </fieldset>
                 <div class="inner-form">
                     <div class="input-field first-wrap">
                         <label>City</label>
-                        <input id="search" type="text" placeholder="Choose the city">
+                        <input id="search" type="text" name="City" placeholder="Choose the city">
                     </div>
                     <div class="input-field second-wrap">
                         <label>Check-in date</label>
-                        <input class="form-control" id="date" name="date" type="text" placeholder="Add dates"/>
+                        <input class="form-control" id="date" type="date" name="date_in" placeholder="Add dates"/>
                     </div>
                     <div class="input-field third-wrap">
                         <label>Check-out date</label>
-                        <input class="form-control" id="date" name="date" type="text" placeholder="Add dates"/>
+                        <input class="form-control" id="date" type="date" name="date_out" placeholder="Add dates"/>
                     </div>
                     <div class="input-field fourth-wrap">
                         <label>Guests</label>
-                        <input id="guests" type="text" placeholder="Add number of guests">
+                        <input id="guests" type="text" name="guests" placeholder="Add number of guests">
                     </div>
                     <div class="input-field fifth-wrap">
-                        <button class="btn-search" type="button">
+                        <button class="btn-search" type="submit" name="submitSearch">
                             <svg class="svg-inline--fa fa-search fa-w-16" aria-hidden="true" data-prefix="fas"
                                  data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                 <path fill="currentColor"

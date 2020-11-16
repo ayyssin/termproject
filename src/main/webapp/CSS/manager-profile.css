@@ -1,0 +1,138 @@
+:root {
+	--color-light: #f8f9fa;
+	--color-medium: #e8e8e8;
+	--color-dark: #a1a1a1;
+	--color-unaccent: #808080;
+	--color-white: #fff;
+	--color-error-light: #f26b6b;
+	--color-error-dark: #d65c5c;
+
+	--spacing-small: 10px;
+	--spacing-medium: 15px;
+	--spacing-large: 30px;
+
+	--border-radius: 3px;
+	--linear-gradient: linear-gradient(to right, #fca311, #f4fc11, #87fc11, #11fccd, #11b2fc);
+	--box-shadow:
+			0 16px 24px 2px rgba(33,37,41,.02),
+			0 6px 30px 5px rgba(33,37,41,.04),
+			0 8px 10px -5px rgba(33,37,41,.1);
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+}
+::-webkit-scrollbar-thumb {
+	background-color: var(--color-dark);
+	border-radius: 5px;
+}
+::-webkit-scrollbar-track {
+	background-color: var(--color-white);
+}
+
+@font-face {
+	src:url("../fonts/Megrim-Regular.ttf") format("truetype");
+	font-family: Megrim;
+}
+@font-face {
+	src:url("../fonts/Mulish-Regular.ttf") format("truetype");
+	font-family: Mulish;
+}
+* {
+	color: #14213D;
+	font-family: Mulish, serif;
+	box-sizing: border-box;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+#navbar {
+	background-color: rgba(255, 158, 0, 0.53);
+	color: white;
+	font-weight: bold;
+}
+.navbar-nav  a:hover{
+	border-bottom: 1px solid blanchedalmond;
+}
+#navbar > a:hover{
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+#navbar > a{
+	font-family: Megrim, serif;
+	font-size: 24px;
+	font-weight: bold;
+}
+#navbar .link {
+	color: #1F1534;
+}
+
+#phone-num, #maill {
+	padding-top: 15px;
+	padding-left: 5px;
+}
+
+#cu {
+	margin-bottom: 0px;
+}
+
+.phone, .mail {
+	display: flex;
+	align-items: center;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.footer {
+	background-color: #14213D;
+	color: white;
+	margin: 0 auto;
+}
+
+.link {
+	color: white;
+}
+
+.footer-links, li {
+	margin: 20px 20px;
+}
+
+.footer-name {
+	margin: 20px 40px;
+}
+
+.copyright {
+	margin: 20px 40px;
+	opacity: 30%;
+}
+
+#greetings {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.choose-btn {
+    margin:20px 20px;
+    text-align: center;
+    display: block;
+}
+
+.choose-btn button {
+    width: 338px;
+    border-radius: 43px;
+    background-color: #14213D;
+    color: white;
+    padding: 40px 0;
+    font-weight: bold;
+    font-family: Mulish, sans-serif;
+    font-size: 24px;
+}
+.choose-btn button:hover{
+    background-color: #bab9b9;
+    color: #14213D;
+}
+.container-btn{
+    margin-top: 40px;
+}

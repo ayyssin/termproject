@@ -26,15 +26,18 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <version>5.1.49</version>
     </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.2</version>
+    </dependency>
 
   </dependencies>
-
 
   <build>
     <finalName>hotel_chain</finalName>
@@ -72,4 +75,6 @@
       </plugins>
     </pluginManagement>
   </build>
+
+
 </project>
