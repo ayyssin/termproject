@@ -25,6 +25,10 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.49" level="project" />
     <orderEntry type="library" name="Maven: javax.servlet:jstl:1.2" level="project" />
+<<<<<<< HEAD
     <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
+=======
+    <orderEntry type="library" name="servlet-api2" level="project" />
+>>>>>>> main
   </component>
 </module>

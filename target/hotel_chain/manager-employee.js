@@ -11,8 +11,15 @@ function runModal(employeeID){
 
     var span = document.getElementsByClassName("close" + " " + employeeID)[0];
 
+    var pay = document.getElementsByClassName("payroll" + " " + employeeID)[0];
+
     btn.onclick = function() {
         modal.style.display = "block";
+    }
+
+    pay.onclick = function(){
+        pay.style.backgroundColor = "#44D362";
+        pay.innerHTML = "Payment sent!";
     }
 
     span.onclick = function() {
@@ -25,11 +32,7 @@ function runModal(employeeID){
         }
     }
 }
-//Script on appending/deleting bookings
 
-//we neeed to pass variables to this function so 
-//to make something like city.innerHTML = VARIABLE got from DB & user input
-//the id of each generated booking should be different and it passed to modal function as well as well
 function generateModal(employeeID, name, position, schedule, hours, salary, total_payroll){
     let main = document.querySelector(".modals");
     let node = document.createElement("div");
@@ -115,14 +118,12 @@ function generateModal(employeeID, name, position, schedule, hours, salary, tota
     totalDiv.appendChild(total);
 
     let payroll = document.createElement("button");
-    payroll.className = "payroll"
+    payroll.className += ("payroll" + " " + employeeID);
     payroll.innerHTML = "Make payroll";
     body.appendChild(payroll);
 }
 
 displayCards.forEach(({id, name, position, schedule, hours, salary, total_payroll, img}) => {
-    
-    //we have to pass some variables to generate specific modals and make sure they're working
     generateModal(id, name, position, schedule, hours, salary, total_payroll);
     runModal(id);
 });

@@ -2,7 +2,7 @@ class Products {
     constructor() {
         this.classNameActive = 'products-element__btn_active';
         this.labelAdd = 'Book now';
-        this.labelRemove = 'Delete booking';
+        this.labelRemove = 'Chosen';
     }
 
     handlerSetLocatStorage(element, id) {
