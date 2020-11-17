@@ -2,6 +2,7 @@ package login.control;
 import java.io.IOException;
 
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,6 +33,11 @@ public class UserLoginServlet extends HttpServlet {
 
         try {
             if (login.validate(loginB)) {
+                String userEmail = loginB.getEmail();
+
+                HttpSession session = request.getSession();
+                //String username = (String)request.getAttribute("email");
+                session.setAttribute("userLogin", email);
                 response.sendRedirect("index2.jsp");
             } else {
             	response.sendRedirect("login.jsp");

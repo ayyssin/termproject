@@ -1,5 +1,35 @@
+<%@ page import="java.util.Date" %>
+<%@ page import="search.hotel_model.searchRoom" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.List" %>
+<%@ page import="javax.swing.plaf.synth.SynthLookAndFeel" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+<% String city = request.getParameter("City"); %>
+<% String guests = request.getParameter("guests"); %>
+<% String date_in = request.getParameter("date_in"); %>
+<% String date_out = request.getParameter("date_out");
+    String login=(String)session.getAttribute("userLogin");
+%>
+<%
+    String beds = (String) request.getAttribute("beds");
+    String room_id = (String) request.getAttribute("room_id");
+    List<searchRoom> rooms = (ArrayList<searchRoom>)request.getAttribute("roomlist");
+    int listSize = rooms.size();
+    int countEmpty = 0;
+    String prices = null;
+    for (searchRoom room:rooms){
+        if(room.getOccupied().equals("0")){
+            countEmpty++;
+        }
+        prices = room.getPrice();
+    }
+
+%>
+
+
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
