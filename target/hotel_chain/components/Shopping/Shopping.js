@@ -1,4 +1,10 @@
 class Shopping {
+    constructor() {
+        this.labelAdd = 'Confirm';
+        this.classNameActive = 'products-element__btn_active';
+        this.labelRemove = 'Confirmed';
+    }
+
     handlerClear() {
         ROOT_SHOPPING.innerHTML = '';
     }
@@ -20,6 +26,16 @@ class Shopping {
             }
         });
 
+        let activeClass = '';
+        let activeText = '';
+
+        if (productsStore.indexOf(id) === -1) {
+            activeText = this.labelAdd;
+        } else {
+            activeClass = ' ' + this.classNameActive;
+            activeText = this.labelRemove;
+        }
+
         const html = `
             <div class="shopping-container">
                 <div class="shopping__close" onclick="shoppingPage.handlerClear();"></div>
@@ -30,9 +46,9 @@ class Shopping {
                         <td class="shopping-element__price">${sumCatalog.toLocaleString()} USD</td>
                     </tr>
                 </table>
-                <div class="shopping__confirm">
-                    <button>Confirm</button>
-                </div>
+                <button class="shopping-element__btn${activeClass}" onclick="">
+                        ${activeText}
+                    </button>
             </div>
         `;
 
