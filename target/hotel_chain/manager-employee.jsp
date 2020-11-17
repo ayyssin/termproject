@@ -94,25 +94,7 @@
 
 <!--POP UP WINDOW-->
 <div class="modals">
-    <div class="modal" id="myModal">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <div class="modal-body">
-                <div class="close">&times;</div>
-                <div class="staff-name">
 
-                </div>
-                <a href="edit.jsp" class="edit">Edit</a>
-            </div>
-            <div class="info-body">
-                <div class="positions">Position: </div>
-                <div class="schedules">Working schedule: </div>
-                <div class="hour">Working hours: </div>
-                <div class="salaries">Salary: </div>
-                <div class="total">Total payroll: </div>
-            </div>
-        </div>
-    </div>
 </div>
 
 <div class="footer">

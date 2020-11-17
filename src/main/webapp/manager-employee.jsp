@@ -21,13 +21,10 @@
                 <a href="index.jsp" class="nav-link link">Home</a>
             </li>
             <li class="nav-item">
-                <a href="bookings.jsp" class="nav-link link">Your Bookings</a>
+                <a href="manager-profile.jsp" class="nav-link link">My profile</a>
             </li>
             <li class="nav-item">
-                <a href="login-all.jsp" class="nav-link link">Login</a>
-            </li>
-            <li class="nav-item">
-                <a href="signup.jsp" class="nav-link link">Sign-up</a>
+                <a href="index.jsp" class="nav-link link">Log-out</a>
             </li>
         </ul>
     </div>
@@ -94,25 +91,7 @@
 
 <!--POP UP WINDOW-->
 <div class="modals">
-    <div class="modal" id="myModal">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <div class="modal-body">
-                <div class="close">&times;</div>
-                <div class="staff-name">
 
-                </div>
-                <a href="edit.jsp" class="edit">Edit</a>
-            </div>
-            <div class="info-body">
-                <div class="positions">Position: </div>
-                <div class="schedules">Working schedule: </div>
-                <div class="hour">Working hours: </div>
-                <div class="salaries">Salary: </div>
-                <div class="total">Total payroll: </div>
-            </div>
-        </div>
-    </div>
 </div>
 
 <div class="footer">
