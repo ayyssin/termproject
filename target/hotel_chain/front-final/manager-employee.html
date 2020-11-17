@@ -42,7 +42,7 @@
                 </div>
                 <div class="staff-type">Cleaning staff</div>
                 <div class="hours">Working hours: 12 hours/week</div>
-                <button>See more</button>
+                <button id="myBtn employee1">See more</button>
             </div>
             <div class="rect">
                 <img src="images/ava.png">
@@ -51,7 +51,7 @@
                 </div>
                 <div class="staff-type">Cleaning staff</div>
                 <div class="hours">Working hours: 6 hours/week</div>
-                <button>See more</button>
+                <button id="myBtn employee2">See more</button>
             </div>
             <div class="rect">
                 <img src="images/ava.png">
@@ -60,7 +60,7 @@
                 </div>
                 <div class="staff-type">Cleaning staff</div>
                 <div class="hours">Working hours: 3 hours/week</div>
-                <button>See more</button>
+                <button id="myBtn employee3">See more</button>
             </div>
         </div>
     </div>
@@ -75,7 +75,7 @@
                 </div>
                 <div class="staff-type">Desk clerk</div>
                 <div class="hours">Working hours: 12 hours/week</div>
-                <button>See more</button>
+                <button id="myBtn employee4">See more</button>
             </div>
             <div class="rect">
                 <img src="images/ava.png">
@@ -84,15 +84,11 @@
                 </div>
                 <div class="staff-type">Desk clerk</div>
                 <div class="hours">Working hours: 6 hours/week</div>
-                <button data-modal-target="#modal">See more</button>
+                <button id="myBtn employee5">See more</button>
             </div>
         </div>
     </div>
 </div>
-
-<script src="../manager-employee.js"></script>
-<script src="../employees.js"></script>
-
 
 <!--POP UP WINDOW-->
 <div class="modals">
@@ -100,10 +96,10 @@
         <!-- Modal content -->
         <div class="modal-content">
             <div class="modal-body">
-                <div class="close">&times;</div>
-                <div class="staff-name">
+            <div class="close">&times;</div>
+            <div class="staff-name">
 
-                </div>
+            </div>
                 <a href="edit.html" class="edit">Edit</a>
             </div>
             <div class="info-body">
@@ -116,8 +112,6 @@
         </div>
     </div>
 </div>
-
-
 
 <div class="footer">
     <div class="row footer">
@@ -139,6 +133,8 @@
     </div>
 </div>
 
+<script src="../constants/employees.js"></script>
+<script src="../manager-employee.js"></script>
 
 </body>
 </html>

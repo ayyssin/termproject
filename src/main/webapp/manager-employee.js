@@ -41,58 +41,83 @@ function generateModal(employeeID, name, position, schedule, hours, salary, tota
     content.className += "modal-content";
     node.appendChild(content);
 
-    let body = document.createElement("div");
-    body.className += "modal-body";
-    content.appendChild(body);
-
-    let close = document.createElement("span");
-    close.className += ("close" + " " + employeeID);
-    close.innerHTML = "&times;"
-    body.appendChild(close);
-
-    let title= document.createElement("span");
-    title.className += ("staff-name" + " " + employeeID);
-    title.innerHTML = name
-    body.appendChild(title);
+    let header = document.createElement("div");
+    header.className += "modal-header";
+    content.appendChild(header);
 
     let edit = document.createElement("a");
     edit.href = "edit.html"
     edit.className += ("edit" + " " + employeeID);
-    body.appendChild(edit);
+    edit.innerHTML = "Edit";
+    header.appendChild(edit);
 
-    let info = document.createElement("div");
-    info.className += "info-body";
-    content.appendChild(info);
+    let staffName = document.createElement("div");
+    staffName.className += "staffName";
+    header.appendChild(staffName);
 
-    let positions = document.createElement("div");
-    positions.className += ("positions" + " " + employeeID);
-    positions.innerHTML = position
-    info.appendChild(positions);
+    let nameSpan = document.createElement("h3");
+    nameSpan.className += "nameSpan";
+    nameSpan.innerHTML = name;
+    staffName.appendChild(nameSpan);
 
-    let schedules = document.createElement("div");
-    schedules.className += ("schedules" + " " + employeeID);
-    schedules.innerHTML = schedule
-    info.appendChild(schedules);
+    let close = document.createElement("div");
+    close.className += ("close" + " " + employeeID);
+    close.innerHTML = "&times;"
+    header.appendChild(close);
 
-    let hour = document.createElement("div");
-    hour.className += ("hour" + " " + employeeID);
-    title.innerHTML = hours
-    info.appendChild(hour);
+    let body = document.createElement("div");
+    body.className += "modal-body";
+    content.appendChild(body);
+
+    let positionDiv = document.createElement("div");
+    positionDiv.className += ("positions");
+    positionDiv.innerHTML = "Position: ";
+    body.appendChild(positionDiv);
+
+    let positions = document.createElement("span");
+    positions.innerHTML = position;
+    positionDiv.appendChild(positions);
+
+    let schedulesDiv = document.createElement("div");
+    schedulesDiv.className += ("schedules");
+    schedulesDiv.innerHTML = "Working Schedule: ";
+    body.appendChild(schedulesDiv);
+
+    let schedules = document.createElement("span");
+    schedules.innerHTML = schedule;
+    schedulesDiv.appendChild(schedules);
+
+    let hourDiv = document.createElement("div");
+    hourDiv.className += ("hour");
+    hourDiv.innerHTML = "Working hours: ";
+    body.appendChild(hourDiv);
+
+    let hour = document.createElement("span");
+    hour.innerHTML = hours;
+    hourDiv.appendChild(hour);
+
+    let salariesDiv = document.createElement("div");
+    salariesDiv.className += ("salaries");
+    salariesDiv.innerHTML = "Salary: "
+    body.appendChild(salariesDiv);
 
     let salaries = document.createElement("div");
-    salaries.className += ("salaries" + " " + employeeID);
-    salaries.innerHTML = salary
-    info.appendChild(salaries);
+    salaries.innerHTML = salary;
+    salariesDiv.appendChild(salaries);
+
+    let totalDiv = document.createElement("div");
+    totalDiv.className += ("total");
+    totalDiv.innerHTML = "Total payroll: ";
+    body.appendChild(totalDiv);
 
     let total = document.createElement("div");
-    total.className += ("total" + " " + employeeID);
-    total.innerHTML = total_payroll
-    info.appendChild(total);
+    total.innerHTML = total_payroll;
+    totalDiv.appendChild(total);
 
     let payroll = document.createElement("button");
     payroll.className = "payroll"
     payroll.innerHTML = "Make payroll";
-    content.appendChild(payroll);
+    body.appendChild(payroll);
 }
 
 displayCards.forEach(({id, name, position, schedule, hours, salary, total_payroll, img}) => {
