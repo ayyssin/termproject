@@ -179,19 +179,18 @@ button{
     display: flex;
     align-items: center;
     border-bottom: 1px solid black;
+    justify-content: space-between;
 }
-
+.modal-header .close{
+    margin: 0;
+}
 .staffName h3 {
     font-size: 40px;
-}
-
-.staffName {
-   /* выровнять надо по центру*/
-   justify-content: center;
+    text-align: center;
 }
 
 .edit {
-    margin: 40px;
+    /*margin: 40px;*/
     font-size: 35px;
     color: black;
     opacity: 50%;
@@ -241,7 +240,6 @@ button{
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(0,0,0,.8);
 }
   
 .modal-content {
