@@ -100,7 +100,7 @@
                 <div class="text">- Maintain a safe distance from anyone who is coughing or sneezing.</div>
                 <div class="text">- Wear a mask when physical distancing is not possible.</div>
                 <div class="text"> - Don’t touch your eyes, nose or mouth.</div>
-                <div class="text"> - Cover your nose and mouth with your bent elbow or a tissue when you cough or sneeze.</div>
+                <div class="text" id="pre-last"> - Cover your nose and mouth with your bent elbow or a tissue when you cough or sneeze.</div>
                 <div class="text" id="last">- Stay home if you feel unwell.</div>
             </div>
         </div>

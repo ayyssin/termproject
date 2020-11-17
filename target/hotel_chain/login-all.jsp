@@ -39,12 +39,12 @@
         <h1 class="form-header">What type of user are you?</h1>
         <div id="login">
             <div class="login-btn">
-                <a href="login-desk-man.jsp">
+                <a href="login-desk-clerk.jsp">
                     <button type="submit" class="btn" id="clerk-btn">Desk clerk</button>
                 </a>
             </div>
             <div class="login-btn">
-                <a href="login-desk-man.jsp">
+                <a href="login-manager.jsp">
                     <button type="submit" class="btn" id="manager-btn">Manager</button>
                 </a>
             </div>
