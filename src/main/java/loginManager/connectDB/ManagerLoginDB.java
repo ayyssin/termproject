@@ -4,7 +4,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-/*
+
 
 import loginManager.manager_model.Manager;
 
@@ -22,21 +22,30 @@ public class ManagerLoginDB {
             //insert your password in MySQLWorkbench instead of 741852963Hesoyam
             //
             try(PreparedStatement preparedStatement = connection
-                    .prepareStatement("select * from User where email = ? and password = ? ")){
+                    .prepareStatement("select * from Manager where email = ? and password = ? ")){
                 String userEmail = login.getEmail();
                 preparedStatement.setString(1, userEmail);
                 preparedStatement.setString(2, login.getPassword());
-
-
                 System.out.println(preparedStatement);
                 ResultSet rs = preparedStatement.executeQuery();
 
-                status = rs.next();
+                while (rs.next()){
+                    String firstName = rs.getString("firstname");
+                    login.setFirstname(firstName);
+                    login.setLastname(rs.getString("lastname"));
+                    login.setHotel_id(rs.getString("Hotel_id"));
+                    login.setManagerID(rs.getString("ManagerID"));
+                    System.out.println(firstName);
+                    status = true;
+                }
+                connection.close();
+
             }
 
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+            status=false;
         }
 
         return status;
@@ -58,4 +67,3 @@ public class ManagerLoginDB {
         }
     }
 }
-*/

@@ -34,7 +34,7 @@
 
     <div class="container form-outer-container">
         <h1 class="form-header">Login</h1>
-        <form action="<%= request.getContextPath() %>/login" method="post">
+        <form action="<%= request.getContextPath() %>/managerLogin" method="post">
             <div class="form-group">
                 <label for="emailInput">Email:</label>
                 <input name="email" type="email" class="form-control" id='emailInput' placeholder="Enter email">

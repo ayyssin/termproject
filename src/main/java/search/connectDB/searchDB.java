@@ -52,31 +52,20 @@ public class searchDB {
                     room.setBeds(rs.getString("beds"));
                     room.setOccupied(rs.getString("occupied"));
                     roomlist.add(room);
-/*
-                    String price = rs.getString("Price");
-                    String beds = rs.getString("beds");
-                    room_id = rs.getString("Room_id");
-                    hotel.setPrice(price);
-                    hotel.setBeds(beds);
-                    hotel.setRoom_id(room_id);
-                    System.out.println(price);
-                    System.out.println(beds);
-
- */
+                    status = true;
                 }
 
-                status = rs.next();
+                //status = rs.next();
                 connection.close();
-
-
             }
 
 
 
         } catch (SQLException throwables) {
+            status = false;
             throwables.printStackTrace();
         }
-        return true;
+        return status;
     }
 
     public static ArrayList<searchRoom> getAllCustomer(){

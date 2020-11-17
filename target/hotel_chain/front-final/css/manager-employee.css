@@ -189,8 +189,22 @@ button{
     text-align: center;
 }
 
+<<<<<<< HEAD
+.staffName h3 {
+    font-size: 40px;
+}
+
+.staffName {
+   /* выровнять надо по центру*/
+   justify-content: center;
+}
+
+.edit {
+    margin: 40px;
+=======
 .edit {
     /*margin: 40px;*/
+>>>>>>> main
     font-size: 35px;
     color: black;
     opacity: 50%;

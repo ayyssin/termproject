@@ -1,9 +1,14 @@
 <component name="libraryTable">
   <library name="servlet-api">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../Labs/Lab 3 logging-exercise/apache-tomcat-8.5.57/apache-tomcat-8.5.57/lib/servlet-api.jar!/" />
+      <root url="file://$PROJECT_DIR$" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/src/main/java" />
+    </SOURCES>
+    <excluded>
+      <root url="file://$PROJECT_DIR$" />
+    </excluded>
   </library>
 </component>
