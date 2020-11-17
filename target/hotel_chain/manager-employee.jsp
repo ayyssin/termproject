@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
+
+
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -21,13 +25,10 @@
                 <a href="index.jsp" class="nav-link link">Home</a>
             </li>
             <li class="nav-item">
-                <a href="bookings.jsp" class="nav-link link">Your Bookings</a>
+                <a href="manager-profile.jsp" class="nav-link link">My profile</a>
             </li>
             <li class="nav-item">
-                <a href="login-all.jsp" class="nav-link link">Login</a>
-            </li>
-            <li class="nav-item">
-                <a href="signup.jsp" class="nav-link link">Sign-up</a>
+                <a href="index.jsp" class="nav-link link">Log-out</a>
             </li>
         </ul>
     </div>

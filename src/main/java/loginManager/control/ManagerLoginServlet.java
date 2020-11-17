@@ -38,12 +38,23 @@ public class ManagerLoginServlet extends HttpServlet{
             if (login.validate(loginB)) {
                 String managerEmail = loginB.getEmail();
                 String managerName = loginB.getFirstname();
+                String managerSurname = loginB.getLastname();
+                String managerID = loginB.getManagerID();
+                String hotel = loginB.getHotel_id();
                 System.out.println("Manager:"+ managerName);
 
-                //HttpSession session = request.getSession();
-                //String username = (String)request.getAttribute("email");
-                //session.setAttribute("managerLogin", email);
-                response.sendRedirect("manager-profile.jsp");
+                request.setAttribute("managerName", managerName);
+                request.setAttribute("managerSurname", managerSurname);
+
+                String url = "/manager-profile.jsp";
+
+                HttpSession session = request.getSession();
+                session.setAttribute("managerLogin", email);
+                session.setAttribute("managerID", managerID);
+
+                response.setContentType("text/html;charset=UTF-8");
+                RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+                dispatcher.forward(request, response);
             } else {
                 response.sendRedirect("login-manager.jsp");
                 HttpSession session = request.getSession();
