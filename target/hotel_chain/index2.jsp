@@ -23,13 +23,10 @@
                         <a href="index.jsp" class="nav-link link">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="bookings.jsp" class="nav-link link">Your Bookings</a>
+                        <a href="bookings.jsp" class="nav-link link">My Bookings</a>
                     </li>
                     <li class="nav-item">
-                        <a href="login-all.jsp" class="nav-link link">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="signup.jsp" class="nav-link link">Sign-up</a>
+                        <a href="index.jsp" class="nav-link link">Log-out</a>
                     </li>
                 </ul>
             </div>

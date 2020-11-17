@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8"
+%>
+<%
+String surname = (String)request.getAttribute("managerSurname");
+String name = (String)request.getAttribute("managerName");
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +37,7 @@
 
     <div class="container">
         <div id="greetings">
-            <h2>Hello, <span id="name">Brook Williams</span></h2>
+            <h2>Hello, <span id="name"><%=name%> <%=surname%></span></h2>
             <hr width="500px" color="#C4C4C4" opacity="90%";>
         </div>
 
@@ -40,7 +45,9 @@
             <div class="row">
                 <div class="col-sm">
                     <div class="choose-btn">
-                        <a href="manager-employee.jsp"><button type="submit" class="btn" id="employees-btn">See employee list</button></a>
+                        <form action="<%=request.getContextPath()%>/employees" method="post">
+                        <a href="manager-employee.jsp"><button type="submit" name="showEmployees" class="btn" id="employees-btn">See employee list</button></a>
+                        </form>
                     </div>
                 </div>
                 <div class="col-sm">

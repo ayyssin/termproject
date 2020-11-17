@@ -71,11 +71,6 @@ public class searchServlet extends HttpServlet {
                     System.out.println(room.getRoom_id());
                 }
 
-/*
-                String price = hotel.getPrice();
-                String beds = hotel.getBeds();
-                String room_id = hotel.getRoom_id();
-*/
                 String url = "/search.jsp";
                 request.setAttribute("roomlist", roomList);
                 HttpSession session=request.getSession(false);
