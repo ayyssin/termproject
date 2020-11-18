@@ -1,16 +1,12 @@
-package loginManager.connectDB;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+package loginClerk.connectDB;
 
+import java.sql.*;
 
-import loginManager.manager_model.Manager;
+import loginClerk.clerk_model.Clerk;
 
-public class ManagerLoginDB {
+public class ClerkLoginDB {
 
-    public boolean validate(Manager login) throws ClassNotFoundException {
+    public static boolean validate(Clerk login) throws ClassNotFoundException {
         boolean status = false;
 
         Class.forName("com.mysql.jdbc.Driver");
@@ -22,22 +18,14 @@ public class ManagerLoginDB {
             //insert your password in MySQLWorkbench instead of 741852963Hesoyam
             //
             try(PreparedStatement preparedStatement = connection
-                    .prepareStatement("select * from Manager where email = ? and password = ? ")){
-                String userEmail = login.getEmail();
-                preparedStatement.setString(1, userEmail);
-                preparedStatement.setString(2, login.getPassword());
+                    .prepareStatement("select * from Employee where firstname = ? and EmployeeID = ?")){
+                String clerkName = login.getFirstname();
+                preparedStatement.setString(1, clerkName);
+                preparedStatement.setString(2, login.getEmployeeID());
                 System.out.println(preparedStatement);
                 ResultSet rs = preparedStatement.executeQuery();
 
-                while (rs.next()){
-                    String firstName = rs.getString("firstname");
-                    login.setFirstname(firstName);
-                    login.setLastname(rs.getString("lastname"));
-                    login.setHotel_id(rs.getString("Hotel_id"));
-                    login.setManagerID(rs.getString("ManagerID"));
-                    System.out.println(firstName);
-                    status = true;
-                }
+                status = rs.next();
                 connection.close();
 
             }
@@ -67,3 +55,4 @@ public class ManagerLoginDB {
         }
     }
 }
+

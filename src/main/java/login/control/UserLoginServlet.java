@@ -30,18 +30,19 @@ public class UserLoginServlet extends HttpServlet {
         User loginB = new User();
         loginB.setEmail(email);
         loginB.setPassword(password);
+        HttpSession session = request.getSession();
 
         try {
             if (login.validate(loginB)) {
                 String userEmail = loginB.getEmail();
 
-                HttpSession session = request.getSession();
+                //HttpSession session = request.getSession();
                 //String username = (String)request.getAttribute("email");
                 session.setAttribute("userLogin", email);
+                System.out.println(session.getAttribute("userLogin"));
                 response.sendRedirect("index2.jsp");
             } else {
             	response.sendRedirect("login.jsp");
-                HttpSession session = request.getSession();
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
