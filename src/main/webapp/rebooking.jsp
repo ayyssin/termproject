@@ -34,7 +34,7 @@
 
 <div class="main">
     <div class="title">Rebook</div>
-    <form action="<%= request.getContextPath() %>/checkRooms" method="post" >
+    <form action="<%=request.getContextPath()%>/checkRooms" method="post" >
         <div class="available">
             <div class="row">
                 <div class="col-lg-12 col-md-12">
