@@ -104,10 +104,10 @@ h1 {
 
 .rect {
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    max-width: 400px;
     color: white;
     text-align: center;
     border-radius: 50px;
+    margin-top: 20px;
 }
 
 .rect img {
@@ -117,8 +117,8 @@ h1 {
 .flex {
     display: flex;
     align-content: center;
-    justify-content: space-around;
-    margin-top: 30px;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 h2 {
@@ -148,7 +148,7 @@ h2 {
     font-size: 20px;
     color: #1F1534;
     opacity: 0.5;
-    padding: 0 26px;
+    padding: 0 10px;
 }
 
 .staff-type {

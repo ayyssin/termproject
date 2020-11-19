@@ -51,10 +51,7 @@
                 <a href="index.jsp" class="nav-link link">Home</a>
             </li>
             <li class="nav-item">
-                <a href="bookings.jsp" class="nav-link link">Your Bookings</a>
-            </li>
-            <li class="nav-item">
-                <a href="login.jsp" class="nav-link link">Login</a>
+                <a href="login-all.jsp" class="nav-link link">Login</a>
             </li>
             <li class="nav-item">
                 <a href="signup.jsp" class="nav-link link">Sign-up</a>
@@ -64,7 +61,37 @@
 </nav>
 
 <div class="main">
+<<<<<<< HEAD
     <h1 class="search-hotel-name">de Vieras <%=city %> <%=login%></h1>
+=======
+    <div class = "row">
+        <div class="col-sm">
+            <h1 class="search-hotel-name">de Vieras <%=city %> <%=login%></h1>
+        </div>
+        <div class="col-sm" id="cart-button">
+            <button type="button" class="cart-button">
+                <span class="glyphicon glyphicon-shopping-cart"></span> My list
+            </button>
+        </div>
+    </div>
+    <div class="modal-cart">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>My list</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+
+            </div>
+
+            <div class="modal-confirmation">
+                <button type="submit" class="btn" id="confirm-btn">
+                    Confirm my bookings
+                </button>
+            </div>
+        </div>
+    </div>
+>>>>>>> main
     <c:set var="val" value="<%=guests%>"/>
     <%
         if(guests.equals("2")){
@@ -84,13 +111,12 @@
                             <li class="facility-item"><%=guests%> guest(s)</li>
                             <li class="facility-item"><%=beds%> bed(s)</li>
                             <li class="facility-item"> Mountains</li>
-                            <li class="facility-item"> Available: <a id="clicks"><%=countEmpty%></a></li>
                         </ul>
                         <p class="room-description">A good room with all-included features needed for couples stay.
                         </p>
                         <h3 class="room-price"><%=prices%>$ per night</h3>
                         <h3 class="date-interval"> <%=date_in%> - <%=date_out%> </h3>
-                        <button class="book-btn" onclick="bookRoom()">Book now</button>
+                        <button class="book-btn" onclick="bookNow(this)">Book now</button>
                     </div>
                 </div>
             </div>
@@ -100,7 +126,10 @@
 <%
 }
 else if(guests.equals("1")){
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 %>
 <div class="container">
     <div class="booking-item">
@@ -117,13 +146,20 @@ else if(guests.equals("1")){
                         <li class="facility-item"><%=guests%> guest(s)</li>
                         <li class="facility-item"><%=beds%> bed(s)</li>
                         <li class="facility-item"> Mountains</li>
+<<<<<<< HEAD
                         <li class="facility-item"> Available: <a id="clicks"><%=countEmpty%></a></li>
+=======
+>>>>>>> main
                     </ul>
                     <p class="room-description">A room offering everything necessary for a comfortable stay.
                     </p>
                     <h3 class="room-price"><%=prices%>$ per night</h3>
                     <h3 class="date-interval"> <%=date_in%> - <%=date_out%> </h3>
+<<<<<<< HEAD
                     <button class="book-btn" onclick="bookRoom()">Book now</button>
+=======
+                    <button class="book-btn" onclick="bookNow(this)">Book now</button>
+>>>>>>> main
                 </div>
             </div>
         </div>
@@ -164,7 +200,10 @@ else if(guests.equals("3")){
 <%
 }
 else if(guests.equals("4")){
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 %>
 <div class="container">
     <div class="booking-item">
@@ -193,9 +232,12 @@ else if(guests.equals("4")){
         </div>
     </div>
 </div>
+<<<<<<< HEAD
 <%}
 else if (guests.equals("6")){
 %>
+=======
+>>>>>>> main
 
 <div class="container">
     <div class="booking-item">
@@ -252,6 +294,7 @@ else if (guests.equals("6")){
     </div>
 </div>
 
+<<<<<<< HEAD
 <script src="js/search.js"></script>
 
 <script>
@@ -294,6 +337,11 @@ else if (guests.equals("6")){
     }
 
 </script>
+=======
+<script src="constants/catalog.js"></script>
+<script src="bookingsStorage.js"></script>
+<script src="searchNew.js"></script>
+>>>>>>> main
 
 </body>
 </html>
