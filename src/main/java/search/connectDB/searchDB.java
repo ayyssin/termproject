@@ -10,7 +10,7 @@ import search.hotel_model.searchHotel;
 import search.hotel_model.searchRoom;
 
 public class searchDB {
-    private static ArrayList<searchRoom> roomlist = new ArrayList<searchRoom>();
+    private static ArrayList<searchRoom> roomlist = new ArrayList<searchRoom>();;
     //ArrayList<searchRoom> roomlist = new ArrayList<searchRoom>();
 
     public boolean validate(searchHotel hotel) throws ClassNotFoundException {
@@ -19,7 +19,7 @@ public class searchDB {
         Class.forName("com.mysql.jdbc.Driver");
 
         try (Connection connection = DriverManager
-                .getConnection("jdbc:mysql://localhost:3306/swe_hotel?useSSL=false", "root", "intComm75")){
+                .getConnection("jdbc:mysql://localhost:3306/swe_hotel?useSSL=false", "root", "741852963Hesoyam")){
 
             try (PreparedStatement preparedStatement = connection
                     .prepareStatement("select Hotel_id from Hotel where City = ?")){
@@ -42,7 +42,9 @@ public class searchDB {
 
                 ResultSet rs = preparedStatement.executeQuery();
 
-
+                //ArrayList<searchRoom> roomlist = new ArrayList<searchRoom>();
+                String room_id = null;
+                int count = 0;
                 while(rs.next()){
                     searchRoom room = new searchRoom();
                     room.setRoom_id(rs.getString("Room_id"));

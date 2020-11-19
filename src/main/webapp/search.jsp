@@ -13,7 +13,6 @@
 <% String date_out = request.getParameter("date_out");
     String login=(String)session.getAttribute("userLogin");
 %>
-
 <%
     String beds = (String) request.getAttribute("beds");
     String room_id = (String) request.getAttribute("room_id");
@@ -27,15 +26,14 @@
         }
         prices = room.getPrice();
     }
-
 %>
 
-
-<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Results</title>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/search.css">
@@ -52,7 +50,10 @@
                 <a href="index.jsp" class="nav-link link">Home</a>
             </li>
             <li class="nav-item">
-                <a href="login-all.jsp" class="nav-link link">Login</a>
+                <a href="bookings.jsp" class="nav-link link">Your Bookings</a>
+            </li>
+            <li class="nav-item">
+                <a href="login.jsp" class="nav-link link">Login</a>
             </li>
             <li class="nav-item">
                 <a href="signup.jsp" class="nav-link link">Sign-up</a>
@@ -60,7 +61,6 @@
         </ul>
     </div>
 </nav>
-
 
 <div class="main">
     <h1 class="search-hotel-name">de Vieras <%=city %> <%=login%></h1>
@@ -126,7 +126,6 @@
 <%
 }
 else if(guests.equals("1")){
-
 %>
 <div class="container">
     <div class="booking-item">
@@ -158,7 +157,6 @@ else if(guests.equals("1")){
 <%
 }
 else if(guests.equals("3")){
-
 %>
 <div class="container">
     <div class="booking-item">
@@ -189,7 +187,6 @@ else if(guests.equals("3")){
 <%
 }
 else if(guests.equals("4")){
-
 %>
 <div class="container">
     <div class="booking-item">
@@ -248,38 +245,9 @@ else if(guests.equals("4")){
 <%
     }
 %>
-<script src="search.js">
-    var clicks = <%=countEmpty%>;
-    var bookedRooms = 0;
+</div>
 
-    function bookRoom() {
-        bookedRooms+=1;
-        clicks-=1;
-        if(clicks==0)    return;
-        document.getElementById("clicks").innerHTML=clicks;
-
-    }
-    $.ajax({
-        url: '/bookingServlet',
-        data: {
-            nBooked: bookedRooms
-        },
-        type: 'POST'
-    });
-
-    function bookNow(el){
-        sessionStorage["city"]="Astana";
-
-        let bookData = el.parentNode.id;
-        let room = document.getElementById(bookData).querySelector(".room-type").innerHTML;
-        sessionStorage[bookData+"Count"]++;
-
-
-        console.log(bookData);
-    }
-
-
-</script>
+</div>
 
 <div class="footer">
     <div class="row footer">
@@ -295,10 +263,38 @@ else if(guests.equals("4")){
                     <img src="images/mail.png" id="mml">
                     <p class="link" id="maill"> devieras@nu.edu.kz</p>
                 </li>
-                <li><h6 class="link">©SWE project 2020. All rights reserved</h6></li>
+                <li><h6 class="link">Â©SWE project 2020. All rights reserved</h6></li>
             </ul>
         </div>
     </div>
 </div>
+
+<script src="js/search.js"></script>
+
+<script>
+    var clicks = <%=countEmpty%>;
+    var bookedRooms = 0;
+    function bookRoom() {
+        bookedRooms+=1;
+        clicks-=1;
+        if(clicks==0)    return;
+        document.getElementById("clicks").innerHTML=clicks;
+    }
+    $.ajax({
+        url: '/bookingServlet',
+        data: {
+            nBooked: bookedRooms
+        },
+        type: 'POST'
+    });
+    function bookNow(el){
+        sessionStorage["city"]="Astana";
+        let bookData = el.parentNode.id;
+        let room = document.getElementById(bookData).querySelector(".room-type").innerHTML;
+        sessionStorage[bookData+"Count"]++;
+        console.log(bookData);
+    }
+</script>
+
 </body>
 </html>
