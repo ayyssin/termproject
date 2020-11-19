@@ -23,7 +23,7 @@ public class employeeDB {
         Class.forName("com.mysql.jdbc.Driver");
 
         try (Connection connection = DriverManager
-                .getConnection("jdbc:mysql://localhost:3306/swe_hotel?useSSL=false", "root", "Zhanmsoul123.")) {
+                .getConnection("jdbc:mysql://localhost:3306/swe_hotel?useSSL=false", "root", "intComm75")) {
             //
             //just insert your username in MySQLWorkbench instead of root
             //insert your password in MySQLWorkbench instead of 741852963Hesoyam
@@ -36,16 +36,20 @@ public class employeeDB {
                 ResultSet rs = preparedStatement.executeQuery();
                 while(rs.next()){
                     employee Employee = new employee();
-                    Employee.setEmployeeID(rs.getString("EmployeeID"));
-                    Employee.setFirstname(rs.getString("firstname"));
-                    Employee.setLastname(rs.getString("lastname"));
-                    Employee.setHotel_id(rs.getString("Hotel_id"));
-                    Employee.setPosition(rs.getString("position"));
-                    Employee.setPayroll(rs.getString("payroll"));
-                    Employee.setSalary(rs.getString("salary"));
-                    Employee.setWorking_days(rs.getString("working_days"));
-                    Employee.setWorking_hour(rs.getString("working_hours"));
-                    employeelist.add(Employee);
+                    String ID = rs.getString("EmployeeID");
+                    boolean exist = employeelist.stream().anyMatch(o -> o.getEmployeeID().equals(ID));
+                    if(!exist){
+                        Employee.setEmployeeID(ID);
+                        Employee.setFirstname(rs.getString("firstname"));
+                        Employee.setLastname(rs.getString("lastname"));
+                        Employee.setHotel_id(rs.getString("Hotel_id"));
+                        Employee.setPosition(rs.getString("position"));
+                        Employee.setPayroll(rs.getString("payroll"));
+                        Employee.setSalary(rs.getString("salary"));
+                        Employee.setWorking_days(rs.getString("working_days"));
+                        Employee.setWorking_hour(rs.getString("working_hours"));
+                        employeelist.add(Employee);
+                    }
                     status = true;
                 }
 
