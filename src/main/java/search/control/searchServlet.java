@@ -52,12 +52,6 @@ public class searchServlet extends HttpServlet {
         searchHotel hotel = new searchHotel();
         hotel.setCity(city);
         hotel.setGuests(guests);
-        /*
-        hotel.setDate_in(date_in);
-        hotel.setDate_out(date_out);
-
-         */
-        //hotel.setPrice();
 
         System.out.println(guests);
 
@@ -67,9 +61,6 @@ public class searchServlet extends HttpServlet {
                 //searchRoom room = new searchRoom();
                 ArrayList<searchRoom> roomList = new ArrayList<>();
                 roomList = searchDB.getAllCustomer();
-//                for(searchRoom room : roomList){
-//                    System.out.println(room.getRoom_id());
-//                }
 
                 String url = "/search.jsp";
                 request.setAttribute("roomlist", roomList);

@@ -14,17 +14,18 @@
     String login=(String)session.getAttribute("userLogin");
 %>
 <%
-    String beds = (String) request.getAttribute("beds");
-    String room_id = (String) request.getAttribute("room_id");
     List<searchRoom> rooms = (ArrayList<searchRoom>)request.getAttribute("roomlist");
-    int listSize = rooms.size();
+    //int listSize = rooms.size();
     int countEmpty = 0;
     String prices = null;
+    String beds = null;
     for (searchRoom room:rooms){
         if(room.getOccupied().equals("0")){
             countEmpty++;
         }
+        beds = room.getBeds();
         prices = room.getPrice();
+        System.out.println("beds:"+ beds);
     }
 %>
 
@@ -96,40 +97,10 @@
         </div>
     </div>
 </div>
-<div class="container">
-    <div class="booking-item">
-        <div class="row">
-            <div class="col-sm">
-                <div class="booking-item-pic">
-                    <img src="images/room.png" class="booking-item-img">
-                </div>
-            </div>
-            <div class="col-sm">
-                <div class="booking-item-description" id="twin">
-                    <h3 class="room-type">Twin</h3>
-                    <ul class="facilities-list">
-                        <li class="facility-item"><%=guests%> guest(s)</li>
-                        <li class="facility-item"><%=beds%> bed(s)</li>
-                        <li class="facility-item"> Mountains</li>
-                    </ul>
-                    <p class="room-description">Ideal choice for a trip with friends or colleagues who want to share a room.
-                    </p>
-                    <h3 class="room-price"><%=prices%>$ per night</h3>
-                    <h3 class="date-interval"> <%=date_in%> - <%=date_out%></h3>
-                    <button class="book-btn" onclick="bookNow(this)">Book now</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
 <%
 }
 else if(guests.equals("1")){
-<<<<<<< HEAD
-=======
 
->>>>>>> main
 %>
 <div class="container">
     <div class="booking-item">
@@ -146,18 +117,18 @@ else if(guests.equals("1")){
                         <li class="facility-item"><%=guests%> guest(s)</li>
                         <li class="facility-item"><%=beds%> bed(s)</li>
                         <li class="facility-item"> Mountains</li>
+                        <li class="facility-item"> Available: <a id="clicks"><%=countEmpty%></a></li>
                     </ul>
                     <p class="room-description">A room offering everything necessary for a comfortable stay.
                     </p>
                     <h3 class="room-price"><%=prices%>$ per night</h3>
                     <h3 class="date-interval"> <%=date_in%> - <%=date_out%> </h3>
-                    <button class="book-btn" onclick="bookNow(this)">Book now</button>
+                    <button class="book-btn" onclick="bookRoom()">Book now</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<<<<<<< HEAD
 
 <%
 }
@@ -178,48 +149,13 @@ else if(guests.equals("3")){
                         <li class="facility-item"><%=guests%> guest(s)</li>
                         <li class="facility-item"><%=beds%> bed(s)</li>
                         <li class="facility-item"> Mountains</li>
+                        <li class="facility-item"> Available: <a id="clicks"><%=countEmpty%></a></li>
                     </ul>
                     <p class="room-description">A room perfectly equipped for traveling friends or business partners.
                     </p>
                     <h3 class="room-price"><%=prices%>$ per night</h3>
                     <h3 class="date-interval"> <%=date_in%> - <%=date_out%> </h3>
-                    <button class="book-btn" onclick="bookNow(this)">Book now</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<%
-}
-else if(guests.equals("4")){
-=======
-
-<%
-}
-else if(guests.equals("3")){
-
-%>
-<div class="container">
-    <div class="booking-item">
-        <div class="row">
-            <div class="col-sm">
-                <div class="booking-item-pic">
-                    <img src="images/room.png" class="booking-item-img">
-                </div>
-            </div>
-            <div class="col-sm">
-                <div class="booking-item-description" id="triple">
-                    <h3 class="room-type">Triple</h3>
-                    <ul class="facilities-list">
-                        <li class="facility-item"><%=guests%> guest(s)</li>
-                        <li class="facility-item"><%=beds%> bed(s)</li>
-                        <li class="facility-item"> Mountains</li>
-                    </ul>
-                    <p class="room-description">A room perfectly equipped for traveling friends or business partners.
-                    </p>
-                    <h3 class="room-price"><%=prices%>$ per night</h3>
-                    <h3 class="date-interval"> <%=date_in%> - <%=date_out%> </h3>
-                    <button class="book-btn" onclick="bookNow(this)">Book now</button>
+                    <button class="book-btn" onclick="bookRoom()">Book now</button>
                 </div>
             </div>
         </div>
@@ -229,7 +165,6 @@ else if(guests.equals("3")){
 }
 else if(guests.equals("4")){
 
->>>>>>> main
 %>
 <div class="container">
     <div class="booking-item">
@@ -246,17 +181,21 @@ else if(guests.equals("4")){
                         <li class="facility-item"><%=guests%> guest(s)</li>
                         <li class="facility-item"><%=beds%> bed(s)</li>
                         <li class="facility-item"> Mountains</li>
+                        <li class="facility-item"> Available: <a id="clicks"><%=countEmpty%></a></li>
                     </ul>
                     <p class="room-description">Great choice for a relaxing vacation for families with children or a group of friends.
                     </p>
                     <h3 class="room-price"><%=prices%>$ per night</h3>
                     <h3 class="date-interval"> <%=date_in%> - <%=date_out%> </h3>
-                    <button class="book-btn" onclick="bookNow(this)">Book now</button>
+                    <button class="book-btn" onclick="bookRoom()">Book now</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<%}
+else if (guests.equals("6")){
+%>
 
 <div class="container">
     <div class="booking-item">
@@ -273,12 +212,13 @@ else if(guests.equals("4")){
                         <li class="facility-item"><%=guests%> guest(s)</li>
                         <li class="facility-item"><%=beds%> bed(s)</li>
                         <li class="facility-item"> Mountains</li>
+                        <li class="facility-item"> Available: <a id="clicks"><%=countEmpty%></a></li>
                     </ul>
                     <p class="room-description">A lux type room which offers breathtaking views from every aspect.
                     </p>
                     <h3 class="room-price"><%=prices%>$ per night</h3>
                     <h3 class="date-interval"> <%=date_in%> - <%=date_out%> </h3>
-                    <button class="book-btn" onclick="bookNow(this)">Book now</button>
+                    <button class="book-btn" onclick="bookRoom()">Book now</button>
                 </div>
             </div>
         </div>
@@ -315,24 +255,17 @@ else if(guests.equals("4")){
 <script src="js/search.js"></script>
 
 <script>
-<<<<<<< HEAD
-    var clicks = <%=countEmpty%>;
-    var bookedRooms = 0;
-=======
+
 
     var clicks = <%=countEmpty%>;
     var bookedRooms = 0;
 
->>>>>>> main
     function bookRoom() {
         bookedRooms+=1;
         clicks-=1;
-        if(clicks==0)    return;
+        if(clicks<0)    return;
         document.getElementById("clicks").innerHTML=clicks;
-<<<<<<< HEAD
-=======
 
->>>>>>> main
     }
     $.ajax({
         url: '/bookingServlet',
@@ -341,7 +274,6 @@ else if(guests.equals("4")){
         },
         type: 'POST'
     });
-<<<<<<< HEAD
     function bookNow(el){
         sessionStorage["city"]="Astana";
         let bookData = el.parentNode.id;
@@ -349,7 +281,6 @@ else if(guests.equals("4")){
         sessionStorage[bookData+"Count"]++;
         console.log(bookData);
     }
-=======
 
     function bookNow(el){
         sessionStorage["city"]="Astana";
@@ -362,8 +293,6 @@ else if(guests.equals("4")){
         console.log(bookData);
     }
 
-
->>>>>>> main
 </script>
 
 </body>
