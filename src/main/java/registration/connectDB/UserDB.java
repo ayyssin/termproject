@@ -19,7 +19,11 @@ public class UserDB {
         Class.forName("com.mysql.jdbc.Driver");
 
         try (Connection connection = DriverManager
+<<<<<<< HEAD
+            .getConnection("jdbc:mysql://localhost:3306/swe_hotel?useSSL=false", "root", "intComm75");
+=======
             .getConnection("jdbc:mysql://localhost:3306/swe_hotel?useSSL=false", "root", "Zhanmsoul123.");
+>>>>>>> main
         		//
         		//just insert your username in MySQLWorkbench instead of root
         		//insert your password in MySQLWorkbench instead of 741852963Hesoyam
