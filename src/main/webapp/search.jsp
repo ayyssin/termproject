@@ -153,7 +153,6 @@ else if(guests.equals("1")){
         </div>
     </div>
 </div>
-<<<<<<< HEAD
 
 <%
 }
