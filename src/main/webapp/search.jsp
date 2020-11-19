@@ -269,24 +269,15 @@ else if(guests.equals("4")){
 <script src="js/search.js"></script>
 
 <script>
-<<<<<<< HEAD
     var clicks = <%=countEmpty%>;
     var bookedRooms = 0;
-=======
-
     var clicks = <%=countEmpty%>;
     var bookedRooms = 0;
-
->>>>>>> main
     function bookRoom() {
         bookedRooms+=1;
         clicks-=1;
         if(clicks==0)    return;
         document.getElementById("clicks").innerHTML=clicks;
-<<<<<<< HEAD
-=======
-
->>>>>>> main
     }
     $.ajax({
         url: '/bookingServlet',
@@ -295,7 +286,6 @@ else if(guests.equals("4")){
         },
         type: 'POST'
     });
-<<<<<<< HEAD
     function bookNow(el){
         sessionStorage["city"]="Astana";
         let bookData = el.parentNode.id;
@@ -303,8 +293,6 @@ else if(guests.equals("4")){
         sessionStorage[bookData+"Count"]++;
         console.log(bookData);
     }
-=======
-
     function bookNow(el){
         sessionStorage["city"]="Astana";
 
@@ -315,9 +303,6 @@ else if(guests.equals("4")){
 
         console.log(bookData);
     }
-
-
->>>>>>> main
 </script>
 
 </body>
