@@ -44,14 +44,6 @@
                 <input name="password" type="password" class="form-control" id="passwordInput"
                        placeholder="Enter password">
             </div>
-            <div class="form-check">
-                <div class="row">
-                    <div class="col-8">
-                        <input type="checkbox" class="form-check-input" id="Ñheck1">
-                        <label class="form-check-label" for="check1">Remember me</label>
-                    </div>
-                </div>
-            </div>
             <div class="login-btn">
                 <button type="submit" class="btn" id="login-btn">Login</button>
             </div>

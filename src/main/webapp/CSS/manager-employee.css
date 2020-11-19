@@ -256,6 +256,10 @@ button{
 .modal-body{
     margin: 20px auto 40px auto;
 }
+.modal-body span{
+    font-style: italic;
+    color: mediumblue;
+}
 /* END */
 
 @media screen and (max-width: 1100px) {

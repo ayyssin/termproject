@@ -112,7 +112,7 @@ function generateModal(employeeID, name, position, schedule, hours, salary, tota
     salariesDiv.innerHTML = "Salary: "
     body.appendChild(salariesDiv);
 
-    let salaries = document.createElement("div");
+    let salaries = document.createElement("span");
     salaries.innerHTML = salary;
     salariesDiv.appendChild(salaries);
 
@@ -121,7 +121,7 @@ function generateModal(employeeID, name, position, schedule, hours, salary, tota
     totalDiv.innerHTML = "Total payroll: ";
     body.appendChild(totalDiv);
 
-    let total = document.createElement("div");
+    let total = document.createElement("span");
     total.innerHTML = total_payroll;
     totalDiv.appendChild(total);
 
