@@ -1,5 +1,16 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
+<%@ page import="employees.employee_model.employee" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Deque" %>
+
+<%
+    List<employee> Employees = (ArrayList<employee>)session.getAttribute("employeeList");
+    //List<employee> empList = (ArrayList<employee>)request.getAttribute("employeeList");
+    String s = (String) request.getAttribute("jsonEmployee");
+    %>
 
 
 
@@ -35,60 +46,45 @@
 </nav>
 
 <div id="main">
+
     <div id="cleaning">
+
         <h2>Cleaning staff</h2>
         <div class="flex">
+            <% for(employee em:Employees) {
+            %>
+            <%if(em.getPosition().equals("Cleaning staff")){%>
             <div class="rect">
                 <img src="images/ava.png">
                 <div class="staff-name">
-                    Anne Summers
+                    <%=em.getFirstname()%> <%=em.getLastname()%>
                 </div>
-                <div class="staff-type">Cleaning staff</div>
-                <div class="hours">Working hours: 12 hours/week</div>
-                <button id="myBtn employee1">See more</button>
+                <div class="staff-type"><%=em.getPosition()%></div>
+                <div class="hours">Working hours: <%=em.getWorking_hour()%></div>
+                <button id="myBtn <%=em.getEmployeeID()%>">See more</button>
             </div>
-            <div class="rect">
-                <img src="images/ava.png">
-                <div class="staff-name">
-                    Aomine Daiki
-                </div>
-                <div class="staff-type">Cleaning staff</div>
-                <div class="hours">Working hours: 6 hours/week</div>
-                <button id="myBtn employee2">See more</button>
-            </div>
-            <div class="rect">
-                <img src="images/ava.png">
-                <div class="staff-name">
-                    Kaneki Ken
-                </div>
-                <div class="staff-type">Cleaning staff</div>
-                <div class="hours">Working hours: 3 hours/week</div>
-                <button id="myBtn employee3">See more</button>
-            </div>
+            <%}
+            }%>
         </div>
     </div>
 
     <div id="reception">
         <h2>Reception</h2>
         <div class="flex">
+            <% for(employee em:Employees) {
+            %>
+            <%if(em.getPosition().equals("Desk clerk")){%>
             <div class="rect">
                 <img src="images/ava.png">
                 <div class="staff-name">
-                    Hermione Lovelace
+                    <%=em.getFirstname()%> <%=em.getLastname()%>
                 </div>
-                <div class="staff-type">Desk clerk</div>
-                <div class="hours">Working hours: 12 hours/week</div>
-                <button id="myBtn employee4">See more</button>
+                <div class="staff-type"><%=em.getPosition()%></div>
+                <div class="hours">Working hours: <%=em.getWorking_hour()%></div>
+                <button id="myBtn <%=em.getEmployeeID()%>">See more</button>
             </div>
-            <div class="rect">
-                <img src="images/ava.png">
-                <div class="staff-name">
-                    Jimmy Neutron
-                </div>
-                <div class="staff-type">Desk clerk</div>
-                <div class="hours">Working hours: 6 hours/week</div>
-                <button id="myBtn employee5">See more</button>
-            </div>
+            <%}
+            }%>
         </div>
     </div>
 </div>
@@ -118,8 +114,15 @@
     </div>
 </div>
 
-<script src="constants/employees.js"></script>
+
+<script>
+    var json ='<%= request.getAttribute("jsonEmployee") %>';
+
+    var list = JSON.parse(json);
+</script>
 <script src="manager-employee.js"></script>
+
+
 
 </body>
 </html>

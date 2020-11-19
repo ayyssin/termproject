@@ -1,6 +1,14 @@
+//var product = document.getElementById("product"), employeeList;
+//employeeList = product.getAttribute("data-prodnumber");
+
+
+for(var i=0; i<list.length; i++){
+    console.log(list[i]);
+}
+
 let displayCards = [];
 
-employees.forEach(({id, name, position, schedule, hours, salary, total_payroll}) => {
+list.forEach(({id, name, position, schedule, hours, salary, total_payroll}) => {
     displayCards.push({id, name, position, schedule, hours, salary, total_payroll});
 });
 
