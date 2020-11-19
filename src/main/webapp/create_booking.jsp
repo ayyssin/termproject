@@ -25,7 +25,10 @@
                     <a href="desk_clerk.jsp" class="nav-link link">My Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a href="index.jsp" class="nav-link link">Log-out</a>
+                    <a href="login.jsp" class="nav-link link">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="signup.jsp" class="nav-link link">Sign-up</a>
                 </li>
             </ul>
         </div>
@@ -69,7 +72,6 @@
                     <input class="check-out"  name="check-out-date" placeholder="dd/mm/yyyy" type="text"/>
                 </div>
             </div>
-            <button id="check-rooms">Check for availabile rooms</button>
         </div>
         <div class="room-param">
             <div class="row">
@@ -84,13 +86,12 @@
                     <input type="text" name="room-type" placeholder="Room Type" required>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12 col-md-12">
-                    <label>Number of occupants:</label>
-                    <input type="text" name="occupants" placeholder="Occupants no." required>
-                </div>
+            <div class="checkB">
+                <button id="check-rooms">Check for available rooms</button>
             </div>
-            <button id="create">Create</button>
+            <div class="createB">
+                <button id="create">Save all</button>
+            </div>
         </div>
     </form>
 </div>

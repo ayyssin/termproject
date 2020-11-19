@@ -34,15 +34,15 @@
 
     <div class="container form-outer-container">
         <h1 class="form-header">Login</h1>
-        <form action="<%= request.getContextPath() %>/login" method="post">
+        <form action="<%= request.getContextPath() %>/clerkLogin" method="post">
             <div class="form-group">
-                <label for="emailInput">Email:</label>
-                <input name="email" type="email" class="form-control" id='emailInput' placeholder="Enter email">
+                <label for="emalInput">First name:</label>
+                <input name="firstname" type="text" class="form-control" id='emailInput' placeholder="Enter your first name">
             </div>
             <div class="form-group">
-                <label for="passwordInput">Password</label>
-                <input name="password" type="password" class="form-control" id="passwordInput"
-                       placeholder="Enter password">
+                <label for="passwordInput">Employee id</label>
+                <input name="employee_id" type="password" class="form-control" id="passwordInput"
+                       placeholder="Enter your id">
             </div>
             <div class="form-check">
                 <div class="row">

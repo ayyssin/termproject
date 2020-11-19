@@ -1,16 +1,15 @@
-package loginManager.connectDB;
+package editBooking.connectDB;
+
+import booking.booking_model.Booking;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import registration.user_model.User;
 
-
-import loginManager.manager_model.Manager;
-
-public class ManagerLoginDB {
-
-    public boolean validate(Manager login) throws ClassNotFoundException {
+public class CheckGuestDB {
+    public boolean validate(User guest) throws ClassNotFoundException{
         boolean status = false;
 
         Class.forName("com.mysql.jdbc.Driver");
@@ -22,30 +21,41 @@ public class ManagerLoginDB {
             //insert your password in MySQLWorkbench instead of 741852963Hesoyam
             //
             try(PreparedStatement preparedStatement = connection
-                    .prepareStatement("select * from Manager where email = ? and password = ? ")){
-                String userEmail = login.getEmail();
-                preparedStatement.setString(1, userEmail);
-                preparedStatement.setString(2, login.getPassword());
+                    .prepareStatement("select * from Guest where email = ? and first_name = ? and last_name = ?")){
+
+                preparedStatement.setString(1, guest.getEmail());
+                preparedStatement.setString(2, guest.getFirst_name());
+                preparedStatement.setString(3, guest.getLast_name());
+
                 System.out.println(preparedStatement);
                 ResultSet rs = preparedStatement.executeQuery();
+                status = rs.next();
 
-                while (rs.next()){
-                    String firstName = rs.getString("firstname");
-                    login.setFirstname(firstName);
-                    login.setLastname(rs.getString("lastname"));
-                    login.setHotel_id(rs.getString("Hotel_id"));
-                    login.setManagerID(rs.getString("ManagerID"));
-                    System.out.println(firstName);
-                    status = true;
+                if(rs.next()){
+                    return status;
                 }
-                connection.close();
+                else{
+                    try(PreparedStatement Statement = connection.prepareStatement("INSERT INTO User\" +\n" +
+                                    "            \"  (email, first_name, last_name) VALUES \" +\n" +
+                                    "            \" (?, ?, ?);")){
+                        preparedStatement.setString(1, guest.getEmail());
+                        preparedStatement.setString(2, guest.getFirst_name());
+                        preparedStatement.setString(2, guest.getLast_name());
+                        System.out.println(preparedStatement);
+                        ResultSet resSet = preparedStatement.executeQuery();
+
+                        status = resSet.next();
+                    } catch (SQLException e) {
+                        printSQLException(e);
+                    }
+                }
 
             }
 
+            return status;
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-            status=false;
         }
 
         return status;

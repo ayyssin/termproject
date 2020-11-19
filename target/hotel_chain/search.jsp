@@ -30,12 +30,12 @@
 
 %>
 
-
-<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Results</title>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/search.css">
@@ -52,7 +52,10 @@
                 <a href="index.jsp" class="nav-link link">Home</a>
             </li>
             <li class="nav-item">
-                <a href="login-all.jsp" class="nav-link link">Login</a>
+                <a href="bookings.jsp" class="nav-link link">Your Bookings</a>
+            </li>
+            <li class="nav-item">
+                <a href="login.jsp" class="nav-link link">Login</a>
             </li>
             <li class="nav-item">
                 <a href="signup.jsp" class="nav-link link">Sign-up</a>
@@ -61,7 +64,43 @@
     </div>
 </nav>
 
+<<<<<<< HEAD
 
+<div class="main">
+    <h1 class="search-hotel-name">de Vieras <%=city %> <%=login%></h1>
+    <c:set var="val" value="<%=guests%>"/>
+    <%
+        if(guests.equals("2")){
+    %>
+    <div class="container">
+        <div class="booking-item">
+            <div class="row">
+                <div class="col-sm">
+                    <div class="booking-item-pic">
+                        <img src="images/room.png" class="booking-item-img">
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="booking-item-description" id="double">
+                        <h3 class="room-type">Double</h3>
+                        <ul class="facilities-list">
+                            <li class="facility-item"><%=guests%> guest(s)</li>
+                            <li class="facility-item"><%=beds%> bed(s)</li>
+                            <li class="facility-item"> Mountains</li>
+                            <li class="facility-item"> Available: <a id="clicks"><%=countEmpty%></a></li>
+                        </ul>
+                        <p class="room-description">A good room with all-included features needed for couples stay.
+                        </p>
+                        <h3 class="room-price"><%=prices%>$ per night</h3>
+                        <h3 class="date-interval"> <%=date_in%> - <%=date_out%> </h3>
+                        <button class="book-btn" onclick="bookRoom()">Book now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+=======
 <div class="main">
     <h1 class="search-hotel-name">de Vieras <%=city %> <%=login%></h1>
     <c:set var="val" value="<%=guests%>"/>
@@ -128,6 +167,52 @@
 else if(guests.equals("1")){
 
 %>
+>>>>>>> main
+<div class="container">
+    <div class="booking-item">
+        <div class="row">
+            <div class="col-sm">
+                <div class="booking-item-pic">
+                    <img src="images/room.png" class="booking-item-img">
+                </div>
+            </div>
+            <div class="col-sm">
+<<<<<<< HEAD
+                <div class="booking-item-description" id="twin">
+                    <h3 class="room-type">Twin</h3>
+=======
+                <div class="booking-item-description" id="single">
+                    <h3 class="room-type">Single</h3>
+>>>>>>> main
+                    <ul class="facilities-list">
+                        <li class="facility-item"><%=guests%> guest(s)</li>
+                        <li class="facility-item"><%=beds%> bed(s)</li>
+                        <li class="facility-item"> Mountains</li>
+                    </ul>
+<<<<<<< HEAD
+                    <p class="room-description">Ideal choice for a trip with friends or colleagues who want to share a room.
+                    </p>
+                    <h3 class="room-price"><%=prices%>$ per night</h3>
+                    <h3 class="date-interval"> <%=date_in%> - <%=date_out%></h3>
+=======
+                    <p class="room-description">A room offering everything necessary for a comfortable stay.
+                    </p>
+                    <h3 class="room-price"><%=prices%>$ per night</h3>
+                    <h3 class="date-interval"> <%=date_in%> - <%=date_out%> </h3>
+>>>>>>> main
+                    <button class="book-btn" onclick="bookNow(this)">Book now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<<<<<<< HEAD
+</div>
+<%
+}
+else if(guests.equals("1")){
+
+%>
 <div class="container">
     <div class="booking-item">
         <div class="row">
@@ -154,6 +239,11 @@ else if(guests.equals("1")){
         </div>
     </div>
 </div>
+
+<%
+}
+else if(guests.equals("3")){
+=======
 
 <%
 }
@@ -189,6 +279,48 @@ else if(guests.equals("3")){
 <%
 }
 else if(guests.equals("4")){
+>>>>>>> main
+
+%>
+<div class="container">
+    <div class="booking-item">
+        <div class="row">
+            <div class="col-sm">
+                <div class="booking-item-pic">
+                    <img src="images/room.png" class="booking-item-img">
+                </div>
+            </div>
+            <div class="col-sm">
+<<<<<<< HEAD
+                <div class="booking-item-description" id="triple">
+                    <h3 class="room-type">Triple</h3>
+=======
+                <div class="booking-item-description" id="quad">
+                    <h3 class="room-type">Quad</h3>
+>>>>>>> main
+                    <ul class="facilities-list">
+                        <li class="facility-item"><%=guests%> guest(s)</li>
+                        <li class="facility-item"><%=beds%> bed(s)</li>
+                        <li class="facility-item"> Mountains</li>
+                    </ul>
+<<<<<<< HEAD
+                    <p class="room-description">A room perfectly equipped for traveling friends or business partners.
+=======
+                    <p class="room-description">Great choice for a relaxing vacation for families with children or a group of friends.
+>>>>>>> main
+                    </p>
+                    <h3 class="room-price"><%=prices%>$ per night</h3>
+                    <h3 class="date-interval"> <%=date_in%> - <%=date_out%> </h3>
+                    <button class="book-btn" onclick="bookNow(this)">Book now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<<<<<<< HEAD
+<%
+}
+else if(guests.equals("4")){
 
 %>
 <div class="container">
@@ -218,6 +350,9 @@ else if(guests.equals("4")){
     </div>
 </div>
 
+=======
+
+>>>>>>> main
 <div class="container">
     <div class="booking-item">
         <div class="row">
@@ -244,6 +379,7 @@ else if(guests.equals("4")){
         </div>
     </div>
 </div>
+<<<<<<< HEAD
 
 <%
     }
@@ -280,6 +416,15 @@ else if(guests.equals("4")){
 
 
 </script>
+=======
+
+<%
+    }
+%>
+</div>
+
+</div>
+>>>>>>> main
 
 <div class="footer">
     <div class="row footer">
@@ -295,10 +440,47 @@ else if(guests.equals("4")){
                     <img src="images/mail.png" id="mml">
                     <p class="link" id="maill"> devieras@nu.edu.kz</p>
                 </li>
-                <li><h6 class="link">©SWE project 2020. All rights reserved</h6></li>
+                <li><h6 class="link">Â©SWE project 2020. All rights reserved</h6></li>
             </ul>
         </div>
     </div>
 </div>
+
+<script src="js/search.js"></script>
+
+<script>
+
+    var clicks = <%=countEmpty%>;
+    var bookedRooms = 0;
+
+    function bookRoom() {
+        bookedRooms+=1;
+        clicks-=1;
+        if(clicks==0)    return;
+        document.getElementById("clicks").innerHTML=clicks;
+
+    }
+    $.ajax({
+        url: '/bookingServlet',
+        data: {
+            nBooked: bookedRooms
+        },
+        type: 'POST'
+    });
+
+    function bookNow(el){
+        sessionStorage["city"]="Astana";
+
+        let bookData = el.parentNode.id;
+        let room = document.getElementById(bookData).querySelector(".room-type").innerHTML;
+        sessionStorage[bookData+"Count"]++;
+
+
+        console.log(bookData);
+    }
+
+
+</script>
+
 </body>
 </html>

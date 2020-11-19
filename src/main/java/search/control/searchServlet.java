@@ -67,15 +67,16 @@ public class searchServlet extends HttpServlet {
                 //searchRoom room = new searchRoom();
                 ArrayList<searchRoom> roomList = new ArrayList<>();
                 roomList = searchDB.getAllCustomer();
-                for(searchRoom room : roomList){
-                    System.out.println(room.getRoom_id());
-                }
+//                for(searchRoom room : roomList){
+//                    System.out.println(room.getRoom_id());
+//                }
 
                 String url = "/search.jsp";
                 request.setAttribute("roomlist", roomList);
                 HttpSession session=request.getSession(false);
                 String userLogin=(String)session.getAttribute("userLogin");
                 System.out.println("email: "+userLogin);
+
                 session.setAttribute("listRoom", roomList);
                 response.setContentType("text/html;charset=UTF-8");
                 RequestDispatcher dispatcher = request.getRequestDispatcher(url);

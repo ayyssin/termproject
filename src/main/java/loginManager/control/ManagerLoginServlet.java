@@ -33,7 +33,7 @@ public class ManagerLoginServlet extends HttpServlet{
         Manager loginB = new Manager();
         loginB.setEmail(email);
         loginB.setPassword(password);
-
+        HttpSession session = request.getSession();
         try {
             if (login.validate(loginB)) {
                 String managerEmail = loginB.getEmail();
@@ -48,7 +48,6 @@ public class ManagerLoginServlet extends HttpServlet{
 
                 String url = "/manager-profile.jsp";
 
-                HttpSession session = request.getSession();
                 session.setAttribute("managerLogin", email);
                 session.setAttribute("managerID", managerID);
 
@@ -57,7 +56,7 @@ public class ManagerLoginServlet extends HttpServlet{
                 dispatcher.forward(request, response);
             } else {
                 response.sendRedirect("login-manager.jsp");
-                HttpSession session = request.getSession();
+
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();

@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import registration.connectDB.UserDB;
 import registration.user_model.User;
@@ -57,9 +58,12 @@ public class UserServlet extends HttpServlet {
 		user.setLast_name(last_name);
 		user.setPassword(password);
 		user.setDate_of_birth(date_of_birth);
-		
+
+		HttpSession session = request.getSession();
 		try {
 			userDB.registerUser(user);
+			session.setAttribute("userLogin", email);
+
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
