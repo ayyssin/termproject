@@ -37,7 +37,7 @@
 
 <div class="main">
     <div class="title">Rebook</div>
-    <form>
+    <form action="<%= request.getContextPath() %>/checkRooms" method="post" >
         <div class="available">
             <div class="row">
                 <div class="col-lg-12 col-md-12">
@@ -66,10 +66,10 @@
                 </div>
             </div>
             <div class="checkB">
-                <button id="check-rooms">Check for available rooms</button>
+                <button type="submit" name="check" id="check-rooms">Check for available rooms</button>
             </div>
             <div class="createB">
-                <button id="create">Save all</button>
+                <button type="submit" name="save" id="create">Save all</button>
             </div>
         </div>
     </form>
