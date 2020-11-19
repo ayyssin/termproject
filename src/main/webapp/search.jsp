@@ -60,7 +60,33 @@
 </nav>
 
 <div class="main">
-    <h1 class="search-hotel-name">de Vieras <%=city %> <%=login%></h1>
+    <div class = "row">
+        <div class="col-sm">
+            <h1 class="search-hotel-name">de Vieras <%=city %> <%=login%></h1>
+        </div>
+        <div class="col-sm" id="cart-button">
+            <button type="button" class="cart-button">
+                <span class="glyphicon glyphicon-shopping-cart"></span> My list
+            </button>
+        </div>
+    </div>
+    <div class="modal-cart">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>My list</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+
+            </div>
+
+            <div class="modal-confirmation">
+                <button type="submit" class="btn" id="confirm-btn">
+                    Confirm my bookings
+                </button>
+            </div>
+        </div>
+    </div>
     <c:set var="val" value="<%=guests%>"/>
     <%
         if(guests.equals("2")){
@@ -266,7 +292,9 @@ else if(guests.equals("4")){
     </div>
 </div>
 
-<script src="js/search.js"></script>
+<script src="constants/catalog.js"></script>
+<script src="bookingsStorage.js"></script>
+<script src="searchNew.js"></script>
 
 <script>
     var clicks = <%=countEmpty%>;
