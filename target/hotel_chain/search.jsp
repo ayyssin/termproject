@@ -61,9 +61,6 @@
 </nav>
 
 <div class="main">
-<<<<<<< HEAD
-    <h1 class="search-hotel-name">de Vieras <%=city %> <%=login%></h1>
-=======
     <div class = "row">
         <div class="col-sm">
             <h1 class="search-hotel-name">de Vieras <%=city %> <%=login%></h1>
@@ -91,7 +88,6 @@
             </div>
         </div>
     </div>
->>>>>>> main
     <c:set var="val" value="<%=guests%>"/>
     <%
         if(guests.equals("2")){
@@ -146,20 +142,13 @@ else if(guests.equals("1")){
                         <li class="facility-item"><%=guests%> guest(s)</li>
                         <li class="facility-item"><%=beds%> bed(s)</li>
                         <li class="facility-item"> Mountains</li>
-<<<<<<< HEAD
                         <li class="facility-item"> Available: <a id="clicks"><%=countEmpty%></a></li>
-=======
->>>>>>> main
                     </ul>
                     <p class="room-description">A room offering everything necessary for a comfortable stay.
                     </p>
                     <h3 class="room-price"><%=prices%>$ per night</h3>
                     <h3 class="date-interval"> <%=date_in%> - <%=date_out%> </h3>
-<<<<<<< HEAD
                     <button class="book-btn" onclick="bookRoom()">Book now</button>
-=======
-                    <button class="book-btn" onclick="bookNow(this)">Book now</button>
->>>>>>> main
                 </div>
             </div>
         </div>
@@ -169,6 +158,7 @@ else if(guests.equals("1")){
 <%
 }
 else if(guests.equals("3")){
+<<<<<<< HEAD
 %>
 <div class="container">
     <div class="booking-item">
@@ -200,7 +190,6 @@ else if(guests.equals("3")){
 <%
 }
 else if(guests.equals("4")){
-<<<<<<< HEAD
 
 =======
 >>>>>>> main
@@ -214,6 +203,39 @@ else if(guests.equals("4")){
                 </div>
             </div>
             <div class="col-sm">
+<<<<<<< HEAD
+=======
+                <div class="booking-item-description" id="triple">
+                    <h3 class="room-type">Triple</h3>
+                    <ul class="facilities-list">
+                        <li class="facility-item"><%=guests%> guest(s)</li>
+                        <li class="facility-item"><%=beds%> bed(s)</li>
+                        <li class="facility-item"> Mountains</li>
+                    </ul>
+                    <p class="room-description">A room perfectly equipped for traveling friends or business partners.
+                    </p>
+                    <h3 class="room-price"><%=prices%>$ per night</h3>
+                    <h3 class="date-interval"> <%=date_in%> - <%=date_out%> </h3>
+                    <button class="book-btn" onclick="bookNow(this)">Book now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%
+}
+else if(guests.equals("4")){
+%>
+<div class="container">
+    <div class="booking-item">
+        <div class="row">
+            <div class="col-sm">
+                <div class="booking-item-pic">
+                    <img src="images/room.png" class="booking-item-img">
+                </div>
+            </div>
+            <div class="col-sm">
+>>>>>>> main
                 <div class="booking-item-description" id="quad">
                     <h3 class="room-type">Quad</h3>
                     <ul class="facilities-list">
@@ -232,12 +254,9 @@ else if(guests.equals("4")){
         </div>
     </div>
 </div>
-<<<<<<< HEAD
 <%}
 else if (guests.equals("6")){
 %>
-=======
->>>>>>> main
 
 <div class="container">
     <div class="booking-item">
