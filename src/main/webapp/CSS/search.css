@@ -152,28 +152,36 @@ html, body {
 }
 .book-btn {
 	position: absolute;
-	background: #14213D;
+	background: white;
 	border-radius: 55px;
-	color: white;
-	width: 250px;
+	border-color: #14213D;
+	color: #14213D;
+	width: 160px;
 	height: 45px;
-	left: 48%;
+	left: 40%;
 	right: 10%;
-	top: 82.19%;
+	top: 80%;
 	bottom: 15.82%;
 }
 
 .cancel-btn {
 	position: absolute;
-	background: #red;
+	background: white;
 	border-radius: 55px;
-	color: white;
-	width: 250px;
+	border-color: red;
+	color: red;
+	width: 160px;
 	height: 45px;
-	left: 25%;
+	left: 40%;
 	right: 10%;
-	top: 82.19%;
+	top: 80%;
 	bottom: 15.82%;
+}
+
+.bookings-quantity{
+	position: absolute;
+	top: 82.5%;
+	left: 22%;
 }
 
 #cart-button {
@@ -249,7 +257,7 @@ html, body {
 	margin-bottom:10px;
 }
 
-@media only screen and (max-width: 1500px){
+@media only screen and (max-width: 1300px){
 	.room-type {
 		margin-top: 50px;
 		margin-left: 40px;
@@ -274,6 +282,47 @@ html, body {
 	}
 	.book-btn{
 		margin-top: 10px;
-		left: 27%;
+	}
+	.cancel-btn{
+		margin-top: 10px;
+	}
+	.bookings-quantity {
+		top: 85%;
+		left: 15%;
+	}
+}
+@media only screen and (max-width: 1000px){
+	.room-type {
+		margin-top: 50px;
+		margin-left: 40px;
+		font-weight: bolder;
+	}
+
+	.room-description{
+		margin-left: 40px;
+		padding-right: 25px;
+	}
+
+	.booking-item-description{
+		margin-bottom: 160px;
+	}
+
+	.room-price-total{
+		left: 30%;
+	}
+
+	.room-price {
+		left: 32%;
+	}
+	.book-btn{
+		margin-top: 10px;
+	}
+	.cancel-btn{
+		margin-top: 10px;
+		top: 80%;
+	}
+	.bookings-quantity {
+		top: 85%;
+		left: 25%;
 	}
 }

@@ -3,21 +3,31 @@ let list = bookingsStorage.getBookings();
 
 function bookNow(el){
     let roomtype = el.parentNode.id;
-    bookingsStorage.addBooking(roomtype);
+    let count = document.getElementById("input-quantity" + " " + roomtype).value;
+    let select = document.getElementById("input-quantity" + " " + roomtype);
 
-    el.style.backgroundColor = "red";
-    el.innerHTML = "Cancel";
-    el.className = "cancel-btn";
-    el.setAttribute( "onclick", "javascript: cancelBooking(this);" );
+    if(count == 0){
+        alert("Error! Choose number of rooms.");
+    }else{
+        select.style.display = "none";
+        bookingsStorage.addBooking(roomtype, count);
+
+
+        el.innerHTML = "Remove from cart";
+        el.className = "cancel-btn";
+        el.setAttribute( "onclick", "javascript: cancelBooking(this);" );
+    }
 };
 
 function cancelBooking(el){
     let roomtype = el.parentNode.id;
+    let select = document.getElementById("input-quantity" + " " + roomtype);
+
+    select.style.display = "block";
     bookingsStorage.removeBooking(roomtype);
 
     el.className = "book-btn";
-    el.style.backgroundColor = "#14213D";
-    el.innerHTML = "Book now";
+    el.innerHTML = "Add to cart";
     el.setAttribute( "onclick", "javascript: bookNow(this);" );
 };
 
@@ -49,23 +59,23 @@ button.onclick = function(){
         confirmBtn.style.display = "block";
 
         data.forEach(({id, name, price}) => {
-            list.forEach((el) => {
-                if(id == el){
+            list.forEach(({roomtype, number}) => {
+                if(id == roomtype){
                     htmlCatalog += `
                                     <div class="row">
                                         <div class="col-sm">
                                             <h5>${name}</h5>
                                         </div>
                                         <div class="col-sm">
-                                            <h5>${price}</h4>
+                                            <h5>${price} USD </h4>
                                         </div>
                                         <div class="col-sm">
-                                            <h5>Number</h5>
+                                            <h5>${number} room(s)</h5>
                                         </div>
                                     </div>
                                     `;
 
-                    totalPrice += price;
+                    totalPrice += (price *number);
                 }
             });
         });

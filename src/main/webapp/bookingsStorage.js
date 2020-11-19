@@ -7,18 +7,18 @@ class BookingsStorage {
         return this.bookingList;
     }
 
-    addBooking(id){
+    addBooking(roomtype, number){
         let bookings = this.getBookings();
 
-        if(bookings.indexOf(id) == -1){
-            bookings.push(id);
+        if(bookings.findIndex(item => item.roomtype == roomtype) == -1){
+            bookings.push({roomtype, number});
         }
         return bookings;
     }
 
-    removeBooking(id){
+    removeBooking(roomtype){
         let bookings = this.getBookings();
-        let index = bookings.indexOf(id);
+        let index = bookings.findIndex(item => item.roomtype == roomtype);
 
         if(index != -1){
             bookings.splice(index, 1);
