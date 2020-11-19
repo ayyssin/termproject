@@ -135,15 +135,13 @@ button:hover {
 
 .guest{
     position: relative;
-    margin-left: 30px;
     margin-bottom: 20px;
-}
-
-.gst span{
+    display: block;
     float: left;
-}
-.gst .kk{
-    margin-left: 10%;
+    margin-left: 0px;
+    width: 100%;
+    padding-right: 70%;
+    padding-left: 10%;
 }
 
 .city, .srch form{
