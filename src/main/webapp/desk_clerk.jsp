@@ -26,7 +26,10 @@
                     <a href="desk_clerk.jsp" class="nav-link link">My Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a href="index.jsp" class="nav-link link">Log-out</a>
+                    <a href="login.jsp" class="nav-link link">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="signup.jsp" class="nav-link link">Sign-up</a>
                 </li>
             </ul>
         </div>
@@ -47,34 +50,87 @@
             <form action="search" class="srchh"><input type="search" name="search" placeholder="Search Guest"></form>
         </div>
     </div>
-    <div id="rectangles">
-        <div class="guest"><span class="gst"><span class="kk">GuestName, </span> <span>GuestID</span></span></div>
-        <div>
-
-        </div>
-
-        <div class="rect">
-            <div class="card-title">
-                2 - 10 Nov, 2020
-            </div>
-            <ul id="card">
-                <ul id="main-inf">
-                    <li id="room-type">Room type: <span class="val">Double</span></li>
-                    <li id="room-id">Room ID: <span class="val">0123</span></li>
-                    <li id="occupancy">Occupancy: <span class="val">1 person(s)</span> </li>
+    <div class="guest-container">
+        <div class="guest">GuestName, GuestID</div>
+        <div class="rects-cont">
+            <div class="rect">
+                <div class="card-title">
+                    2 - 10 Nov, 2020
+                </div>
+                <ul class="card">
+                    <ul class="main-inf">
+                        <li class="room-type">Room type: <span class="val">Double</span></li>
+                        <li class="room-id">Room ID: <span class="val">0123</span></li>
+                        <li class="occupancy">Occupancy: <span class="val">1 person(s)</span> </li>
+                    </ul>
+                    <li class="price">Total price: <span class="val">$1420</span></li>
+                    <li class="ed-b"><a class="edit" href="edit_booking.jsp">
+                        Edit booking
+                    </a>
+                        <a class="cancel" href="">Cancel booking</a></li>
                 </ul>
-                <li id="price">Total price: <span class="val">$1420</span></li>
-                <li id="ed-b"><a id="edit" href="edit_booking.jsp">
-                    Edit booking
-                </a>
-                <a id="cancel" href="">Cancel booking</a></li>
-            </ul>
-        </div>
-
-
-        <div class="rect">
-            <div class="card-title">
-                1 - 9 Dec, 2020
+            </div>
+            <div class="rect">
+                <div class="card-title">
+                    2 - 10 Nov, 2020
+                </div>
+                <ul class="card">
+                    <ul class="main-inf">
+                        <li class="room-type">Room type: <span class="val">Double</span></li>
+                        <li class="room-id">Room ID: <span class="val">0123</span></li>
+                        <li class="occupancy">Occupancy: <span class="val">1 person(s)</span> </li>
+                    </ul>
+                    <li class="price">Total price: <span class="val">$1420</span></li>
+                    <li class="ed-b"><a class="edit" href="edit_booking.jsp">
+                        Edit booking
+                    </a>
+                        <a class="cancel" href="">Cancel booking</a></li>
+                </ul>
+            </div>
+            <div class="rect past">
+                <div class="card-title">
+                    2 - 10 Nov, 2020
+                </div>
+                <ul class="card">
+                    <ul class="main-inf">
+                        <li class="room-type">Room type: <span class="val">Double</span></li>
+                        <li class="room-id">Room ID: <span class="val">0123</span></li>
+                        <li class="occupancy">Occupancy: <span class="val">1 person(s)</span> </li>
+                    </ul>
+                    <li class="price">Total price: <span class="val">$1420</span></li>
+                    <li class="ed-b">
+                        <a class="rebook" href="rebooking.jsp">Rebook</a></li>
+                </ul>
+            </div>
+            <div class="rect past">
+                <div class="card-title">
+                    2 - 10 Nov, 2020
+                </div>
+                <ul class="card">
+                    <ul class="main-inf">
+                        <li class="room-type">Room type: <span class="val">Double</span></li>
+                        <li class="room-id">Room ID: <span class="val">0123</span></li>
+                        <li class="occupancy">Occupancy: <span class="val">1 person(s)</span> </li>
+                    </ul>
+                    <li class="price">Total price: <span class="val">$1420</span></li>
+                    <li class="ed-b">
+                        <a class="rebook" href="rebooking.jsp">Rebook</a></li>
+                </ul>
+            </div>
+            <div class="rect past">
+                <div class="card-title">
+                    2 - 10 Nov, 2020
+                </div>
+                <ul class="card">
+                    <ul class="main-inf">
+                        <li class="room-type">Room type: <span class="val">Double</span></li>
+                        <li class="room-id">Room ID: <span class="val">0123</span></li>
+                        <li class="occupancy">Occupancy: <span class="val">1 person(s)</span> </li>
+                    </ul>
+                    <li class="price">Total price: <span class="val">$1420</span></li>
+                    <li class="ed-b">
+                        <a class="rebook" href="rebooking.jsp">Rebook</a></li>
+                </ul>
             </div>
         </div>
     </div>
