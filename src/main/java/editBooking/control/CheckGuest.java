@@ -1,17 +1,12 @@
 package editBooking.control;
 
+import editBooking.connectDB.CheckGuestDB;
+import registration.user_model.User;
+
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-import booking.booking_model.Booking;
-import editBooking.connectDB.EditBookingDB;
-import registration.user_model.User;
-import editBooking.connectDB.CheckGuestDB;
-
 import java.io.IOException;
 
 public class CheckGuest extends HttpServlet  {
@@ -33,9 +28,9 @@ public class CheckGuest extends HttpServlet  {
 
         try {
             if (GuestCheck.validate(guest)) {
-
+                //guest is found
             } else {
-
+                //guest is not found
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();

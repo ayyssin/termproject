@@ -34,7 +34,7 @@
 
 <div class="main">
     <div class="title">Create a new booking</div>
-    <form>
+    <form action="<%=request.getContextPath()%>/checkRooms" method="post" >
         <div class="existence">
             <div class="row" id="existence">
                 <div class="col-lg-12 col-md-12">
@@ -54,7 +54,7 @@
                     <input type="text" name="lName" placeholder="Enter your Last Name" required>
                 </div>
             </div>
-            <button>Check for existence</button>
+            <button type="submit" name="guest" >Check for existence</button>
         </div>
         <div class="available">
             <div class="row">
@@ -84,10 +84,10 @@
                 </div>
             </div>
             <div class="checkB">
-                <button id="check-rooms">Check for available rooms</button>
+                <button type="submit" name="check" id="check-rooms">Check for available rooms</button>
             </div>
             <div class="createB">
-                <button id="create">Save all</button>
+                <button type="submit" name="save" id="create">Save all</button>
             </div>
         </div>
     </form>
