@@ -36,7 +36,7 @@
         <h1 class="form-header">Login</h1>
         <form action="<%= request.getContextPath() %>/clerkLogin" method="post">
             <div class="form-group">
-                <label for="emalInput">First name:</label>
+                <label for="emailInput">First name:</label>
                 <input name="firstname" type="text" class="form-control" id='emailInput' placeholder="Enter your first name">
             </div>
             <div class="form-group">
