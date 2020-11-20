@@ -58,12 +58,50 @@ public class searchServlet extends HttpServlet {
 
         try {
             if (search.validate(hotel)) {
-                //searchRoom room = new searchRoom();
                 ArrayList<searchRoom> roomList = new ArrayList<>();
                 roomList = searchDB.getAllCustomer();
+                String[][] allRoom = new String[5][4];
+                int emptyS = 0, emptyD=0, emptyT=0, emptyQ=0, emptyP = 0;
+                for(searchRoom room: roomList){
+                    if(room.getRoom_type().equals("single") && room.getOccupied().equals("0")){
+                        emptyS++;
+                        allRoom[0][0] = "single";
+                        allRoom[0][1] = String.valueOf(emptyS);
+                        allRoom[0][2] = room.getPrice();
+                        allRoom[0][3] = room.getBeds();
+                    }
+                    else if(room.getRoom_type().equals("double") && room.getOccupied().equals("0")){
+                        emptyD++;
+                        allRoom[1][0] = "double";
+                        allRoom[1][1] = String.valueOf(emptyD);
+                        allRoom[1][2] = room.getPrice();
+                        allRoom[1][3] = room.getBeds();
+                    }
+                    else if(room.getRoom_type().equals("triple") && room.getOccupied().equals("0")){
+                        emptyT++;
+                        allRoom[2][0] = "triple";
+                        allRoom[2][1] = String.valueOf(emptyT);
+                        allRoom[2][2] = room.getPrice();
+                        allRoom[2][3] = room.getBeds();
+                    }
+                    else if(room.getRoom_type().equals("quad") && room.getOccupied().equals("0")){
+                        emptyQ++;
+                        allRoom[3][0] = "quad";
+                        allRoom[3][1] = String.valueOf(emptyQ);
+                        allRoom[3][2] = room.getPrice();
+                        allRoom[3][3] = room.getBeds();
+                    }
+                    else if(room.getRoom_type().equals("president") && room.getOccupied().equals("0")){
+                        emptyP++;
+                        allRoom[4][0] = "president";
+                        allRoom[4][1] = String.valueOf(emptyP);
+                        allRoom[4][2] = room.getPrice();
+                        allRoom[4][3] = room.getBeds();
+                    }
+                }
 
                 String url = "/search.jsp";
-                request.setAttribute("roomlist", roomList);
+                request.setAttribute("allRoom", allRoom);
                 HttpSession session=request.getSession(false);
                 String userLogin=(String)session.getAttribute("userLogin");
                 System.out.println("email: "+userLogin);

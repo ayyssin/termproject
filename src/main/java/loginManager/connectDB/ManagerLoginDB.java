@@ -16,7 +16,7 @@ public class ManagerLoginDB {
         Class.forName("com.mysql.jdbc.Driver");
 
         try (Connection connection = DriverManager
-                .getConnection("jdbc:mysql://localhost:3306/swe_hotel?useSSL=false", "root", "Qwerty1!")) {
+                .getConnection("jdbc:mysql://localhost:3306/swe_hotel?useSSL=false", "root", "intComm75")) {
 
 
             //

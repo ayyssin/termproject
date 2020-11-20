@@ -12,20 +12,18 @@
 <% String date_in = request.getParameter("date_in"); %>
 <% String date_out = request.getParameter("date_out");
     String login=(String)session.getAttribute("userLogin");
+    if(session.getAttribute("userLogin") == null){
+        System.out.println("not logged in");
+    }
 %>
 <%
-    List<searchRoom> rooms = (ArrayList<searchRoom>)request.getAttribute("roomlist");
-    //int listSize = rooms.size();
-    int countEmpty = 0;
-    String prices = null;
-    String beds = null;
-    for (searchRoom room:rooms){
-        if(room.getOccupied().equals("0")){
-            countEmpty++;
+    //List<searchRoom> rooms = (ArrayList<searchRoom>)request.getAttribute("roomlist");
+
+    String[][] allRooms = (String[][]) request.getAttribute("allRoom");
+    for(int i=0; i<allRooms.length; i++){
+        for (int j=0; j<allRooms[i].length; j++){
+            System.out.println(allRooms[i][j]);
         }
-        beds = room.getBeds();
-        prices = room.getPrice();
-        System.out.println("beds:"+ beds);
     }
 %>
 
@@ -105,12 +103,12 @@
                         <h3 class="room-type">Double</h3>
                         <ul class="facilities-list">
                             <li class="facility-item"><%=guests%> guest(s)</li>
-                            <li class="facility-item"><%=beds%> bed(s)</li>
+                            <li class="facility-item"><%=allRooms[1][3]%> bed(s)</li>
                             <li class="facility-item"> Mountains</li>
                         </ul>
                         <p class="room-description">A good room with all-included features needed for couples stay.
                         </p>
-                        <h3 class="room-price"><%=prices%>$ per night</h3>
+                        <h3 class="room-price"><%=allRooms[1][2]%>$ per night</h3>
                         <h3 class="date-interval"> <%=date_in%> - <%=date_out%> </h3>
                         <div class="bookings-quantity">
                             <label for="quantity"></label>
@@ -148,12 +146,12 @@ else if(guests.equals("1")){
                     <h3 class="room-type">Single</h3>
                     <ul class="facilities-list">
                         <li class="facility-item"><%=guests%> guest(s)</li>
-                        <li class="facility-item"><%=beds%> bed(s)</li>
+                        <li class="facility-item"><%=allRooms[0][3]%> bed(s)</li>
                         <li class="facility-item"> Mountains</li>
                     </ul>
                     <p class="room-description">A room offering everything necessary for a comfortable stay.
                     </p>
-                    <h3 class="room-price"><%=prices%>$ per night</h3>
+                    <h3 class="room-price"><%=allRooms[0][2]%>$ per night</h3>
                     <h3 class="date-interval"> <%=date_in%> - <%=date_out%> </h3>
                     <div class="bookings-quantity">
                         <label for="quantity"></label>
@@ -190,12 +188,12 @@ else if(guests.equals("3")){
                     <h3 class="room-type">Triple</h3>
                     <ul class="facilities-list">
                         <li class="facility-item"><%=guests%> guest(s)</li>
-                        <li class="facility-item"><%=beds%> bed(s)</li>
+                        <li class="facility-item"><%=allRooms[2][3]%> bed(s)</li>
                         <li class="facility-item"> Mountains</li>
                     </ul>
                     <p class="room-description">A room perfectly equipped for traveling friends or business partners.
                     </p>
-                    <h3 class="room-price"><%=prices%>$ per night</h3>
+                    <h3 class="room-price"><%=allRooms[2][2]%>$ per night</h3>
                     <h3 class="date-interval"> <%=date_in%> - <%=date_out%> </h3>
                     <div class="bookings-quantity">
                         <label for="quantity"></label>
@@ -232,12 +230,12 @@ else if(guests.equals("4")){
                     <h3 class="room-type">Quad</h3>
                     <ul class="facilities-list">
                         <li class="facility-item"><%=guests%> guest(s)</li>
-                        <li class="facility-item"><%=beds%> bed(s)</li>
+                        <li class="facility-item"><%=allRooms[3][3]%> bed(s)</li>
                         <li class="facility-item"> Mountains</li>
                     </ul>
                     <p class="room-description">Great choice for a relaxing vacation for families with children or a group of friends.
                     </p>
-                    <h3 class="room-price"><%=prices%>$ per night</h3>
+                    <h3 class="room-price"><%=allRooms[3][2]%>$ per night</h3>
                     <h3 class="date-interval"> <%=date_in%> - <%=date_out%> </h3>
                     <div class="bookings-quantity">
                         <label for="quantity"></label>
@@ -273,13 +271,12 @@ else if (guests.equals("6") || guests.equals("5")){
                     <h3 class="room-type">President Suite</h3>
                     <ul class="facilities-list">
                         <li class="facility-item"><%=guests%> guest(s)</li>
-                        <li class="facility-item"><%=beds%> bed(s)</li>
+                        <li class="facility-item"><%=allRooms[4][3]%> bed(s)</li>
                         <li class="facility-item"> Mountains</li>
-                        <li class="facility-item"> Available: <a id="clicks"><%=countEmpty%></a></li>
                     </ul>
                     <p class="room-description">A lux type room which offers breathtaking views from every aspect.
                     </p>
-                    <h3 class="room-price"><%=prices%>$ per night</h3>
+                    <h3 class="room-price"><%=allRooms[4][2]%>$ per night</h3>
                     <h3 class="date-interval"> <%=date_in%> - <%=date_out%> </h3>
                     <div class="bookings-quantity">
                         <label for="quantity"></label>

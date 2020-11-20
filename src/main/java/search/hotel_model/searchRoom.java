@@ -7,7 +7,11 @@ public class searchRoom {
     public String beds;
     public String room_id;
     public String occupied;
+    public String room_type;
 
+
+    public String getRoom_type(){return room_type;}
+    public void setRoom_type(String room_type){this.room_type=room_type;}
     public String getPrice(){return price;}
     public void setPrice(String price){this.price=price;}
     public String getBeds(){return beds;}
