@@ -21,6 +21,8 @@ function runModal(employeeID){
 
     var pay = document.getElementsByClassName("payroll" + " " + employeeID)[0];
 
+    var paymentAmount = document.getElementById("total-span" + " " + employeeID);
+
     btn.onclick = function() {
         modal.style.display = "block";
     }
@@ -28,6 +30,8 @@ function runModal(employeeID){
     pay.onclick = function(){
         pay.style.backgroundColor = "#44D362";
         pay.innerHTML = "Payment sent!";
+
+        paymentAmount.innerHTML = '0';
     }
 
     span.onclick = function() {
@@ -122,6 +126,7 @@ function generateModal(employeeID, name, position, schedule, hours, salary, tota
     body.appendChild(totalDiv);
 
     let total = document.createElement("span");
+    total.id += ("total-span" + " " + employeeID);
     total.innerHTML = total_payroll;
     totalDiv.appendChild(total);
 

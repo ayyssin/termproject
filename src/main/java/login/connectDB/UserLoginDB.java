@@ -16,7 +16,7 @@ public class UserLoginDB {
 
         try (Connection connection = DriverManager
 
-        	.getConnection("jdbc:mysql://localhost:3306/swe_hotel?useSSL=false", "root", "Qwerty1!")) {
+        	.getConnection("jdbc:mysql://localhost:3306/swe_hotel?useSSL=false&allowPublicKeyRetrieval=true", "root", "icexo123456")) {
 
             //
             //just insert your username in MySQLWorkbench instead of root
