@@ -100,15 +100,16 @@
                         </p>
                         <h3 class="room-price"><%=allRooms[1][2]%>$ per night</h3>
                         <h3 class="date-interval"> <%=date_in%> - <%=date_out%> </h3>
+                        <%if(allRooms[1][1].equals('0')){%>
+                            <p class="no-rooms"> No available rooms. </p>
+                        <%}%>
                         <div class="bookings-quantity">
                             <label for="quantity"></label>
                             <select name="quantity" id="input-quantity double">
                                 <option value="0">Choose</option>
-                                <option value="1">1 room</option>
-                                <option value="2">2 rooms</option>
-                                <option value="3">3 rooms</option>
-                                <option value="4">4 rooms</option>
-                                <option value="5">5 rooms</option>
+                                <%for(int i = 1; i <= (Integer.parseInt(allRooms[1][1])+1); i++){ %>
+                                <option value="<%=i%>"><%=i%> room(s)</option>
+                                <%}%>
                             </select>
                         </div>
                         <button class="book-btn" onclick="bookNow(this)">Add to the cart</button>
@@ -143,15 +144,15 @@ else if(guests.equals("1")){
                     </p>
                     <h3 class="room-price"><%=allRooms[0][2]%>$ per night</h3>
                     <h3 class="date-interval"> <%=date_in%> - <%=date_out%> </h3>
+                    <%if(allRooms[0][1].equals('0')){%>
+                    <p class="no-rooms"> No available rooms. </p>
+                    <%}%>
                     <div class="bookings-quantity">
-                        <label for="quantity"></label>
                         <select name="quantity" id="input-quantity single">
                             <option value="0">Choose</option>
-                            <option value="1">1 room</option>
-                            <option value="2">2 rooms</option>
-                            <option value="3">3 rooms</option>
-                            <option value="4">4 rooms</option>
-                            <option value="5">5 rooms</option>
+                            <%for(int i = 1; i <= (Integer.parseInt(allRooms[0][1])+1); i++){ %>
+                            <option value="<%=i%>"><%=i%> room(s)</option>
+                            <%}%>
                         </select>
                     </div>
                     <button class="book-btn" onclick="bookNow(this)">Add to the cart</button>
@@ -185,15 +186,16 @@ else if(guests.equals("3")){
                     </p>
                     <h3 class="room-price"><%=allRooms[2][2]%>$ per night</h3>
                     <h3 class="date-interval"> <%=date_in%> - <%=date_out%> </h3>
+                    <%if(allRooms[2][1].equals('0')){%>
+                    <p class="no-rooms"> No available rooms. </p>
+                    <%}%>
                     <div class="bookings-quantity">
                         <label for="quantity"></label>
                         <select name="quantity" id="input-quantity triple">
                             <option value="0">Choose</option>
-                            <option value="1">1 room</option>
-                            <option value="2">2 rooms</option>
-                            <option value="3">3 rooms</option>
-                            <option value="4">4 rooms</option>
-                            <option value="5">5 rooms</option>
+                            <%for(int i = 1; i <= (Integer.parseInt(allRooms[2][1])+1); i++){ %>
+                            <option value="<%=i%>"><%=i%> room(s)</option>
+                            <%}%>
                         </select>
                     </div>
                     <button class="book-btn" onclick="bookNow(this)">Add to the cart</button>
@@ -227,15 +229,16 @@ else if(guests.equals("4")){
                     </p>
                     <h3 class="room-price"><%=allRooms[3][2]%>$ per night</h3>
                     <h3 class="date-interval"> <%=date_in%> - <%=date_out%> </h3>
+                    <%if(allRooms[3][1].equals('0')){%>
+                    <p class="no-rooms"> No available rooms. </p>
+                    <%}%>
                     <div class="bookings-quantity">
                         <label for="quantity"></label>
                         <select name="quantity" id="input-quantity quad">
                             <option value="0">Choose</option>
-                            <option value="1">1 room</option>
-                            <option value="2">2 rooms</option>
-                            <option value="3">3 rooms</option>
-                            <option value="4">4 rooms</option>
-                            <option value="5">5 rooms</option>
+                            <%for(int i = 1; (i <= Integer.parseInt(allRooms[3][1])+1); i++){ %>
+                            <option value="<%=i%>"><%=i%> room(s)</option>
+                            <%}%>
                         </select>
                     </div>
                     <button class="book-btn" onclick="bookNow(this)">Add to the cart</button>
@@ -268,15 +271,16 @@ else if (guests.equals("6") || guests.equals("5")){
                     </p>
                     <h3 class="room-price"><%=allRooms[4][2]%>$ per night</h3>
                     <h3 class="date-interval"> <%=date_in%> - <%=date_out%> </h3>
+                    <%if(allRooms[4][1].equals('0')){%>
+                    <p class="no-rooms"> No available rooms. </p>
+                    <%}%>
                     <div class="bookings-quantity">
                         <label for="quantity"></label>
                         <select name="quantity" id="input-quantity president">
                             <option value="0">Choose</option>
-                            <option value="1">1 room</option>
-                            <option value="2">2 rooms</option>
-                            <option value="3">3 rooms</option>
-                            <option value="4">4 rooms</option>
-                            <option value="5">5 rooms</option>
+                            <%for(int i = 1; i <= (Integer.parseInt(allRooms[4][1])+1); i++){ %>
+                            <option value="<%=i%>"><%=i%> room(s)</option>
+                            <%}%>
                         </select>
                     </div>
                     <button class="book-btn" onclick="bookNow(this)">Add to the cart</button>

@@ -1,0 +1,174 @@
+@font-face {
+    src: url("../fonts/Megrim-Regular.ttf") format("truetype");
+    font-family: Megrim;
+}
+
+@font-face {
+    src: url("../fonts/Mulish-Regular.ttf") format("truetype");
+    font-family: Mulish;
+}
+
+* {
+    color: #14213D;
+    font-family: Mulish, serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-nav a:hover {
+    border-bottom: 1px solid blanchedalmond;
+}
+
+#navbar > a:hover {
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#navbar > a {
+    font-family: Megrim, serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#navbar {
+    background-color: rgba(255, 158, 0, 0.53);
+    color: white;
+    font-weight: bold;
+}
+
+#navbar .link {
+    color: #1F1534;
+}
+
+.footer {
+    background-color: #14213D;
+    color: white;
+    margin: 0 auto;
+}
+
+#cu {
+    margin-bottom: 0px;
+}
+
+.phone, .mail {
+    display: flex;
+    align-items: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#phone-num, #maill {
+    padding-top: 15px;
+    padding-left: 5px;
+}
+
+.link {
+    color: white;
+}
+
+.footer-links, li {
+    margin: 20px 20px;
+}
+
+.footer-name {
+    margin: 20px 40px;
+}
+
+.copyright {
+    margin: 20px 40px;
+    opacity: 30%;
+}
+
+h1 {
+    margin: 63px auto 0 auto;
+    text-align: center;
+}
+
+#staff {
+    margin: 30px auto 0 auto;
+    max-width: 800px;
+    padding-bottom: 70px;
+    text-align: center;
+}
+
+.staff-name {
+    font-weight: 600;
+    font-size: 32px;
+    color: #17299f;
+    max-width: 100%;
+    border-top: 1px solid black;
+    padding: 25px 0;
+}
+
+.flex {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 18px;
+    color: #000000;
+}
+
+form {
+    text-align: center;
+}
+
+#edit-submit {
+    background: #14213D;
+    border-radius: 55px;
+    width: 140px;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 11px 0;
+    margin-bottom: 180px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.light {
+    font-weight: normal;
+}
+
+.days-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.schedule input {
+    display: none !important;
+}
+
+.schedule input[type=checkbox] + label {
+    display: inline-block;
+    border-radius: 50%;
+    background: #dddddd;
+    height: 40px;
+    width: 40px;
+    margin-right: 3px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.schedule input[type=number] {
+    border-width: 0;
+    border: none;
+    outline: none;
+    background: #dddddd;
+}
+
+.schedule input[type=checkbox]:checked + label {
+    background: #FFD38A;
+    color: #000000;
+}
