@@ -19,7 +19,7 @@ public class searchDB {
         Class.forName("com.mysql.jdbc.Driver");
 
         try (Connection connection = DriverManager
-                .getConnection("jdbc:mysql://localhost:3306/swe_hotel?useSSL=false&allowPublicKeyRetrieval=true", "root", "741852963Hesoyam")){
+                .getConnection("jdbc:mysql://localhost:3306/swe_hotel?useSSL=false&allowPublicKeyRetrieval=true", "root", "intComm75")){
 
             try (PreparedStatement preparedStatement = connection
                     .prepareStatement("select Hotel_id from Hotel where City = ?")){
@@ -35,9 +35,8 @@ public class searchDB {
                 status = rs.next();
             }
             try (PreparedStatement preparedStatement = connection
-                    .prepareStatement("select * from Room where Capacity = ? and Hotel_id = ?")){
-                preparedStatement.setString(1, hotel.getGuests());
-                preparedStatement.setString(2, hotel.getHotel_id());
+                    .prepareStatement("select * from Room where Hotel_id = ?")){
+                preparedStatement.setString(1, hotel.getHotel_id());
                 System.out.println(preparedStatement);
 
                 ResultSet rs = preparedStatement.executeQuery();
@@ -46,6 +45,7 @@ public class searchDB {
                 int count = 0;
                 while(rs.next()){
                     searchRoom room = new searchRoom();
+                    room.setRoom_type(rs.getString("Room_type"));
                     room.setRoom_id(rs.getString("Room_id"));
                     room.setPrice(rs.getString("Price"));
                     room.setBeds(rs.getString("beds"));

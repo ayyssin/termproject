@@ -5,9 +5,10 @@ function bookNow(el){
     let roomtype = el.parentNode.id;
     let count = document.getElementById("input-quantity" + " " + roomtype).value;
     let select = document.getElementById("input-quantity" + " " + roomtype);
+    let city
 
     if(count == 0){
-        alert("Error! Choose number of rooms.");
+        alert("Error! Choose the number of rooms.");
     }else{
         select.style.display = "none";
         bookingsStorage.addBooking(roomtype, count);
@@ -44,6 +45,7 @@ button.onclick = function(){
     modal.style.display = "block";
     let htmlCatalog = '';
     let totalPrice = 0;
+    let num_of_days = 0;
 
     if(list.length == 0){
         confirmBtn.style.display = "none";
@@ -57,7 +59,6 @@ button.onclick = function(){
     }else{
 
         confirmBtn.style.display = "block";
-
         data.forEach(({id, name, price}) => {
             list.forEach(({roomtype, number}) => {
                 if(id == roomtype){
@@ -74,8 +75,7 @@ button.onclick = function(){
                                         </div>
                                     </div>
                                     `;
-
-                    totalPrice += (price *number);
+                    totalPrice += (price * number);
                 }
             });
         });
@@ -85,7 +85,6 @@ button.onclick = function(){
                         </div>`
         ;
     }
-
     modalBody.innerHTML = htmlCatalog;
 }
 
