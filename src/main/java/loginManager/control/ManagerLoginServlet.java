@@ -50,6 +50,7 @@ public class ManagerLoginServlet extends HttpServlet{
 
                 session.setAttribute("managerLogin", email);
                 session.setAttribute("managerID", managerID);
+                session.setAttribute("Hotel_id", hotel);
 
                 response.setContentType("text/html;charset=UTF-8");
                 RequestDispatcher dispatcher = request.getRequestDispatcher(url);
