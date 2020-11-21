@@ -12,19 +12,9 @@
 <% String date_in = request.getParameter("date_in"); %>
 <% String date_out = request.getParameter("date_out");
     String login=(String)session.getAttribute("userLogin");
-    if(session.getAttribute("userLogin") == null){
-        System.out.println("not logged in");
-    }
 %>
 <%
-    //List<searchRoom> rooms = (ArrayList<searchRoom>)request.getAttribute("roomlist");
-
     String[][] allRooms = (String[][]) request.getAttribute("allRoom");
-    for(int i=0; i<allRooms.length; i++){
-        for (int j=0; j<allRooms[i].length; j++){
-            System.out.println(allRooms[i][j]);
-        }
-    }
 %>
 
 <html lang="en">
