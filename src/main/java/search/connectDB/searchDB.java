@@ -19,7 +19,7 @@ public class searchDB {
         Class.forName("com.mysql.jdbc.Driver");
 
         try (Connection connection = DriverManager
-                .getConnection("jdbc:mysql://localhost:3306/swe_hotel?useSSL=false&allowPublicKeyRetrieval=true", "root", "intComm75")){
+                .getConnection("jdbc:mysql://localhost:3306/swe_hotel?useSSL=false&allowPublicKeyRetrieval=true", "root", "icexo123456")){
 
             try (PreparedStatement preparedStatement = connection
                     .prepareStatement("select Hotel_id from Hotel where City = ?")){
@@ -41,16 +41,19 @@ public class searchDB {
 
                 ResultSet rs = preparedStatement.executeQuery();
 
-                String room_id = null;
                 int count = 0;
                 while(rs.next()){
                     searchRoom room = new searchRoom();
-                    room.setRoom_type(rs.getString("Room_type"));
-                    room.setRoom_id(rs.getString("Room_id"));
-                    room.setPrice(rs.getString("Price"));
-                    room.setBeds(rs.getString("beds"));
-                    room.setOccupied(rs.getString("occupied"));
-                    roomlist.add(room);
+                    String room_id = rs.getString("Room_id");
+                    boolean exist = roomlist.stream().anyMatch(o -> o.getRoom_id().equals(room_id));
+                    if(!exist){
+                        room.setRoom_type(rs.getString("Room_type"));
+                        room.setRoom_id(room_id);
+                        room.setPrice(rs.getString("Price"));
+                        room.setBeds(rs.getString("beds"));
+                        room.setOccupied(rs.getString("occupied"));
+                        roomlist.add(room);
+                    }
                     status = true;
                 }
 

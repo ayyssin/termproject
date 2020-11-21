@@ -184,6 +184,10 @@ html, body {
 	left: 22%;
 }
 
+.bookings-quantity input {
+	width: 100px;
+}
+
 #cart-button {
 	text-align: right;
 	margin-top: 40px;

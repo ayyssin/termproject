@@ -1,0 +1,164 @@
+/*MAIN*/
+@font-face {
+    src: url("../fonts/Megrim-Regular.ttf") format("truetype");
+    font-family: Megrim;
+}
+
+@font-face {
+    src: url("../fonts/Mulish-Regular.ttf") format("truetype");
+    font-family: Mulish;
+}
+
+* {
+    color: #14213D;
+    font-family: Mulish, serif;
+    font-size: 16px;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+#navbar {
+    background-color: rgba(255, 158, 0, 0.53);
+    color: white;
+    font-weight: bold;
+}
+
+.navbar-nav a:hover {
+    border-bottom: 1px solid blanchedalmond;
+}
+
+#navbar > a:hover {
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#navbar > a {
+    font-family: Megrim, serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#navbar .link {
+    color: #1F1534;
+}
+
+#phone-num, #maill {
+    padding-top: 15px;
+    padding-left: 5px;
+}
+
+#cu {
+    margin-bottom: 0px;
+}
+
+.phone, .mail {
+    display: flex;
+    align-items: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.footer {
+    background-color: #14213D;
+    color: white;
+    margin: 0 auto;
+}
+
+.link {
+    color: white;
+}
+
+.footer-links, li {
+    margin: 20px 20px;
+}
+
+.footer-name {
+    margin: 20px 40px;
+}
+
+.copyright {
+    margin: 20px 40px;
+    opacity: 30%;
+}
+
+/*create_booking.html*/
+.main{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    text-align: center;
+}
+
+.title{
+    font-weight: 700;
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+.available, .existence, .room-param{
+    position: relative;
+    margin: 8px 10%;
+}
+
+label{
+    float: left;
+    margin-left: 25%;
+    font-size: 1.2em
+}
+
+input{
+    float: right;
+    margin-right: 25%;
+    font-size: 1.2em;
+}
+
+/*BUTTONS*/
+button {
+    background: #14213D;
+    border-radius: 55px;
+    border: 0;
+    font-weight: bold;
+    font-size: 1em;
+    text-align: center;
+    color: #FFFFFF;
+    width: 200px;
+    height: 50px;
+    margin: 10px auto;
+}
+
+button:hover {
+    text-decoration-line: underline;
+    cursor: pointer;
+}
+
+#create{
+    width: 130px;
+}
+
+#check-rooms{
+    width: 250px;
+}
+
+.createB, .checkB{
+    display: block;
+    width: 100%;
+}
+
+
+/*RESPONSIVENESS*/
+
+@media screen and (max-width: 900px) {
+    label{
+        margin-left: 40%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    label{
+        margin-left: 30%;
+    }
+}
+
