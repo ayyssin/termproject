@@ -1,43 +1,39 @@
-package loginManager.connectDB;
+package seasons.connectDB;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
+import seasons.season_model.season;
 
-import loginManager.manager_model.Manager;
+public class seasonsDB {
+    private static ArrayList<season> seasonlist = new ArrayList<season>();
 
-public class ManagerLoginDB {
-
-    public boolean validate(Manager login) throws ClassNotFoundException {
+    public boolean validate(String hotelID) throws ClassNotFoundException {
         boolean status = false;
-
         Class.forName("com.mysql.jdbc.Driver");
 
         try (Connection connection = DriverManager
                 .getConnection("jdbc:mysql://localhost:3306/swe_hotel?useSSL=false&allowPublicKeyRetrieval=true", "root", "intComm75")) {
-
-
-            //
-            //just insert your username in MySQLWorkbench instead of root
-            //insert your password in MySQLWorkbench instead of 741852963Hesoyam
-            //
             try(PreparedStatement preparedStatement = connection
-                    .prepareStatement("select * from Manager where email = ? and password = ? ")){
-                String userEmail = login.getEmail();
-                preparedStatement.setString(1, userEmail);
-                preparedStatement.setString(2, login.getPassword());
+                    .prepareStatement("select * from seasonal_rate where Hotel_id = ?")){
+                preparedStatement.setString(1, hotelID);
                 System.out.println(preparedStatement);
-                ResultSet rs = preparedStatement.executeQuery();
 
-                while (rs.next()){
-                    String firstName = rs.getString("firstname");
-                    login.setFirstname(firstName);
-                    login.setLastname(rs.getString("lastname"));
-                    login.setHotel_id(rs.getString("Hotel_id"));
-                    login.setManagerID(rs.getString("ManagerID"));
-                    System.out.println(firstName);
+                ResultSet rs = preparedStatement.executeQuery();
+                while(rs.next()){
+                    season new_season = new season();
+                    String name = rs.getString("season_name");
+                    boolean exist = seasonlist.stream().anyMatch(o -> o.getSeason_name().equals(name));
+                    if(!exist){
+                        new_season.setSeason_name(name);
+                        new_season.setDiscount(rs.getString("discount"));
+                        new_season.setWeekend_rate(rs.getString("weekend_rate"));
+                        seasonlist.add(new_season);
+                    }
                     status = true;
                 }
                 connection.close();
@@ -47,12 +43,15 @@ public class ManagerLoginDB {
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-            status=false;
+            status = false;
         }
-
         return status;
-    }
 
+    }
+    public static ArrayList<season> getAllSeasons(){
+
+        return seasonlist;
+    }
     private void printSQLException(SQLException ex) {
         for (Throwable e: ex) {
             if (e instanceof SQLException) {

@@ -19,7 +19,7 @@ public class searchDB {
         Class.forName("com.mysql.jdbc.Driver");
 
         try (Connection connection = DriverManager
-                .getConnection("jdbc:mysql://localhost:3306/swe_hotel?useSSL=false&allowPublicKeyRetrieval=true", "root", "icexo123456")){
+                .getConnection("jdbc:mysql://localhost:3306/swe_hotel?useSSL=false&allowPublicKeyRetrieval=true", "root", "intComm75")){
 
             try (PreparedStatement preparedStatement = connection
                     .prepareStatement("select Hotel_id from Hotel where City = ?")){

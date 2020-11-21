@@ -52,7 +52,9 @@ String name = (String)request.getAttribute("managerName");
                 </div>
                 <div class="col-sm">
                     <div class="choose-btn">
+                        <form action="<%=request.getContextPath()%>/seasonalRates" method="get">
                         <a href="seasons.jsp"><button type="submit" class="btn" id="season-btn">See seasonal rates</button></a>
+                        </form>
                     </div>
                 </div>
             </div>

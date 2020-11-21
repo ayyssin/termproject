@@ -107,7 +107,7 @@
                             <label for="quantity"></label>
                             <select name="quantity" id="input-quantity double">
                                 <option value="0">Choose</option>
-                                <%for(int i = 1; i <= (Integer.parseInt(allRooms[1][1])+1); i++){ %>
+                                <%for(int i = 1; i < (Integer.parseInt(allRooms[1][1])+1); i++){ %>
                                 <option value="<%=i%>"><%=i%> room(s)</option>
                                 <%}%>
                             </select>
@@ -150,7 +150,7 @@ else if(guests.equals("1")){
                     <div class="bookings-quantity">
                         <select name="quantity" id="input-quantity single">
                             <option value="0">Choose</option>
-                            <%for(int i = 1; i <= (Integer.parseInt(allRooms[0][1])+1); i++){ %>
+                            <%for(int i = 1; i < (Integer.parseInt(allRooms[0][1])+1); i++){ %>
                             <option value="<%=i%>"><%=i%> room(s)</option>
                             <%}%>
                         </select>
@@ -193,7 +193,7 @@ else if(guests.equals("3")){
                         <label for="quantity"></label>
                         <select name="quantity" id="input-quantity triple">
                             <option value="0">Choose</option>
-                            <%for(int i = 1; i <= (Integer.parseInt(allRooms[2][1])+1); i++){ %>
+                            <%for(int i = 1; i < (Integer.parseInt(allRooms[2][1])+1); i++){ %>
                             <option value="<%=i%>"><%=i%> room(s)</option>
                             <%}%>
                         </select>
@@ -236,7 +236,7 @@ else if(guests.equals("4")){
                         <label for="quantity"></label>
                         <select name="quantity" id="input-quantity quad">
                             <option value="0">Choose</option>
-                            <%for(int i = 1; (i <= Integer.parseInt(allRooms[3][1])+1); i++){ %>
+                            <%for(int i = 1; (i < Integer.parseInt(allRooms[3][1])+1); i++){ %>
                             <option value="<%=i%>"><%=i%> room(s)</option>
                             <%}%>
                         </select>
@@ -278,7 +278,7 @@ else if (guests.equals("6") || guests.equals("5")){
                         <label for="quantity"></label>
                         <select name="quantity" id="input-quantity president">
                             <option value="0">Choose</option>
-                            <%for(int i = 1; i <= (Integer.parseInt(allRooms[4][1])+1); i++){ %>
+                            <%for(int i = 1; i < (Integer.parseInt(allRooms[4][1])+1); i++){ %>
                             <option value="<%=i%>"><%=i%> room(s)</option>
                             <%}%>
                         </select>

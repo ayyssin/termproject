@@ -1,5 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+<%@ page import="seasons.season_model.season" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Deque" %>
+<%
+    List<season> list = (ArrayList<season>)request.getAttribute("seasonList");
+    for(season s:list){
+        System.out.println("name: "+s.getSeason_name());
+    }
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
