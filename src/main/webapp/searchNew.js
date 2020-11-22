@@ -59,7 +59,7 @@ button.onclick = function(){
     }else{
 
         confirmBtn.style.display = "block";
-        data.forEach(({id, name, price}) => {
+        data.forEach(({id, name, price, days}) => {
             list.forEach(({roomtype, number}) => {
                 if(id == roomtype){
                     htmlCatalog += `
@@ -68,14 +68,17 @@ button.onclick = function(){
                                             <h5>${name}</h5>
                                         </div>
                                         <div class="col-sm">
-                                            <h5>${price} USD </h4>
+                                            <h5>${number} room(s)</h5>
                                         </div>
                                         <div class="col-sm">
-                                            <h5>${number} room(s)</h5>
+                                            <h5>x ${days} day(s)</h5>
+                                        </div>
+                                        <div class="col-sm">
+                                            <h5>x ${price} USD </h4>
                                         </div>
                                     </div>
                                     `;
-                    totalPrice += (price * number);
+                    totalPrice += (price * number * days);
                 }
             });
         });

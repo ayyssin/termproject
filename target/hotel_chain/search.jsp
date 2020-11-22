@@ -4,6 +4,8 @@
 <%@ page import="java.util.List" %>
 <%@ page import="javax.swing.plaf.synth.SynthLookAndFeel" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="java.text.ParseException"%>
+<%@ page import="java.text.SimpleDateFormat"%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
@@ -129,7 +131,7 @@ else if(guests.equals("1")){
         <div class="row">
             <div class="col-sm">
                 <div class="booking-item-pic">
-                    <img src="images/room.png" class="booking-item-img">
+                    <img src="images/single.png" class="booking-item-img">
                 </div>
             </div>
             <div class="col-sm">
@@ -171,7 +173,7 @@ else if(guests.equals("3")){
         <div class="row">
             <div class="col-sm">
                 <div class="booking-item-pic">
-                    <img src="images/room.png" class="booking-item-img">
+                    <img src="images/triple.png" class="booking-item-img">
                 </div>
             </div>
             <div class="col-sm">
@@ -214,7 +216,7 @@ else if(guests.equals("4")){
         <div class="row">
             <div class="col-sm">
                 <div class="booking-item-pic">
-                    <img src="images/room.png" class="booking-item-img">
+                    <img src="images/quad.png" class="booking-item-img">
                 </div>
             </div>
             <div class="col-sm">
@@ -248,7 +250,7 @@ else if(guests.equals("4")){
     </div>
 </div>
 <%}
-else if (guests.equals("6") || guests.equals("5")){
+else if (Integer.parseInt(guests) >= 5){
 %>
 
 <div class="container">
@@ -256,7 +258,7 @@ else if (guests.equals("6") || guests.equals("5")){
         <div class="row">
             <div class="col-sm">
                 <div class="booking-item-pic">
-                    <img src="images/room.png" class="booking-item-img">
+                    <img src="images/president.png" class="booking-item-img">
                 </div>
             </div>
             <div class="col-sm">
@@ -317,9 +319,43 @@ else if (guests.equals("6") || guests.equals("5")){
     </div>
 </div>
 
+<script src="constants/roomCatalog.js"></script>
 <script src="constants/catalog.js"></script>
 <script src="bookingsStorage.js"></script>
 <script src="searchNew.js"></script>
+
+<script type="text/javascript">
+    const _MS_PER_DAY = 1000 * 60 * 60 * 24;
+    let checkin = '<%=date_in%>';
+    let checkout = '<%=date_out%>';
+    let a = new Date(checkin);
+    let b = new Date(checkout);
+
+    function dateDiffInDays(a, b) {
+        // Discard the time and time-zone information.
+        const utc1 = Date.UTC(a.getFullYear(), a.getMonth(), a.getDate());
+        const utc2 = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate());
+
+        return Math.floor((utc2 - utc1) / _MS_PER_DAY);
+    }
+
+    data.forEach((el) =>{
+        <%for(int i = 0; i < 5; i++){%>
+          if(el.id == "<%=allRooms[i][0]%>") {
+              el.price = <%=Double.valueOf(allRooms[i][2])%>;
+              let days = dateDiffInDays(a, b);
+              if(days == 0){
+                  el.days = 1;
+              }else{
+                  el.days = days;
+              }
+          }
+        <%} %>
+    })
+
+</script>
+
+
 
 </body>
 </html>
