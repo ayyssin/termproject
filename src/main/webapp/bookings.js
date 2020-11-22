@@ -40,10 +40,6 @@ function runRemove(bookingID){
         while(bookingCard.length > 0){
             bookingCard[0].parentNode.removeChild(bookingCard[0]);
         }
-        let indx = list.indexOf(bookingID);
-        if(indx != -1){
-            localStorageUtil.removeProduct(bookingID);
-        }
     }
 }
 
