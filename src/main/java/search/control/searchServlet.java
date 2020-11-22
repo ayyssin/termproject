@@ -50,14 +50,14 @@ public class searchServlet extends HttpServlet {
 
 
         searchHotel hotel = new searchHotel();
-        hotel.setCity(city);
-        hotel.setGuests(guests);
+        //hotel.setCity(city);
+        //hotel.setGuests(guests);
 
         System.out.println(guests);
 
 
         try {
-            if (search.validate(hotel)) {
+            if (search.validate(city)) {
                 ArrayList<searchRoom> roomList = new ArrayList<>();
                 roomList = searchDB.getAllCustomer();
                 String[][] allRoom = new String[5][4];
