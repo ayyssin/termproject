@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+<% String employee_id=(String)session.getAttribute("userLogin"); %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,6 +36,8 @@
 <div class="main">
     <div class="title">Rebook</div>
     <form action="<%=request.getContextPath()%>/checkRooms" method="post" >
+        <input type="text" name="info" value=<%=employee_id%> hidden>
+        <input type="text" name="url" value="<%=request.getContextPath()%>/rebooking.jsp" hidden>
         <div class="available">
             <div class="row">
                 <div class="col-lg-12 col-md-12">

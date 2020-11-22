@@ -352,7 +352,7 @@ else if (Integer.parseInt(guests) >= 5){
                 </div>
                 <div class="text">Hurry up & book your room now!</div>
                 <div id="act">
-                    <a href="index.html">
+                    <a href="index.jsp">
                         <button>Book now</button>
                     </a>
                 </div>
@@ -398,7 +398,6 @@ else if (Integer.parseInt(guests) >= 5){
     </div>
 </div>
 
-<script src="constants/roomCatalog.js"></script>
 <script src="constants/catalog.js"></script>
 <script src="bookingsStorage.js"></script>
 <script src="searchNew.js"></script>
