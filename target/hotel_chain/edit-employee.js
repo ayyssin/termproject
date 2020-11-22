@@ -58,9 +58,27 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
     nameSpan.innerHTML = name;
     staffName.appendChild(nameSpan);
 
+    let form = document.createElement('form');
+    form.className += 'form';
+    staff.appendChild(form);
+
+    let staffID = document.createElement("div");
+    staffID.className += "flex";
+    form.appendChild(staffID);
+
+    let staffIdL = document.createElement('div');
+    staffIdL.className = 'staffId-label';
+    staffIdL.innerHTML = 'Employee ID: ';
+    staffID.appendChild(staffIdL);
+
+    let stafffID = document.createElement('input');
+    stafffID.value = employeeID;
+    stafffID.disabled = true;
+    staffID.appendChild(stafffID);
+
     let posClean = document.createElement("div");
     posClean.className += "flex";
-    staff.appendChild(posClean);
+    form.appendChild(posClean);
 
     let positionDiv = document.createElement("div");
     positionDiv.className += ("position-label");
@@ -90,7 +108,7 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
 
     let sched = document.createElement("div");
     sched.className += "flex";
-    staff.appendChild(sched);
+    form.appendChild(sched);
 
     let schedulesDiv = document.createElement("div");
     schedulesDiv.className += ("schedule-label");
@@ -222,7 +240,7 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
 
     let hourr = document.createElement("div");
     hourr.className += "flex";
-    staff.appendChild(hourr);
+    form.appendChild(hourr);
 
     let hourDiv = document.createElement("div");
     hourDiv.className += ("hours-label");
@@ -235,7 +253,7 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
 
     let salar = document.createElement("div");
     salar.className += "flex";
-    staff.appendChild(salar);
+    form.appendChild(salar);
 
     let salariesDiv = document.createElement("div");
     salariesDiv.className += ("salary-label");
@@ -247,10 +265,11 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
     salaries.value = salary;
     salar.appendChild(salaries);
 
-    let save = document.createElement("button");
+    let save = document.createElement("input");
+    save.type = 'submit';
     save.className += ("edit-submit" + " " + employeeID);
-    save.innerHTML = "Save";
-    staff.appendChild(save);
+    save.value = "Save";
+    form.appendChild(save);
 }
 function runEdit(el){
     displayEmployeeEdit.forEach(({id, name, position, schedule, hours, salary}) => {
