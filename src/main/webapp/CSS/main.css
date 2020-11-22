@@ -317,7 +317,7 @@ form legend {
 
 
 .modal {
-    display: block;
+    display: none;
     justify-content: center;
     width: 100%;
     height: 100%;
