@@ -71,11 +71,11 @@
 
             </div>
             <form action="<%= request.getContextPath() %>/confirm" method="post">
-                <input name="user_email" value=<%=login%> hidden>
-                <input name="check_in" value=<%=date_in%> hidden>
-                <input name="check_out" value=<%=date_out%> hidden>
-                <input name="guests" value=<%=guests%> hidden>
-                <input name="city" value=<%=city %> hidden>
+                <input name="user_email" value="<%=login%>" hidden>
+                <input name="check_in" value="<%=date_in%>" hidden>
+                <input name="check_out" value="<%=date_out%>" hidden>
+                <input name="city" value="<%=city %>" hidden>
+                <input name="guests" value="<%=guests%>" hidden>
                 <input name="url" value="<%=request.getContextPath()%>/search.jsp" hidden>
                 <div class="modal-confirmation">
                 <button type="submit" class="btn" id="confirm-btn">
