@@ -8,8 +8,8 @@ for(var i=0; i<list.length; i++){
 
 let displayCards = [];
 
-list.forEach(({id, name, position, schedule, hours, salary, total_payroll}) => {
-    displayCards.push({id, name, position, schedule, hours, salary, total_payroll});
+list.forEach(({id, name, position, schedule, hours, salary}) => {
+    displayCards.push({id, name, position, schedule, hours, salary});
 });
 
 function runModal(employeeID){
@@ -19,9 +19,9 @@ function runModal(employeeID){
 
     var submitSave = document.getElementsByClassName("save" + " " + employeeID)[0];
 
-    btn.onclick = function() {
+    /*btn.onclick = function() {
         edit.style.display = "block";
-    }
+    }*/
 
     submitSave.onclick = function(){
         submitSave.style.backgroundColor = "#44D362";
@@ -29,7 +29,7 @@ function runModal(employeeID){
     }
 }
 
-function generateModal(employeeID, name, position, schedule, hours, salary, total_payroll){
+function generateModal(employeeID, name, position, schedule, hours, salary){
     let main = document.querySelector(".edits");
     let node = document.createElement("div");
     node.className += "edit";
@@ -188,7 +188,7 @@ function generateModal(employeeID, name, position, schedule, hours, salary, tota
     body.appendChild(save);
 }
 
-displayCards.forEach(({id, name, position, schedule, hours, salary, total_payroll, img}) => {
-    generateModal(id, name, position, schedule, hours, salary, total_payroll);
+displayCards.forEach(({id, name, position, schedule, hours, salary}) => {
+    generateModal(id, name, position, schedule, hours, salary);
     runModal(id);
 });
