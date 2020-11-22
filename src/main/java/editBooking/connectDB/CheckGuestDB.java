@@ -11,13 +11,13 @@ public class CheckGuestDB {
         Class.forName("com.mysql.jdbc.Driver");
 
         try (Connection connection = DriverManager
-                .getConnection("jdbc:mysql://localhost:3306/swe_hotel?useSSL=false&allowPublicKeyRetrieval=true", "root", "Zhanmsoul123.")) {
+                .getConnection("jdbc:mysql://localhost:3306/swe_hotel?useSSL=false&allowPublicKeyRetrieval=true", "root", "741852963Hesoyam")) {
             //
             //just insert your username in MySQLWorkbench instead of root
             //insert your password in MySQLWorkbench instead of 741852963Hesoyam
             //
             try(PreparedStatement preparedStatement = connection
-                    .prepareStatement("select * from User where email = ? and first_name = ? and last_name = ?")){
+                    .prepareStatement("select * from User where email = ? and first_name = ? and last_name = ?;")) {
 
                 preparedStatement.setString(1, guest.getEmail());
                 preparedStatement.setString(2, guest.getFirst_name());
@@ -27,36 +27,35 @@ public class CheckGuestDB {
                 ResultSet rs = preparedStatement.executeQuery();
                 status = rs.next();
 
-                if(rs.next()){
+                if (status) {
                     return status;
-                }
-                else{
-                    try(PreparedStatement Statement = connection.prepareStatement("INSERT INTO User" +
-                            "      (email, first_name, last_name, password, date_of_birth) VALUES" + " (?, ?, ?, ?, ?) ")){
-                        preparedStatement.setString(1, guest.getEmail());
-                        preparedStatement.setString(2, guest.getFirst_name());
-                        preparedStatement.setString(3, guest.getLast_name());
-                        preparedStatement.setString(4, "root");
-                        preparedStatement.setString(5, "NULL");
+                } else {
+                    System.out.println("guest is not found db");
+                    try (PreparedStatement Statement = connection.prepareStatement("INSERT INTO User" +
+                            " VALUES (?, ?, ?, ?, ?) ")) {
+                        Statement.setString(1, guest.getEmail());
+                        Statement.setString(2, guest.getFirst_name());
+                        Statement.setString(3, guest.getLast_name());
+                        Statement.setString(4, "root");
+                        Statement.setString(5, "NULL");
 
-                        System.out.println(preparedStatement);
-                        ResultSet resSet = preparedStatement.executeQuery();
+                        System.out.println(Statement);
+                        int res = Statement.executeUpdate();
+                        System.out.println("rows affected: " + res);
 
-                        status = resSet.next();
+                        if (res != 0){
+                            status = true;
+                        }
+
                     } catch (SQLException e) {
-                        printSQLException(e);
+                        e.printStackTrace();
                     }
                 }
-
             }
-
-            return status;
-
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-
-        return status;
+            return status;
     }
 
     private void printSQLException(SQLException ex) {

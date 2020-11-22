@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+<% String employee_id = (String)session.getAttribute("userLogin"); %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,7 +45,7 @@
     </div>
     <div class="title">
         <div class="city">
-            City
+            City <%=employee_id %>
         </div>
         <div class="srch">
             <form action="search" class="srchh"><input type="search" name="search" placeholder="Search Guest"></form>

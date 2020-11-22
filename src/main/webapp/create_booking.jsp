@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+<% String employee_id=(String)session.getAttribute("userLogin"); %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,25 +34,27 @@
 </div>
 
 <div class="main">
-    <div class="title">Create a new booking</div>
+    <div class="title">Create a new booking </div>
     <form action="<%=request.getContextPath()%>/checkRooms" method="post" >
+        <input type="text" name="info" value=<%=employee_id%> hidden>
+        <input type="text" name="url" value="<%=request.getContextPath()%>/create_booking.jsp" hidden>
         <div class="existence">
             <div class="row" id="existence">
                 <div class="col-lg-12 col-md-12">
                     <label class="email">Guest email:</label>
-                    <input type="text" name="email" placeholder="Enter your email" required>
+                    <input type="text" name="email" placeholder="Enter your email">
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12 col-md-12">
                     <label>First Name:</label>
-                    <input type="text" name="fName" placeholder="Enter your First Name" required>
+                    <input type="text" name="fName" placeholder="Enter your First Name">
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12 col-md-12">
                     <label>Last Name:</label>
-                    <input type="text" name="lName" placeholder="Enter your Last Name" required>
+                    <input type="text" name="lName" placeholder="Enter your Last Name">
                 </div>
             </div>
             <button type="submit" name="guest" >Check for existence</button>
@@ -74,20 +77,20 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12">
                     <label class="email">Room ID:</label>
-                    <input type="text" name="room-id" placeholder="Room ID" required>
+                    <input type="text" name="room-id" placeholder="Room ID" >
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12 col-md-12">
                     <label>Room Type:</label>
-                    <input type="text" name="room-type" placeholder="Room Type" required>
+                    <input type="text" name="room-type" placeholder="Room Type" >
                 </div>
             </div>
             <div class="checkB">
                 <button type="submit" name="check" id="check-rooms">Check for available rooms</button>
             </div>
             <div class="createB">
-                <button type="submit" name="save" id="create">Save all</button>
+                <button type="submit" name="create" id="create">Save all</button>
             </div>
         </div>
     </form>

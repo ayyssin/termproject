@@ -1,0 +1,50 @@
+[
+    {
+        "id": "el1",
+        "name": "Double",
+        "description": "A good room with all-included features needed for couples stay.",
+        "img": "https://i.ibb.co/q0xdvmr/room.jpg",
+        "price": 13600,
+        "number": 3
+    },
+    {
+        "id": "el2",
+        "name": "Twin",
+        "description": "Ideal choice for a trip with friends to share a room.",
+        "img": "https://i.ibb.co/q0xdvmr/room.jpg",
+        "price": 23900,
+        "number": 4
+    },
+    {
+        "id": "el3",
+        "name": "Single",
+        "description": "A room offering everything necessary for a comfortable stay.",
+        "img": "https://i.ibb.co/q0xdvmr/room.jpg",
+        "price": 21600,
+        "number": 6
+    },
+    {
+        "id": "el4",
+        "name": "Triple",
+        "description": "A room perfectly equipped for traveling friends.",
+        "img": "https://i.ibb.co/q0xdvmr/room.jpg",
+        "price": 19900,
+        "number": 1
+    },
+    {
+        "id": "el5",
+        "name": "Quad",
+        "description": "Great choice for a relaxing vacation for families with children.",
+        "img": "https://i.ibb.co/q0xdvmr/room.jpg",
+        "price": 14500,
+        "number": 4
+    },
+    {
+        "id": "el6",
+        "name": "President Suite",
+        "description": "A lux type room which offers breathtaking views.",
+        "img": "https://i.ibb.co/q0xdvmr/room.jpg",
+        "price": 14600,
+        "number": 2
+    }
+]
