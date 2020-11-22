@@ -1,5 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
+<%@ page import="booking.booking_model.Booking" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Deque" %>
+
+<%
+    List<Booking> Employees = (ArrayList<Booking>)request.getAttribute("bookingList");
+    //List<employee> empList = (ArrayList<employee>)request.getAttribute("employeeList");
+    String s = (String) request.getAttribute("jsonBooking");
+    System.out.println(s);
+%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,6 +58,19 @@ pageEncoding="UTF-8"%>
         <div class="oops">
             You don't have any upcoming bookings!
         </div>
+
+        <! -- EXAMPLE FOR FURTHER USE WHEN DB IS CONNECTED -->
+        <div class="rect">
+            <img src="images/twin.png">
+            <div class="card-title">
+                Almaty
+            </div>
+            <div class="card-date">
+                2 Nov - 10 Dec
+            </div>
+            <a class="more">More details</a>
+        </div>
+
     </div>
 
     <div id="act">

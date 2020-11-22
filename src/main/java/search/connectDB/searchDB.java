@@ -10,16 +10,20 @@ import search.hotel_model.searchHotel;
 import search.hotel_model.searchRoom;
 
 public class searchDB {
-    private static ArrayList<searchRoom> roomlist = new ArrayList<searchRoom>();;
+    private static ArrayList<searchRoom> roomlist = new ArrayList<searchRoom>();
     //ArrayList<searchRoom> roomlist = new ArrayList<searchRoom>();
 
-    public boolean validate(searchHotel hotel) throws ClassNotFoundException {
+    public boolean validate(String city) throws ClassNotFoundException {
         boolean status = false;
 
         Class.forName("com.mysql.jdbc.Driver");
 
         try (Connection connection = DriverManager
                 .getConnection("jdbc:mysql://localhost:3306/swe_hotel?useSSL=false&allowPublicKeyRetrieval=true", "root", "intComm75")){
+
+            //roomlist = null;
+            searchHotel hotel = new searchHotel();
+            hotel.setCity(city);
 
             try (PreparedStatement preparedStatement = connection
                     .prepareStatement("select Hotel_id from Hotel where City = ?")){

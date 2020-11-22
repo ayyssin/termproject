@@ -42,7 +42,7 @@
                 <a href="login-all.jsp" class="nav-link link">Login</a>
             </li>
             <li class="nav-item">
-                <a href="signup.jsp" class="nav-link link">Sign-up</a>
+                <a href="<%= request.getContextPath() %>/bookingServlet" class="nav-link link">My bookings</a>
             </li>
         </ul>
     </div>
@@ -129,7 +129,7 @@ else if(guests.equals("1")){
         <div class="row">
             <div class="col-sm">
                 <div class="booking-item-pic">
-                    <img src="images/room.png" class="booking-item-img">
+                    <img src="images/single.png" class="booking-item-img">
                 </div>
             </div>
             <div class="col-sm">
@@ -171,7 +171,7 @@ else if(guests.equals("3")){
         <div class="row">
             <div class="col-sm">
                 <div class="booking-item-pic">
-                    <img src="images/room.png" class="booking-item-img">
+                    <img src="images/triple.png" class="booking-item-img">
                 </div>
             </div>
             <div class="col-sm">
@@ -214,7 +214,7 @@ else if(guests.equals("4")){
         <div class="row">
             <div class="col-sm">
                 <div class="booking-item-pic">
-                    <img src="images/room.png" class="booking-item-img">
+                    <img src="images/quad.png" class="booking-item-img">
                 </div>
             </div>
             <div class="col-sm">
@@ -256,7 +256,7 @@ else if (guests.equals("6") || guests.equals("5")){
         <div class="row">
             <div class="col-sm">
                 <div class="booking-item-pic">
-                    <img src="images/room.png" class="booking-item-img">
+                    <img src="images/president.png" class="booking-item-img">
                 </div>
             </div>
             <div class="col-sm">
@@ -317,9 +317,24 @@ else if (guests.equals("6") || guests.equals("5")){
     </div>
 </div>
 
+<script src="constants/roomCatalog.js"></script>
 <script src="constants/catalog.js"></script>
 <script src="bookingsStorage.js"></script>
 <script src="searchNew.js"></script>
+
+<script type="text/javascript">
+    data.forEach((el) =>{
+        <%for(int i = 0; i < 5; i++){%>
+          if(el.id == "<%=allRooms[i][0]%>") {
+              el.price = <%=Double.valueOf(allRooms[i][2])%>;
+          }
+        <%} %>
+    })
+
+
+</script>
+
+
 
 </body>
 </html>

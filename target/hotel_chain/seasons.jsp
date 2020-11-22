@@ -46,39 +46,52 @@
             <h2>Seasonal rates</h2>
         </div>
         <div id="seasons-list">
-            <div class="season">
-                <div class="seasons-info">
-                    <div class="season-heading">
-                        <h2><span id="season-name">Spring</span></h2>
-                        <hr width="600px" color="#C4C4C4" opacity="90%" align="left";>
-                    </div>
-                    <div>
-                        <form class="container">
-                            <div class="row form-row">
-                                <label for="rate-dow">Weekend rate (in %):</label>
-                                <input type="text" name="rate-dow" id="input-dow-rate" placeholder="Enter a value">
+            <form class="container" id="seasons-form">
+
+                <% for(season s:list) {%>
+                <div class="season">
+                    <div class="seasons-info">
+                            <div class="season-heading">
+                                <h2><span id="season-name"><%=s.getSeason_name()%></span></h2>
+                                <hr width="600px" color="#C4C4C4" opacity="90%" align="left";>
                             </div>
                             <div class="row form-row">
                                 <label for="season-rate">Seasonal rate (in %):</label>
-                                <input type="text" name="season-rate"  id="input-season-rate" placeholder="Enter a value">
+                                <input type="text" name="season-rate"  id="input-<%=s.getSeason_name()%>-rate" placeholder="<%=s.getDiscount()%>">
                             </div>
                             <div class="row form-row">
                                 <label for="on-off">On/Off</label>
-                                <select name="on-off"  id="input-on-off">
-                                    <option value="on">On</option>
+                                <select name="on-off"  id="<%=s.getSeason_name()%>-on-off">
+                                    <option value="choose">Choose</option>
                                     <option value="off">Off</option>
+                                    <option value="on">On</option>
                                   </select>
                             </div>
-
-                            <div id="save">
-                                <button class="btn" type="submit" id="spring-btn">Save</button>
-                            </div>
-
-                        </form>
                     </div>
                 </div>
-            </div>
+                <%} %>
+                <div id="save">
+                    <button class="btn" type="submit" id="save-all-btn">Save</button>
+                </div>
+            </form>
         </div>
     </div>
 </body>
+
+<script type="text/javascript">
+    let newDiscounts = []; //хранит те сезоны которые нужно изменить
+    seasons = ['Autumn', 'Spring', 'Summer', 'Winter'];
+
+    document.getElementById("save-all-btn").onclick = function(){
+        seasons.forEach(s => {
+            let discount = document.getElementById("input-" + s + "-rate").value;
+            let onoff = document.getElementById(s+"-on-off").value;
+
+            if(onoff == "on"){
+                newDiscounts.push(s, discount);
+            }
+        });
+    }
+    
+</script>
 </html>
