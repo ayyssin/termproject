@@ -13,7 +13,7 @@ function runModal(employeeID){
 
     var btn = document.getElementById("editBtn" + " " + employeeID);
 
-    var submitSave = document.getElementsByClassName("save" + " " + employeeID)[0];
+    var submitSave = document.getElementsByClassName("edit-submit" + " " + employeeID)[0];
 
     /*btn.onclick = function() {
         edit.style.display = "block";
@@ -60,7 +60,7 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
 
     let form = document.createElement('form');
     form.className += 'form';
-    form.action = "<%= request.getContextPath() %>/checkRooms";
+    /*form.action = "<%= request.getContextPath() %>/checkRooms";*/
     form.method = "post";
     staff.appendChild(form);
 
