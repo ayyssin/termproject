@@ -44,7 +44,7 @@
                 <a href="login-all.jsp" class="nav-link link">Login</a>
             </li>
             <li class="nav-item">
-                <a href="signup.jsp" class="nav-link link">Sign-up</a>
+                <a href="<%= request.getContextPath() %>/bookingServlet" class="nav-link link">My bookings</a>
             </li>
         </ul>
     </div>

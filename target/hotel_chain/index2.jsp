@@ -23,7 +23,7 @@
                         <a href="index.jsp" class="nav-link link">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="bookings.jsp" class="nav-link link">My Bookings</a>
+                        <a href="<%= request.getContextPath() %>/bookingServlet" class="nav-link link">My Bookings</a>
                     </li>
                     <li class="nav-item">
                         <a href="index.jsp" class="nav-link link">Log-out</a>

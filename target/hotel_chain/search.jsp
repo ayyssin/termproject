@@ -44,7 +44,7 @@
                 <a href="login-all.jsp" class="nav-link link">Login</a>
             </li>
             <li class="nav-item">
-                <a href="signup.jsp" class="nav-link link">Sign-up</a>
+                <a href="<%= request.getContextPath() %>/bookingServlet" class="nav-link link">My bookings</a>
             </li>
         </ul>
     </div>
@@ -398,6 +398,7 @@ else if (Integer.parseInt(guests) >= 5){
     </div>
 </div>
 
+<script src="constants/roomCatalog.js"></script>
 <script src="constants/catalog.js"></script>
 <script src="bookingsStorage.js"></script>
 <script src="searchNew.js"></script>
@@ -430,6 +431,23 @@ else if (Integer.parseInt(guests) >= 5){
         <%} %>
     })
 
+<<<<<<< HEAD
+<script type="text/javascript">
+    data.forEach((el) =>{
+        <%for(int i = 0; i < 5; i++){%>
+          if(el.id == "<%=allRooms[i][0]%>") {
+              el.price = <%=Double.valueOf(allRooms[i][2])%>;
+          }
+        <%} %>
+    })
+
+
 </script>
+
+
+
+=======
+</script>
+>>>>>>> main
 </body>
 </html>
