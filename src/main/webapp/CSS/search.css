@@ -200,7 +200,7 @@ html, body {
 	height: 60px;
 	font-size: 30px;
 	opacity: 90%;
-	border-color: 14213D;
+	border-color: #14213D;
 	border-width: 5px;
 	border-radius: 40px;
 }
@@ -359,7 +359,7 @@ html, body {
 }
 
 .modal-body{
-	margin: 0px auto 0px auto;
+	margin-top: 25px;
 	padding-top: 0;
 	position: relative;
 }

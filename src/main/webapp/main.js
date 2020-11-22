@@ -2,7 +2,6 @@
 document.querySelector(".btn-search").onclick = function(){
     location.href = "search.html";
 }
-
 var cmodal = document.getElementById("cov-myModal");
 var cspan = document.getElementsByClassName("close")[0];
 
