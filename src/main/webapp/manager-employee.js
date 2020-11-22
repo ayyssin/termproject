@@ -64,6 +64,11 @@ function generateModal(employeeID, name, position, schedule, hours, salary, tota
     edit.className += ("editBtn" + " " + employeeID);
     edit.innerHTML = "Edit";
     header.appendChild(edit);
+    edit.onclick = () => {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'edit-employee.js';
+    }
 
     let staffName = document.createElement("div");
     staffName.className += "staffName";
