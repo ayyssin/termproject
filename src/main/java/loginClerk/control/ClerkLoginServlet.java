@@ -38,7 +38,7 @@ public class ClerkLoginServlet extends HttpServlet {
 
                 //HttpSession session = request.getSession();
                 //String username = (String)request.getAttribute("email");
-                session.setAttribute("userLogin", userName);
+                session.setAttribute("userLogin", employee_id);
                 System.out.println(session.getAttribute("userLogin"));
                 response.sendRedirect("desk_clerk.jsp");
             } else {
