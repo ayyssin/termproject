@@ -333,6 +333,7 @@ button{
     color: #FFFFFF;
     padding: 11px 0;
     margin-bottom: 180px;
+    margin-top: 60px;
 }
 
 input::-webkit-outer-spin-button,

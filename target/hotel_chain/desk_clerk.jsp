@@ -48,7 +48,14 @@
             City <%=employee_id %>
         </div>
         <div class="srch">
-            <form action="search" class="srchh"><input type="search" name="search" placeholder="Search Guest"></form>
+            <form id="searchForm" action="javascript:search();">
+                <div class="input-group">
+                    <button id="go" class="btn btn-default" type="button"
+                            onclick="document.getElementById('searchForm').submit(); return false;">Go
+                    </button>
+                    <input type="text" id="searchItem" class="form-control" placeholder="Search Guest">
+                </div>
+            </form>
         </div>
     </div>
     <div class="guest-container">
@@ -156,5 +163,35 @@
         </div>
     </div>
 </div>
+
+<script>
+    function search() {
+
+        var name = document.getElementById("searchForm").elements["searchItem"].value;
+        var divs = document.getElementsByClassName("guest");
+        var targetId = "";
+        for (var i = 0; i < divs.length; i++){
+            if (name === divs[i].innerHTML){
+                targetId = divs[i].parentNode.id;
+                document.getElementById(targetId).scrollIntoView();
+                break;
+            }
+        }
+        /*
+        var pattern = name.toLowerCase();
+        var targetId = "";
+
+        var divs = document.getElementsByClassName("guest");
+        for (var i = 0; i < divs.length; i++) {
+            var para = divs[i].getElementsByTagName("p");
+            var index = para[0].innerText.toLowerCase().indexOf(pattern);
+            if (index != -1) {
+                targetId = divs[i].parentNode.id;
+                document.getElementById(targetId).scrollIntoView();
+                break;
+            }
+        }*/
+    }
+</script>
 </body>
 </html>

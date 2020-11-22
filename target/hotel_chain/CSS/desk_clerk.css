@@ -111,7 +111,7 @@ button:hover {
 .createBtn a{
     position: relative;
     text-align: center;
-    margin: 10px 40%;
+    margin: 10px 43.4%;
 }
 
 #create{
@@ -271,5 +271,19 @@ li.ed-b{
     text-align: center;
 }
 
+#go {
+    float: right;
+    width: 50px;
+    margin: 0 auto;
+    height: 38px;
+}
+#searchItem {
+    float: left;
+    width: 200px;
+
+}
+.input-group {
+    width: 260px;
+}
     
 
