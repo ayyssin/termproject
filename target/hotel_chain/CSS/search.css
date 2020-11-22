@@ -359,7 +359,7 @@ html, body {
 }
 
 .modal-body{
-	margin: 0px auto 0px auto;
+	margin-top: 25px;
 	padding-top: 0;
 	position: relative;
 }
