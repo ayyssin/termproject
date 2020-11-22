@@ -7,13 +7,6 @@ const data = [
         "price": 150
     },
     {
-        "id": "twin",
-        "name": "Twin",
-        "description": "Ideal choice for a trip with friends to share a room.",
-        "img": "images/twin.png",
-        "price": 23900
-    },
-    {
         "id": "single",
         "name": "Single",
         "description": "A room offering everything necessary for a comfortable stay.",
