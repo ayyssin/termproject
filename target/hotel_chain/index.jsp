@@ -98,7 +98,27 @@
         </div>
     </div>
 </div>
-
+<div class="modal" id="cov-myModal">
+    <!-- Modal content - COVID -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-body">
+            <div class="m-title">COVID-19 precautionary measures</div>
+            <div class="m-img">
+                <img src="images/covid.png">
+            </div>
+            <div class="text1">
+                <div class="title">To prevent the spread of COVID-19:</div>
+                <div class="text">- Clean your hands often. Use soap and water, or an alcohol-based hand rub.</div>
+                <div class="text">- Maintain a safe distance from anyone who is coughing or sneezing.</div>
+                <div class="text">- Wear a mask when physical distancing is not possible.</div>
+                <div class="text"> - Don’t touch your eyes, nose or mouth.</div>
+                <div class="text"> - Cover your nose and mouth with your bent elbow or a tissue when you cough or sneeze.</div>
+                <div class="text" id="last">- Stay home if you feel unwell.</div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="footer">
     <div class="row footer">
         <div class="col-10">

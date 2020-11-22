@@ -61,7 +61,7 @@ String name = (String)request.getAttribute("managerName");
             <div class="row">
                 <div class="col-sm">
                     <div class="choose-btn">
-                        <a href="#"><button type="submit" class="btn" id="advisory-btn">Issue advisory </button></a>
+                        <a href="manager_adv.jsp"><button type="submit" class="btn" id="advisory-btn">Issue advisory </button></a>
                     </div>
                 </div>
             </div>

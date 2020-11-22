@@ -5,7 +5,6 @@ function bookNow(el){
     let roomtype = el.parentNode.id;
     let count = document.getElementById("input-quantity" + " " + roomtype).value;
     let select = document.getElementById("input-quantity" + " " + roomtype);
-    let city
 
     if(count == 0){
         alert("Error! Choose the number of rooms.");
@@ -93,4 +92,90 @@ button.onclick = function(){
 
 closeBtn.onclick = function(){
     modal.style.display = "none";
+}
+
+//---- To open/close POPUP windows
+let wmodal = document.getElementById("wtr-myModal");
+let wspan = document.getElementsByClassName("close1")[0];
+wspan.onclick = function() {
+    wmodal.style.display = "none";
+}
+
+let smodal = document.getElementById("smr-myModal");
+let sspan = document.getElementsByClassName("close1")[1];
+sspan.onclick = function() {
+    smodal.style.display = "none";
+}
+
+let fmodal = document.getElementById("fl-myModal");
+let fspan = document.getElementsByClassName("close1")[2];
+fspan.onclick = function() {
+    fmodal.style.display = "none";
+}
+
+let spmodal = document.getElementById("spr-myModal");
+let spspan = document.getElementsByClassName("close1")[3];
+spspan.onclick = function() {
+    spmodal.style.display = "none";
+}
+
+// ---- to control on/off of POPUP by MANAGER
+let winter = localStorage.getItem('winterPopup');
+if(winter == 'off'){
+    wmodal.style.display = "none";
+}else if(winter == 'on'){
+    wmodal.style.display = "block";
+    // нужно чтобы закрыл все другие модалы
+    smodal.style.display = "none";
+    fmodal.style.display = "none";
+    spmodal.style.display = "none";
+}
+
+let summer = localStorage.getItem('summerPopup');
+if(summer == 'off'){
+    smodal.style.display = "none";
+}else if(summer == 'on'){
+    smodal.style.display = "block";
+    // нужно чтобы закрыл все другие модалы
+    wmodal.style.display = "none";
+    fmodal.style.display = "none";
+    spmodal.style.display = "none";
+}
+
+let fall = localStorage.getItem('fallPopup');
+if(fall == 'off'){
+    fmodal.style.display = "none";
+}else if(fall == 'on'){
+    fmodal.style.display = "block";
+    // нужно чтобы закрыл все другие модалы
+    wmodal.style.display = "none";
+    smodal.style.display = "none";
+    spmodal.style.display = "none";
+}
+
+let spring = localStorage.getItem('springPopup');
+if(spring == 'off'){
+    spmodal.style.display = "none";
+}else if(spring == 'on'){
+    spmodal.style.display = "block";
+    // нужно чтобы закрыл все другие модалы
+    wmodal.style.display = "none";
+    smodal.style.display = "none";
+    fmodal.style.display = "none";
+}
+
+//---- to close by touching outside the box
+window.onclick = function(event) {
+    if (event.target == wmodal) {
+        wmodal.style.display = "none";
+    }
+    if (event.target == smodal) {
+        smodal.style.display = "none";
+    }
+    if (event.target == fmodal) {
+        fmodal.style.display = "none";
+    }
+    if (event.target == spmodal) {
+        spmodal.style.display = "none";
+    }
 }

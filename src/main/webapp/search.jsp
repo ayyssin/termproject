@@ -4,8 +4,6 @@
 <%@ page import="java.util.List" %>
 <%@ page import="javax.swing.plaf.synth.SynthLookAndFeel" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page import="java.text.ParseException"%>
-<%@ page import="java.text.SimpleDateFormat"%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
@@ -250,7 +248,7 @@ else if(guests.equals("4")){
     </div>
 </div>
 <%}
-else if (Integer.parseInt(guests) >= 5){
+else if (guests.equals("6") || guests.equals("5")){
 %>
 
 <div class="container">
@@ -298,7 +296,86 @@ else if (Integer.parseInt(guests) >= 5){
 </div>
 
 </div>
+<div class="modal" id="wtr-myModal">
+    <!-- Modal content - WINTER -->
+    <div class="modal-content" >
+        <div class="close1">&times;</div>
+        <div class="modal-body">
+            <div class="m-title">Winter discount</div>
+            <div class="m-img">
+                <img src="images/winter.jpg">
+            </div>
+            <div class="text1">
+                <div class="title">Winter is coming!</div>
+                <div class="text">That’s why invite you to spend your
+                    holidays with us and
+                    enjoy our discounts!</div>
+                <div class="text"><span class="discount">10% off</span> on president suite during
+                    New Year period for families!
+                </div>
+                <div class="text">Unforgettable New Year show with invited  guests, welcome drinks and many more!</div>
+            </div>
+        </div>
+    </div>
+</div>
 
+<div class="modal" id="smr-myModal">
+    <!-- Modal content - SUMMER -->
+    <div class="modal-content">
+        <div class="close1">&times;</div>
+        <div class="modal-body">
+            <div class="m-title">Welcome Summer with de Vieras!</div>
+            <div class="sm-img">
+                <img src="images/summer.png">
+            </div>
+            <div class="text1">
+                <div class="text">This summer, explore a new destination or revisit a favorite place. Book now to lock in our lowest price and instant benefits only at <a>deVieras.com.</a> </div>
+                <div class="text">Plus, our members save even more. Not a member? Not a problem – join instantly when you book your stay.
+                </div>
+                <div class="text">Don’t miss this opportunity!</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="fl-myModal">
+    <!-- Modal content - FALL-->
+    <div class="modal-content">
+        <div class="modal-body-fl" id="fl">
+            <div class="close1" >&times;</div>
+            <div class="m-title">Fall discounts are here!</div>
+            <div class="fl-text1">
+                <div class="text">Your favourite Fall ingredient is back! </div>
+                <div class="text">We offer you <span class="discount">10% discount</span> for all the twin rooms this Fall!
+                </div>
+                <div class="text">Hurry up & book your room now!</div>
+                <div id="act">
+                    <a href="index.html">
+                        <button>Book now</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="spr-myModal">
+    <!-- Modal content - SPRING -->
+    <div class="modal-content">
+        <div class="close1" >&times;</div>
+        <div class="modal-body">
+            <div class="m-title">Spring offers</div>
+            <div class="spr-img">
+                <img src="images/spring-im.jpg">
+            </div>
+            <div class="text1">
+                <div class="text">The days are getting longer and the milder weather is the perfect excuse for a breath of fresh air. It's the perfect time to enjoy a relaxing stay in one of our great destinations.</div>
+                <div class="text">Book your getaway and get up to <span class="discount">10% off</span> on a huge range of hotels and resorts all over the world.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="footer">
     <div class="row footer">
         <div class="col-10">
@@ -323,39 +400,16 @@ else if (Integer.parseInt(guests) >= 5){
 <script src="constants/catalog.js"></script>
 <script src="bookingsStorage.js"></script>
 <script src="searchNew.js"></script>
-
 <script type="text/javascript">
-    const _MS_PER_DAY = 1000 * 60 * 60 * 24;
-    let checkin = '<%=date_in%>';
-    let checkout = '<%=date_out%>';
-    let a = new Date(checkin);
-    let b = new Date(checkout);
-
-    function dateDiffInDays(a, b) {
-        // Discard the time and time-zone information.
-        const utc1 = Date.UTC(a.getFullYear(), a.getMonth(), a.getDate());
-        const utc2 = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate());
-
-        return Math.floor((utc2 - utc1) / _MS_PER_DAY);
-    }
-
     data.forEach((el) =>{
         <%for(int i = 0; i < 5; i++){%>
           if(el.id == "<%=allRooms[i][0]%>") {
               el.price = <%=Double.valueOf(allRooms[i][2])%>;
-              let days = dateDiffInDays(a, b);
-              if(days == 0){
-                  el.days = 1;
-              }else{
-                  el.days = days;
-              }
           }
         <%} %>
     })
 
+
 </script>
-
-
-
 </body>
 </html>

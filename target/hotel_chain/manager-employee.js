@@ -60,9 +60,8 @@ function generateModal(employeeID, name, position, schedule, hours, salary, tota
     header.className += "modal-header";
     content.appendChild(header);
 
-    let edit = document.createElement("a");
-    edit.href = "edit.html"
-    edit.className += ("edit" + " " + employeeID);
+    let edit = document.createElement("button");
+    edit.className += ("editBtn" + " " + employeeID);
     edit.innerHTML = "Edit";
     header.appendChild(edit);
 
