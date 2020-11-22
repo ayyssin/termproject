@@ -3,27 +3,19 @@ let list = bookingsStorage.getBookings();
 
 function bookNow(el){
     let roomtype = el.parentNode.id;
-    let count = document.getElementById("input-quantity" + " " + roomtype).value;
-    let select = document.getElementById("input-quantity" + " " + roomtype);
-
-    if(count == 0){
-        alert("Error! Choose the number of rooms.");
-    }else{
-        select.style.display = "none";
-        bookingsStorage.addBooking(roomtype, count);
+    let count = 1;
+    bookingsStorage.addBooking(roomtype, count);
 
 
-        el.innerHTML = "Remove from cart";
-        el.className = "cancel-btn";
-        el.setAttribute( "onclick", "javascript: cancelBooking(this);" );
-    }
+    el.innerHTML = "Remove from cart";
+    el.className = "cancel-btn";
+    el.setAttribute( "onclick", "javascript: cancelBooking(this);" );
+
 };
 
 function cancelBooking(el){
     let roomtype = el.parentNode.id;
-    let select = document.getElementById("input-quantity" + " " + roomtype);
 
-    select.style.display = "block";
     bookingsStorage.removeBooking(roomtype);
 
     el.className = "book-btn";

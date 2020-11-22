@@ -4,6 +4,8 @@ import booking.booking_model.Booking;
 
 import java.sql.*;
 import java.util.Random;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 public class ConfirmBookingDB {
 
@@ -35,11 +37,21 @@ public class ConfirmBookingDB {
             preparedStatement1.setString(1, book.getGuests());
             preparedStatement1.setString(2, hotel_id);
 
-            System.out.println(preparedStatement);
+            System.out.println(preparedStatement1);
             ResultSet rs1 = preparedStatement1.executeQuery();
             rs1.next();
             String room_id = rs1.getString("Room_id");
+            String price = rs1.getString("Price");
             System.out.println("Room id: " + room_id);
+            System.out.println("Room price is " + price);
+
+            LocalDate check_in = LocalDate.parse(book.getCheck_in());
+            LocalDate check_out = LocalDate.parse(book.getCheck_out());
+            System.out.println("check in day: " + check_in + " check out day: " + check_out);
+
+            int num_of_days = (int) ChronoUnit.DAYS.between(check_in, check_out);
+            int total_cost = Integer.parseInt(price) * num_of_days;
+            System.out.println("Total price for booking is " + total_cost);
 
             PreparedStatement preparedStatement2 = connection
                     .prepareStatement("INSERT INTO Booking " + "VALUES (?,?,?,?,?,?,?,?); ");
@@ -52,7 +64,7 @@ public class ConfirmBookingDB {
             preparedStatement2.setString(5, "0");
             preparedStatement2.setString(6, room_id);
             preparedStatement2.setString(7, hotel_id);
-            preparedStatement2.setString(8, book.getTotal_cost());
+            preparedStatement2.setString(8, Integer.toString(total_cost));
 
             System.out.println(preparedStatement2);
             int res = preparedStatement2.executeUpdate();

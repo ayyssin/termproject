@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Random;
 
 
@@ -68,16 +70,18 @@ public class EditBookingDB {
 
             }
 
-            int room_price = Integer.parseInt(price);
-            int num_days = Integer.parseInt(book.getCheck_out());
-            num_days = num_days - Integer.parseInt(book.getCheck_in());
-            room_price = room_price * num_days;
-            System.out.println("Total booking price is " + room_price);
+            LocalDate check_in = LocalDate.parse(book.getCheck_in());
+            LocalDate check_out = LocalDate.parse(book.getCheck_out());
+            System.out.println("check in day: " + check_in + " check out day: " + check_out);
+
+            int num_of_days = (int) ChronoUnit.DAYS.between(check_in, check_out);
+            int total_cost = Integer.parseInt(price) * num_of_days;
+            System.out.println("Total price for booking is " + total_cost);
 
             try(PreparedStatement preparedStatement = connection
                     .prepareStatement("update Booking set Total_cost = ?, Check_in = ?, Check_out = ? where Booking_id = ? ;")){
 
-                preparedStatement.setString(1, Integer.toString(room_price));
+                preparedStatement.setString(1, Integer.toString(total_cost));
                 preparedStatement.setString(2, book.getCheck_in());
                 preparedStatement.setString(3, book.getCheck_out());
                 preparedStatement.setString(4, booking_id);
@@ -145,20 +149,12 @@ public class EditBookingDB {
                 Random rnd = new Random();
                 String booking_id = hotel_id + book.getRoom_id().charAt(1) + Integer.toString(rnd.nextInt(5) + 5);
                 System.out.println("Booking id is: " + booking_id);
-                String check_in = null, check_out = null;
-                int slash_in = book.getCheck_in().indexOf("/");
-                int slash_out = book.getCheck_out().indexOf("/");
-                if (slash_in != -1){
-                    check_in = book.getCheck_in().substring(0, slash_in);
-                }
-                if (slash_out != -1){
-                    check_out = book.getCheck_out().substring(0, slash_out);
-                }
-                slash_in = Integer.parseInt(check_in);
-                slash_out = Integer.parseInt(check_out);
-                System.out.println("check in day: " + slash_in + " check out day: " +slash_out );
+                LocalDate check_in = LocalDate.parse(book.getCheck_in());
+                LocalDate check_out = LocalDate.parse(book.getCheck_out());
+                System.out.println("check in day: " + check_in + " check out day: " + check_out);
 
-                int total_cost = (slash_out - slash_out) * Integer.parseInt(price);
+                int num_of_days = (int) ChronoUnit.DAYS.between(check_in, check_out);
+                int total_cost = Integer.parseInt(price) * num_of_days;
                 System.out.println("Total price for booking is " + total_cost);
 
                 preparedStatement2.setString(1, booking_id);

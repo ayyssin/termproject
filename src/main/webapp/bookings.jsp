@@ -58,16 +58,7 @@ pageEncoding="UTF-8"%>
         </div>
 
         <! -- EXAMPLE FOR FURTHER USE WHEN DB IS CONNECTED -->
-        <div class="rect">
-            <img src="images/twin.png">
-            <div class="card-title">
-                Almaty
-            </div>
-            <div class="card-date">
-                2 Nov - 10 Dec
-            </div>
-            <a class="more">More details</a>
-        </div>
+
 
     </div>
 
@@ -138,15 +129,11 @@ pageEncoding="UTF-8"%>
         </div>
     </div>
 </div>
-<script src="constants/catalog.js"></script>
-
-<script src="components/Header/Header.js"></script>
-
-<script src="components/Products/Products.js"></script>
-
-<script src="components/Shopping/Shopping.js"></script>
-
-<script src="utils/localStorageUtil.js"></script>
+<script>
+    let json = '<%= request.getAttribute("jsonBooking")%>';
+    let bookingsCatalog = JSON.parse(json);
+    console.log(bookingsCatalog);
+</script>
 <script src="bookings.js"></script>
 </body>
 </html>
