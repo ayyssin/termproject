@@ -193,7 +193,7 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
     scheduleDay6.name = 'days[]';
     scheduleDay6.className = 'days-circle';
     for (var i = 0; i < schedule.length; i++){
-        if (schedule.charAt(i) === scheduleDay6.value)
+        if (schedule.charAt(i) === scheduleDay6.value[0] && schedule.charAt(i+1) === scheduleDay6.value[1])
             scheduleDay6.checked = true;
     }
     days.appendChild(scheduleDay6);

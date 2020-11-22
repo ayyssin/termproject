@@ -6,10 +6,8 @@ pageEncoding="UTF-8"%>
 <%@ page import="java.util.Deque" %>
 
 <%
-    List<Booking> Employees = (ArrayList<Booking>)request.getAttribute("bookingList");
-    //List<employee> empList = (ArrayList<employee>)request.getAttribute("employeeList");
+    List<Booking> bookings = (ArrayList<Booking>)request.getAttribute("bookingList");
     String s = (String) request.getAttribute("jsonBooking");
-    System.out.println(s);
 %>
 
 <!DOCTYPE html>

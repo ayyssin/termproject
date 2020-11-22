@@ -4,12 +4,8 @@ const data = [
         "name": "Double",
         "description": "A good room with all-included features needed for couples stay.",
         "img": "images/double.png",
-<<<<<<< HEAD
-        "price": 150
-=======
         "price": 150,
         "days": 0
->>>>>>> main
     },
     {
         "id": "single",
