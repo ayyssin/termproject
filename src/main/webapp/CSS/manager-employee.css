@@ -193,7 +193,6 @@ button{
     /*margin: 40px;*/
     font-size: 35px;
     color: black;
-    opacity: 50%;
 }
 
 .close {
@@ -280,3 +279,104 @@ button{
         margin-bottom: 24px;
     }
 }
+
+
+/* Edit form */
+.edit-content * {
+    color: #14213D;
+    font-family: Mulish, serif;
+}
+
+.edit-content .editInfo {
+    margin: 63px auto 0 auto;
+    text-align: center;
+}
+
+.edit-content .staff {
+    margin: 30px auto 0 auto;
+    max-width: 800px;
+    padding-bottom: 70px;
+    text-align: center;
+}
+
+.edit-content .staff-name {
+    font-weight: 600;
+    font-size: 32px;
+    color: #17299f;
+    max-width: 100%;
+    border-top: 1px solid black;
+    padding: 25px 0;
+}
+
+.edit-content .flex {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 18px;
+    color: #000000;
+}
+
+.edit-content {
+    text-align: center;
+}
+
+.edit-content .edit-submit {
+    background: #14213D;
+    border-radius: 55px;
+    width: 140px;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 11px 0;
+    margin-bottom: 180px;
+    margin-top: 60px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.light {
+    font-weight: normal;
+}
+
+.edit-content .days-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.edit-content .schedule input {
+    display: none !important;
+}
+
+.edit-content .schedule input[type=checkbox] + label {
+    display: inline-block;
+    border-radius: 50%;
+    background: #dddddd;
+    height: 40px;
+    width: 40px;
+    margin-right: 3px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.edit-content .schedule input[type=number] {
+    border-width: 0;
+    border: none;
+    outline: none;
+    background: #dddddd;
+}
+
+.edit-content .schedule input[type=checkbox]:checked + label {
+    background: #FFD38A;
+    color: #000000;
+}
+

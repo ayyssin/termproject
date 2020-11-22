@@ -94,6 +94,12 @@
 
 </div>
 
+<!-- edit page -->
+<div class="edits">
+
+</div>
+
+
 <div class="footer">
     <div class="row footer">
         <div class="col-10">
@@ -121,6 +127,7 @@
     var list = JSON.parse(json);
 </script>
 <script src="manager-employee.js"></script>
+<script src="edit-employee.js"></script>
 
 
 

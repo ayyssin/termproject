@@ -32,5 +32,13 @@
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.49" level="project" />
     <orderEntry type="library" name="Maven: javax.servlet:jstl:1.2" level="project" />
     <orderEntry type="library" name="Maven: org.mortbay.jetty:jetty-util:6.1.25" level="project" />
+<<<<<<< HEAD
+=======
+    <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
+    <orderEntry type="library" name="servlet-api6" level="project" />
+    <orderEntry type="library" name="servlet-api7" level="project" />
+    <orderEntry type="library" name="servlet-api9" level="project" />
+    <orderEntry type="library" name="servlet-api10" level="project" />
+>>>>>>> main
   </component>
 </module>

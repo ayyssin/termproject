@@ -44,7 +44,7 @@
                 Covid-2019 Precautions
             </div>
             <button id="cov-myBtn" >More details</button>
-            <div class="on-off"><button id="on">On</button><button id="off">Off</button></div>
+            <div class="on-off"><button class="onB" id="onCov">On</button><button class="offB" id="offCov">Off</button></div>
         </div>
         <div class="rect" id="winter">
             <img src="images/winter-icon.png">
@@ -52,7 +52,7 @@
                 Winter
             </div>
             <button id="wtr-myBtn" >More details</button>
-            <div class="on-off"><button id="on">On</button><button id="off">Off</button></div>
+            <div class="on-off"><button class="onB" id="onWtr" >On</button><button class="offB" id="offWtr">Off</button></div>
         </div>
         <div class="rect" id="summer">
             <img src="images/summer.png">
@@ -60,7 +60,7 @@
                 Summer
             </div>
             <button id="smr-myBtn" >More details</button>
-            <div class="on-off"><button id="on">On</button><button id="off">Off</button></div>
+            <div class="on-off"><button class="onB" id="onSmr">On</button><button class="offB" id="offSmr">Off</button></div>
         </div>
         <div class="rect" id="fall">
             <img src="images/autumn-icon.png">
@@ -68,7 +68,7 @@
                 Fall
             </div>
             <button id="fl-myBtn" >More details</button>
-            <div class="on-off"><button id="on">On</button><button id="off">Off</button></div>
+            <div class="on-off"><button class="onB" id="onFl">On</button><button class="offB" id="offFl">Off</button></div>
         </div>
         <div class="rect" id="spring">
             <img src="images/spring-icon.png">
@@ -76,16 +76,15 @@
                 Spring
             </div>
             <button id="spr-myBtn" >More details</button>
-            <div class="on-off"><button id="on">On</button><button id="off">Off</button></div>
+            <div class="on-off"><button  class="onB" id="onSpr">On</button><button class="offB" id="offSpr">Off</button></div>
         </div>
     </div>
-
 </div>
 <!--POP UP WINDOW-->
 <div class="modal" id="cov-myModal">
     <!-- Modal content - COVID -->
     <div class="modal-content">
-        <span class="close" id="close">&times;</span>
+        <span class="close" >&times;</span>
         <div class="modal-body">
             <div class="m-title">COVID-19 precautionary measures</div>
             <div class="m-img">
@@ -107,7 +106,7 @@
 <div class="modal" id="wtr-myModal">
     <!-- Modal content - WINTER -->
     <div class="modal-content" >
-        <span class="close" id="close">&times;</span>
+        <span class="close">&times;</span>
         <div class="modal-body">
             <div class="m-title">Winter discount</div>
             <div class="m-img">
@@ -130,7 +129,7 @@
 <div class="modal" id="smr-myModal">
     <!-- Modal content - SUMMER -->
     <div class="modal-content">
-        <span class="close" id="close">&times;</span>
+        <span class="close">&times;</span>
         <div class="modal-body">
             <div class="m-title">Welcome Summer with de Vieras!</div>
             <div class="sm-img">
@@ -150,7 +149,7 @@
     <!-- Modal content - FALL-->
     <div class="modal-content">
         <div class="modal-body-fl" id="fl">
-            <span class="close" id="close">&times;</span>
+            <span class="close">&times;</span>
             <div class="m-title">Fall discounts are here!</div>
             <div class="fl-text1">
                 <div class="text">Your favourite Fall ingredient is back! </div>
@@ -170,7 +169,7 @@
 <div class="modal" id="spr-myModal">
     <!-- Modal content - SPRING -->
     <div class="modal-content">
-        <span class="close" id="close">&times;</span>
+        <span class="close">&times;</span>
         <div class="modal-body">
             <div class="m-title">Spring offers</div>
             <div class="spr-img">
