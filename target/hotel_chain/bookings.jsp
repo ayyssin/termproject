@@ -47,6 +47,19 @@ pageEncoding="UTF-8"%>
         <div class="oops">
             You don't have any upcoming bookings!
         </div>
+
+        <! -- EXAMPLE FOR FURTHER USE WHEN DB IS CONNECTED -->
+        <div class="rect">
+            <img src="images/twin.png">
+            <div class="card-title">
+                Almaty
+            </div>
+            <div class="card-date">
+                2 Nov - 10 Dec
+            </div>
+            <a class="more">More details</a>
+        </div>
+
     </div>
 
     <div id="act">
