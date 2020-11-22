@@ -2,14 +2,10 @@
 //employeeList = product.getAttribute("data-prodnumber");
 
 
-for(var i=0; i<list.length; i++){
-    console.log(list[i]);
-}
+let displayEmployeeEdit = [];
 
-let displayCards = [];
-
-list.forEach(({id, name, position, schedule, hours, salary}) => {
-    displayCards.push({id, name, position, schedule, hours, salary});
+displayCards.forEach(({id, name, position, schedule, hours, salary}) => {
+    displayEmployeeEdit.push({id, name, position, schedule, hours, salary});
 });
 
 function runModal(employeeID){
@@ -30,7 +26,7 @@ function runModal(employeeID){
 }
 
 function generateModal(employeeID, name, position, schedule, hours, salary){
-    let main = document.querySelector(".edits");
+    let main = document.getElementById("main");
     let node = document.createElement("div");
     node.className += "edit";
     node.id += ("myEdit" + " " + employeeID);
@@ -49,36 +45,61 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
     editHeader.innerHTML = "Edit information";
     header.appendChild(editHeader);
 
+    let staff = document.createElement("div");
+    staff.className += "staff";
+    header.appendChild(staff);
+
     let staffName = document.createElement("div");
-    staffName.className += "staffNameEdit";
-    header.appendChild(staffName);
+    staffName.className += "staff-name";
+    staff.appendChild(staffName);
 
     let nameSpan = document.createElement("h3");
-    nameSpan.className += "nameSpanEdit";
+    nameSpan.className += "nameSpan";
     nameSpan.innerHTML = name;
     staffName.appendChild(nameSpan);
 
-    let body = document.createElement("div");
-    body.className += "edit-body";
-    content.appendChild(body);
+    let posClean = document.createElement("div");
+    posClean.className += "flex";
+    staff.appendChild(posClean);
 
     let positionDiv = document.createElement("div");
-    positionDiv.className += ("positions");
+    positionDiv.className += ("position-label");
     positionDiv.innerHTML = "Position: ";
-    body.appendChild(positionDiv);
+    posClean.appendChild(positionDiv);
 
-    let positions = document.createElement("span");
-    positions.innerHTML = position;
-    positionDiv.appendChild(positions);
+    let positions = document.createElement("div");
+    posClean.appendChild(positions);
+
+    let positionSelect = document.createElement('select');
+    positions.appendChild(positionSelect);
+
+    let positionOptions = document.createElement('option');
+    if (position === 'Cleaning staff'){
+        positionOptions.innerHTML = position;
+        let positionOptions2 = document.createElement('option');
+        positionOptions2.innerHTML = 'Cleaning staff';
+        positionSelect.appendChild(positionOptions2);
+    }
+    else {
+        positionOptions.innerHTML = position;
+        let positionOptions2 = document.createElement('option');
+        positionOptions2.innerHTML = 'Desk clerk';
+        positionSelect.appendChild(positionOptions2);
+    }
+    positionSelect.appendChild(positionOptions);
+
+    let sched = document.createElement("div");
+    sched.className += "flex";
+    staff.appendChild(sched);
 
     let schedulesDiv = document.createElement("div");
-    schedulesDiv.className += ("schedules");
+    schedulesDiv.className += ("schedule-label");
     schedulesDiv.innerHTML = "Working Schedule: ";
-    body.appendChild(schedulesDiv);
+    sched.appendChild(schedulesDiv);
 
     let days = document.createElement('div');
-    days.className = 'schedule-days';
-    body.appendChild(days);
+    days.className = 'schedule';
+    sched.appendChild(days);
 
     let scheduleDay1 = document.createElement("input");
     scheduleDay1.type = 'checkbox';
@@ -92,6 +113,11 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
     }
     days.appendChild(scheduleDay1);
 
+    let label1 = document.createElement('label');
+    label1.htmlFor = 'monday';
+    label1.innerHTML = 'M';
+    days.appendChild(label1);
+
     let scheduleDay2 = document.createElement("input");
     scheduleDay2.type = 'checkbox';
     scheduleDay2.id = 'tuesday';
@@ -103,6 +129,11 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
             scheduleDay2.checked = true;
     }
     days.appendChild(scheduleDay2);
+
+    let label2 = document.createElement('label');
+    label2.htmlFor = 'tuesday';
+    label2.innerHTML = 'T';
+    days.appendChild(label2);
 
     let scheduleDay3 = document.createElement("input");
     scheduleDay3.type = 'checkbox';
@@ -116,6 +147,11 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
     }
     days.appendChild(scheduleDay3);
 
+    let label3 = document.createElement('label');
+    label3.htmlFor = 'wednesday';
+    label3.innerHTML = 'W';
+    days.appendChild(label3);
+
     let scheduleDay4 = document.createElement("input");
     scheduleDay4.type = 'checkbox';
     scheduleDay4.id = 'thursday';
@@ -127,6 +163,11 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
             scheduleDay4.checked = true;
     }
     days.appendChild(scheduleDay4);
+
+    let label4 = document.createElement('label');
+    label4.htmlFor = 'thursday';
+    label4.innerHTML = 'R';
+    days.appendChild(label4);
 
     let scheduleDay5 = document.createElement("input");
     scheduleDay5.type = 'checkbox';
@@ -140,6 +181,11 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
     }
     days.appendChild(scheduleDay5);
 
+    let label5 = document.createElement('label');
+    label5.htmlFor = 'friday';
+    label5.innerHTML = 'F';
+    days.appendChild(label5);
+
     let scheduleDay6 = document.createElement("input");
     scheduleDay6.type = 'checkbox';
     scheduleDay6.id = 'saturday';
@@ -151,6 +197,11 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
             scheduleDay6.checked = true;
     }
     days.appendChild(scheduleDay6);
+
+    let label6 = document.createElement('label');
+    label6.htmlFor = 'saturday';
+    label6.innerHTML = 'St';
+    days.appendChild(label6);
 
     let scheduleDay7 = document.createElement("input");
     scheduleDay7.type = 'checkbox';
@@ -164,31 +215,55 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
     }
     days.appendChild(scheduleDay7);
 
-    let hourDiv = document.createElement("div");
-    hourDiv.className += ("hour");
-    hourDiv.innerHTML = "Working hours: ";
-    body.appendChild(hourDiv);
+    let label7 = document.createElement('label');
+    label7.htmlFor = 'sunday';
+    label7.innerHTML = 'S';
+    days.appendChild(label7);
 
-    let hour = document.createElement("span");
-    hour.innerHTML = hours;
-    hourDiv.appendChild(hour);
+    let hourr = document.createElement("div");
+    hourr.className += "flex";
+    staff.appendChild(hourr);
+
+    let hourDiv = document.createElement("div");
+    hourDiv.className += ("hours-label");
+    hourDiv.innerHTML = "Working hours: ";
+    hourr.appendChild(hourDiv);
+
+    let hour = document.createElement("input");
+    hour.value = hours;
+    hourr.appendChild(hour);
+
+    let salar = document.createElement("div");
+    salar.className += "flex";
+    staff.appendChild(salar);
 
     let salariesDiv = document.createElement("div");
-    salariesDiv.className += ("salaries");
+    salariesDiv.className += ("salary-label");
     salariesDiv.innerHTML = "Salary: ";
-    body.appendChild(salariesDiv);
+    salar.appendChild(salariesDiv);
 
-    let salaries = document.createElement("span");
-    salaries.innerHTML = salary;
-    salariesDiv.appendChild(salaries);
+    let salaries = document.createElement("input");
+    salaries.type = 'number';
+    salaries.value = salary;
+    salar.appendChild(salaries);
 
     let save = document.createElement("button");
-    save.className += ("save" + " " + employeeID);
+    save.className += ("edit-submit" + " " + employeeID);
     save.innerHTML = "Save";
-    body.appendChild(save);
+    staff.appendChild(save);
 }
+function runEdit(el){
+    displayEmployeeEdit.forEach(({id, name, position, schedule, hours, salary}) => {
+        if(id == el.id){
+            let cleaning = document.getElementById("cleaning");
+            let reception = document.getElementById("reception");
+            let prevModal = document.getElementById("myModal" + " " + id);
 
-displayCards.forEach(({id, name, position, schedule, hours, salary}) => {
-    generateModal(id, name, position, schedule, hours, salary);
-    runModal(id);
-});
+            prevModal.style.display = "none";
+            cleaning.style.display = "none";
+            reception.style.display = "none";
+            generateModal(id, name, position, schedule, hours, salary);
+            runModal(id);
+        }
+    });
+}

@@ -1,11 +1,6 @@
 //var product = document.getElementById("product"), employeeList;
 //employeeList = product.getAttribute("data-prodnumber");
 
-
-for(var i=0; i<list.length; i++){
-    console.log(list[i]);
-}
-
 let displayCards = [];
 
 list.forEach(({id, name, position, schedule, hours, salary, total_payroll}) => {
@@ -60,10 +55,11 @@ function generateModal(employeeID, name, position, schedule, hours, salary, tota
     header.className += "modal-header";
     content.appendChild(header);
 
-    let edit = document.createElement("a");
-    edit.href = 'edit-employee.js';
+    let edit = document.createElement("button");
+    edit.id = employeeID;
     edit.className += ("editBtn" + " " + employeeID);
     edit.innerHTML = "Edit";
+    edit.setAttribute("onclick", "javascript: runEdit(this);")
     header.appendChild(edit);
 
     let staffName = document.createElement("div");
