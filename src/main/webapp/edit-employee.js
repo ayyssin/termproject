@@ -60,6 +60,8 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
 
     let form = document.createElement('form');
     form.className += 'form';
+    form.action = "<%= request.getContextPath() %>/checkRooms";
+    form.method = "post";
     staff.appendChild(form);
 
     let staffID = document.createElement("div");
