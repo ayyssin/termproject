@@ -17,7 +17,7 @@ public class seasonsDB {
         Class.forName("com.mysql.jdbc.Driver");
 
         try (Connection connection = DriverManager
-                .getConnection("jdbc:mysql://localhost:3306/swe_hotel?useSSL=false&allowPublicKeyRetrieval=true", "root", "Zhanmsoul123.")) {
+                .getConnection("jdbc:mysql://localhost:3306/swe_hotel?useSSL=false&allowPublicKeyRetrieval=true", "root", "741852963Hesoyam")) {
             try(PreparedStatement preparedStatement = connection
                     .prepareStatement("select * from seasonal_rate where Hotel_id = ?")){
                 preparedStatement.setString(1, hotelID);

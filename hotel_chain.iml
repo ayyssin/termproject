@@ -39,6 +39,5 @@
     <orderEntry type="library" name="servlet-api7" level="project" />
     <orderEntry type="library" name="servlet-api9" level="project" />
     <orderEntry type="library" name="servlet-api10" level="project" />
-    <orderEntry type="library" name="servlet-api11" level="project" />
   </component>
 </module>

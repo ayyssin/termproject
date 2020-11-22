@@ -14,7 +14,7 @@ import registration.user_model.User;
 import booking.connectDB.ConfirmBookingDB;
 
 @WebServlet("/confirm")
-public class ConfirmBooking {
+public class ConfirmBooking extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private ConfirmBookingDB book_confirm;
 
@@ -37,11 +37,11 @@ public class ConfirmBooking {
         try {
             if (book_confirm.confirm(book)) {
                 System.out.println("booking is confirmed & created ");
-                response.sendRedirect(url);
+                response.sendRedirect("index2.jsp");
 
             } else {
                 System.out.println("booking is not created");
-                response.sendRedirect(url);
+                response.sendRedirect("index2.jsp");
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
