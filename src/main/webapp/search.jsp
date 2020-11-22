@@ -70,12 +70,19 @@
             <div class="modal-body">
 
             </div>
-
-            <div class="modal-confirmation">
+            <form action="<%= request.getContextPath() %>/confirm" method="post">
+                <input name="user_email" value=<%=login%> hidden>
+                <input name="check_in" value=<%=date_in%> hidden>
+                <input name="check_out" value=<%=date_out%> hidden>
+                <input name="guests" value=<%=guests%> hidden>
+                <input name="city" value=<%=city %> hidden>
+                <input name="url" value="<%=request.getContextPath()%>/search.jsp" hidden>
+                <div class="modal-confirmation">
                 <button type="submit" class="btn" id="confirm-btn">
                     Confirm
                 </button>
-            </div>
+                </div>
+            </form>
         </div>
     </div>
     <c:set var="val" value="<%=guests%>"/>
@@ -104,16 +111,9 @@
                         <h3 class="date-interval"> <%=date_in%> - <%=date_out%> </h3>
                         <%if(allRooms[1][1].equals('0')){%>
                             <p class="no-rooms"> No available rooms. </p>
+                        <%}else{%>
+                            <p class="yes-rooms"> Available rooms: <%=allRooms[1][1]%> </p>
                         <%}%>
-                        <div class="bookings-quantity">
-                            <label for="quantity"></label>
-                            <select name="quantity" id="input-quantity double">
-                                <option value="0">Choose</option>
-                                <%for(int i = 1; i < (Integer.parseInt(allRooms[1][1])+1); i++){ %>
-                                <option value="<%=i%>"><%=i%> room(s)</option>
-                                <%}%>
-                            </select>
-                        </div>
                         <button class="book-btn" onclick="bookNow(this)">Add to the cart</button>
                     </div>
                 </div>
@@ -148,15 +148,9 @@ else if(guests.equals("1")){
                     <h3 class="date-interval"> <%=date_in%> - <%=date_out%> </h3>
                     <%if(allRooms[0][1].equals('0')){%>
                     <p class="no-rooms"> No available rooms. </p>
+                    <%}else{%>
+                    <p class="yes-rooms"> Available rooms: <%=allRooms[0][1]%> </p>
                     <%}%>
-                    <div class="bookings-quantity">
-                        <select name="quantity" id="input-quantity single">
-                            <option value="0">Choose</option>
-                            <%for(int i = 1; i < (Integer.parseInt(allRooms[0][1])+1); i++){ %>
-                            <option value="<%=i%>"><%=i%> room(s)</option>
-                            <%}%>
-                        </select>
-                    </div>
                     <button class="book-btn" onclick="bookNow(this)">Add to the cart</button>
             </div>
         </div>
@@ -190,16 +184,9 @@ else if(guests.equals("3")){
                     <h3 class="date-interval"> <%=date_in%> - <%=date_out%> </h3>
                     <%if(allRooms[2][1].equals('0')){%>
                     <p class="no-rooms"> No available rooms. </p>
+                    <%}else{%>
+                    <p class="yes-rooms"> Available rooms: <%=allRooms[2][1]%> </p>
                     <%}%>
-                    <div class="bookings-quantity">
-                        <label for="quantity"></label>
-                        <select name="quantity" id="input-quantity triple">
-                            <option value="0">Choose</option>
-                            <%for(int i = 1; i < (Integer.parseInt(allRooms[2][1])+1); i++){ %>
-                            <option value="<%=i%>"><%=i%> room(s)</option>
-                            <%}%>
-                        </select>
-                    </div>
                     <button class="book-btn" onclick="bookNow(this)">Add to the cart</button>
                 </div>
             </div>
@@ -233,16 +220,9 @@ else if(guests.equals("4")){
                     <h3 class="date-interval"> <%=date_in%> - <%=date_out%> </h3>
                     <%if(allRooms[3][1].equals('0')){%>
                     <p class="no-rooms"> No available rooms. </p>
+                    <%}else{%>
+                    <p class="yes-rooms"> Available rooms: <%=allRooms[3][1]%> </p>
                     <%}%>
-                    <div class="bookings-quantity">
-                        <label for="quantity"></label>
-                        <select name="quantity" id="input-quantity quad">
-                            <option value="0">Choose</option>
-                            <%for(int i = 1; (i < Integer.parseInt(allRooms[3][1])+1); i++){ %>
-                            <option value="<%=i%>"><%=i%> room(s)</option>
-                            <%}%>
-                        </select>
-                    </div>
                     <button class="book-btn" onclick="bookNow(this)">Add to the cart</button>
                 </div>
             </div>
@@ -275,16 +255,9 @@ else if (Integer.parseInt(guests) >= 5){
                     <h3 class="date-interval"> <%=date_in%> - <%=date_out%> </h3>
                     <%if(allRooms[4][1].equals('0')){%>
                     <p class="no-rooms"> No available rooms. </p>
+                    <%}else{%>
+                    <p class="yes-rooms"> Available rooms: <%=allRooms[4][1]%> </p>
                     <%}%>
-                    <div class="bookings-quantity">
-                        <label for="quantity"></label>
-                        <select name="quantity" id="input-quantity president">
-                            <option value="0">Choose</option>
-                            <%for(int i = 1; i < (Integer.parseInt(allRooms[4][1])+1); i++){ %>
-                            <option value="<%=i%>"><%=i%> room(s)</option>
-                            <%}%>
-                        </select>
-                    </div>
                     <button class="book-btn" onclick="bookNow(this)">Add to the cart</button>
                 </div>
             </div>
