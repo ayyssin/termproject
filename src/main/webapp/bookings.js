@@ -1,15 +1,8 @@
-let list = localStorageUtil.getProducts();
-let oopsMessage = document.querySelector(".oops");
-let displayCards = [];
 
-data.forEach(({id, name, img, price}) => {
-    if(list.indexOf(id) != -1){
-        displayCards.push({id, name, img, price});
-    }
-});
+let oopsMessage = document.querySelector(".oops");
 
 function oopsDisplay(){
-    if(list.length == 0){
+    if(bookingsCatalog.length == 0){
         oopsMessage.style.display = "block";
     }else{
         oopsMessage.style.display = "none";
@@ -59,7 +52,8 @@ function runRemove(bookingID){
 //we neeed to pass variables to this function so 
 //to make something like city.innerHTML = VARIABLE got from DB & user input
 //the id of each generated booking should be different and it passed to modal function as well as well
-function generateModal(bookingID, name, PRICE){
+function generateModal(bookingID, name, PRICE, CAPACITY, check_in, check_out, city){
+    console.log(bookingID, name, PRICE, check_in, check_out, city);
     let main = document.querySelector(".modals");
 
     let node = document.createElement("div");
@@ -110,7 +104,7 @@ function generateModal(bookingID, name, PRICE){
 
     let locationName = document.createElement("div");
     locationName.className += "location";
-    locationName.innerHTML = "City, Country";
+    locationName.innerHTML = city;
     locationBox.appendChild(locationName);
 
     let infoDiv = document.createElement("div");
@@ -127,7 +121,7 @@ function generateModal(bookingID, name, PRICE){
 
     let checkInTitle = document.createElement("span");
     checkInTitle.className += "titles";
-    checkInTitle.innerHTML = "Check-in";
+    checkInTitle.innerHTML = check_in;
     checkIN.appendChild(checkInTitle);
 
     let checkInDate = document.createElement("div");
@@ -146,7 +140,7 @@ function generateModal(bookingID, name, PRICE){
 
     let checkOutTitle = document.createElement("span");
     checkOutTitle.className += "titles";
-    checkOutTitle.innerHTML = "Check-out";
+    checkOutTitle.innerHTML = check_out;
     checkOut.appendChild(checkOutTitle);
 
     let checkOutDate = document.createElement("div");
@@ -174,7 +168,7 @@ function generateModal(bookingID, name, PRICE){
     
     let capacityNum = document.createElement("span");
     capacityNum.className += "room-capacity";
-    capacityNum.innerHTML = "3";
+    capacityNum.innerHTML = CAPACITY;
     capacity.appendChild(capacityNum);
     genInfo.appendChild(capacity);
 
@@ -189,37 +183,47 @@ function generateModal(bookingID, name, PRICE){
     genInfo.appendChild(price);
 }
 
-displayCards.forEach(({id, name, img, price}) => {
-
-    let bookingID = id;
+bookingsCatalog.forEach(({bookingID, capacity, check_in, check_out, city, price, room_id, room_type}) => {
 
     let main = document.querySelector("#rectangles");
 
     let node = document.createElement("div");
-    node.className += ("rect" + " " + id);
+    node.className += ("rect" + " " + bookingID);
 
     let image = document.createElement("img");
+    let img;
+    if(room_type == "single"){
+        img = "images/single.png";
+    }else if(room_type == "double"){
+        img = "images/double.png";
+    }else if(room_type == "triple"){
+        img = "images/triple.png";
+    }else if(room_type == "quad"){
+        img = "images/quad.png";
+    }else if(room_type == "president"){
+       img =  "images/president.png"
+    }
     image.setAttribute("src", img);
 
-    let city = document.createElement("div");
-    city.className += "card-title";
-    city.innerHTML = name;
+    let cityDIV = document.createElement("div");
+    cityDIV.className += "card-title";
+    cityDIV.innerHTML = city;
 
     let date = document.createElement("div");
     date.className += "card-date";
-    date.innerHTML = "Date from - Date to";
+    date.innerHTML = check_in + "-" + check_out;
 
     let moreDetails = document.createElement("button");
-    moreDetails.id += "myBtn" + " " + id;
+    moreDetails.id += "myBtn" + " " + bookingID;
     moreDetails.innerHTML = "More details";
 
     let cancel = document.createElement("button");
-    cancel.id += ("cancel" + " " + id);
-    cancel.className += "cancel" + " " + id;
+    cancel.id += ("cancel" + " " + bookingID);
+    cancel.className += "cancel" + " " + bookingID;
     cancel.innerHTML = "Cancel booking";
 
     node.appendChild(image);
-    node.appendChild(city);
+    node.appendChild(cityDIV);
     node.appendChild(date);
     node.appendChild(moreDetails);
     node.appendChild(cancel);
@@ -227,8 +231,8 @@ displayCards.forEach(({id, name, img, price}) => {
     main.appendChild(node);
 
     //we have to pass some variables to generate specific modals and make sure they're working
-    generateModal(id, name, price);
-    runModal(id);
-    runRemove(id);
+    generateModal(bookingID, room_type, price, capacity, check_in, check_out, city);
+    runModal(bookingID);
+    runRemove(bookingID);
     oopsDisplay();
 });
