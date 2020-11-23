@@ -87,9 +87,11 @@ public class EditBookingDB {
                 preparedStatement.setString(4, booking_id);
 
                 System.out.println(preparedStatement);
-                ResultSet rs = preparedStatement.executeQuery();
+                int rs = preparedStatement.executeUpdate();
 
-                result = rs.next();
+                if( rs != 0){
+                    result = true;
+                }
             }
 
         } catch (SQLException throwables) {

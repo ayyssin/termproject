@@ -63,7 +63,7 @@ pageEncoding="UTF-8"%>
     </div>
 
     <div id="act">
-        <a href="search.jsp">
+        <a href="index.jsp">
             <button class="newbooking-btn">Create a new booking</button>
         </a>
     </div>

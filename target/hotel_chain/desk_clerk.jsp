@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <% String employee_id = (String)session.getAttribute("userLogin"); %>
+<% String hotel_id = (String)session.getAttribute("userLogin"); %>
 <!DOCTYPE html>
 <html lang="en">
 <head>

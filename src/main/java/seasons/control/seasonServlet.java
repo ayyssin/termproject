@@ -31,6 +31,7 @@ public class seasonServlet extends HttpServlet{
         HttpSession session=request.getSession(false);
         String hotelID=(String)session.getAttribute("Hotel_id");
 
+
         try {
             if(season.validate(hotelID)){
                 ArrayList<season> seasonsList = new ArrayList<>();
