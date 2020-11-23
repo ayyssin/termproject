@@ -1,5 +1,6 @@
 package login.control;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 
 import javax.servlet.RequestDispatcher;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import login.connectDB.UserLoginDB;
 import registration.user_model.User;
 
+
 @WebServlet("/login")
 public class UserLoginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
@@ -24,6 +26,7 @@ public class UserLoginServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
+        PrintWriter out = response.getWriter();
 
         String email = request.getParameter("email");
         String password = request.getParameter("password");
@@ -42,7 +45,11 @@ public class UserLoginServlet extends HttpServlet {
                 System.out.println(session.getAttribute("userLogin"));
                 response.sendRedirect("index2.jsp");
             } else {
-            	response.sendRedirect("login.jsp");
+                out.println("<script type=\"text/javascript\">");
+                out.println("alert('User or password incorrect');");
+                out.println("location='login.jsp';");
+                out.println("</script>");
+            	//response.sendRedirect("login.jsp");
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
