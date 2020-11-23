@@ -15,6 +15,8 @@ function runModal(employeeID){
 
     var submitSave = document.getElementsByClassName("edit-submit" + " " + employeeID)[0];
 
+    var all = {};
+
     /*btn.onclick = function() {
         edit.style.display = "block";
     }*/
@@ -22,11 +24,34 @@ function runModal(employeeID){
     submitSave.onclick = function(){
         submitSave.style.backgroundColor = "#44D362";
         submitSave.innerHTML = "Saved";
+        console.log('hello');
+
+        all.id = employeeID;
+        console.log(all.id);
+        all.position = document.getElementsByClassName('positionOptions').innerHTML;
+        console.log(all.position);
+        var checkboxes = document.getElementsByName('days[]');
+        for (var checkbox of checkboxes){
+            if (checkbox.checked)
+                all.schedule += checkbox.value + ' ';
+        }
+        console.log(all.schedule);
+        all.hour = document.getElementsByClassName('hourChanged').value;
+        console.log(all.hour);
+        all.salary = document.getElementsByClassName('salariesChanged').value;
+        console.log(all.salary);
+        $.post("/employees", JSON.stringify(all),
+            function(response){
+
+            });
     }
 }
 
 function generateModal(employeeID, name, position, schedule, hours, salary){
+<<<<<<< HEAD
     var all = {};
+=======
+>>>>>>> 0f4a428a141c0fada6472b83136d23dabcc8f59a
 
     let main = document.getElementById("main");
     let node = document.createElement("div");
@@ -80,7 +105,10 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
     stafffID.disabled = true;
     staffID.appendChild(stafffID);
 
+<<<<<<< HEAD
     all.id = employeeID;
+=======
+>>>>>>> 0f4a428a141c0fada6472b83136d23dabcc8f59a
 
     let posClean = document.createElement("div");
     posClean.className += "flex";
@@ -100,15 +128,15 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
 
     let positionOptions = document.createElement('option');
     if (position === 'Cleaning staff'){
-        positionOptions.innerHTML = position;
         let positionOptions2 = document.createElement('option');
-        positionOptions2.innerHTML = 'Cleaning staff';
+        positionOptions2.innerHTML = position;
+        positionOptions.innerHTML = 'Desk clerk';
         positionSelect.appendChild(positionOptions2);
     }
     else {
-        positionOptions.innerHTML = position;
         let positionOptions2 = document.createElement('option');
-        positionOptions2.innerHTML = 'Desk clerk';
+        positionOptions2.innerHTML = position;
+        positionOptions.innerHTML = 'Cleaning staff';
         positionSelect.appendChild(positionOptions2);
     }
     positionSelect.appendChild(positionOptions);
@@ -274,13 +302,18 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
     salaries.value = salary;
     salar.appendChild(salaries);
 
-    let save = document.createElement("input");
-    save.type = 'submit';
+    let save = document.createElement("button");
+    /*save.type = 'submit';*/
     save.className += ("edit-submit" + " " + employeeID);
-    save.value = "Save";
+    save.innerHTML = "Save";
     form.appendChild(save);
+<<<<<<< HEAD
 
     save.onclick = () => {
+=======
+/*
+    document.getElementsByClassName('edit-submit').onclick = () => {
+>>>>>>> 0f4a428a141c0fada6472b83136d23dabcc8f59a
         all.position = document.getElementsByClassName('positionOptions').innerHTML;
         console.log(all.position);
         var checkboxes = document.getElementsByName('days[]');
@@ -288,6 +321,7 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
             if (checkbox.checked)
                 all.schedule += checkbox.value + ' ';
         }
+<<<<<<< HEAD
         all.hour = document.getElementsByClassName('hourChanged').value;
         all.salary = document.getElementsByClassName('salariesChanged').value;
         $.get("/employees", JSON.stringify(all),
@@ -295,6 +329,18 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
 
             });
     }
+=======
+        console.log(all.schedule);
+        all.hour = document.getElementsByClassName('hourChanged').value;
+        console.log(all.hour);
+        all.salary = document.getElementsByClassName('salariesChanged').value;
+        console.log(all.salary);
+        $.post("/employees", JSON.stringify(all),
+            function(response){
+
+            });
+    }*/
+>>>>>>> 0f4a428a141c0fada6472b83136d23dabcc8f59a
 }
 function runEdit(el){
     displayEmployeeEdit.forEach(({id, name, position, schedule, hours, salary}) => {
