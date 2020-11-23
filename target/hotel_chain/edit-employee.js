@@ -293,25 +293,8 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
     save.className += ("edit-submit" + " " + employeeID);
     save.innerHTML = "Save";
     form.appendChild(save);
-    /*
-        document.getElementsByClassName('edit-submit').onclick = () => {
-            all.position = document.getElementsByClassName('positionOptions').innerHTML;
-            console.log(all.position);
-            var checkboxes = document.getElementsByName('days[]');
-            for (var checkbox of checkboxes){
-                if (checkbox.checked)
-                    all.schedule += checkbox.value + ' ';
-            }
-            console.log(all.schedule);
-            all.hour = document.getElementsByClassName('hourChanged').value;
-            console.log(all.hour);
-            all.salary = document.getElementsByClassName('salariesChanged').value;
-            console.log(all.salary);
-            $.post("/employees", JSON.stringify(all),
-                function(response){
 
-                });
-        }*/
+ 
 }
 function runEdit(el){
     displayEmployeeEdit.forEach(({id, name, position, schedule, hours, salary}) => {

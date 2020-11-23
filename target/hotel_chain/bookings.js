@@ -37,12 +37,8 @@ function runRemove(bookingID){
     let btn = document.getElementById("cancel" + " " + bookingID);
 
     btn.onclick = function() {
-        while(bookingCard.length > 0){
-            bookingCard[0].parentNode.removeChild(bookingCard[0]);
-
-            let index = bookingsCatalog.indexOf(bookingID);
-            bookingsCatalog.splice(index, 1);
-        }
+        bookingCard[0].style.display = "none";
+        localStorage.setItem(bookingID, "none");
     }
 }
 
@@ -183,55 +179,57 @@ function generateModal(bookingID, name, PRICE, CAPACITY, check_in, check_out, ci
 }
 
 bookingsCatalog.forEach(({bookingID, capacity, check_in, check_out, city, price, room_id, room_type}) => {
+    if(localStorage.getItem(bookingID) != "none"){
+        let main = document.querySelector("#rectangles");
 
-    let main = document.querySelector("#rectangles");
+        let node = document.createElement("div");
+        node.className += ("rect" + " " + bookingID);
 
-    let node = document.createElement("div");
-    node.className += ("rect" + " " + bookingID);
+        let image = document.createElement("img");
+        let img;
+        if(room_type == "single"){
+            img = "images/single.png";
+        }else if(room_type == "double"){
+            img = "images/double.png";
+        }else if(room_type == "triple"){
+            img = "images/triple.png";
+        }else if(room_type == "quad"){
+            img = "images/quad.png";
+        }else if(room_type == "president"){
+            img =  "images/president.png"
+        }
+        image.setAttribute("src", img);
 
-    let image = document.createElement("img");
-    let img;
-    if(room_type == "single"){
-        img = "images/single.png";
-    }else if(room_type == "double"){
-        img = "images/double.png";
-    }else if(room_type == "triple"){
-        img = "images/triple.png";
-    }else if(room_type == "quad"){
-        img = "images/quad.png";
-    }else if(room_type == "president"){
-       img =  "images/president.png"
+        let cityDIV = document.createElement("div");
+        cityDIV.className += "card-title";
+        cityDIV.innerHTML = city;
+
+        let date = document.createElement("div");
+        date.className += "card-date";
+        date.innerHTML = check_in + "-" + check_out;
+
+        let moreDetails = document.createElement("button");
+        moreDetails.id += "myBtn" + " " + bookingID;
+        moreDetails.innerHTML = "More details";
+
+        let cancel = document.createElement("button");
+        cancel.id += ("cancel" + " " + bookingID);
+        cancel.className += "cancel" + " " + bookingID;
+        cancel.innerHTML = "Cancel booking";
+
+        node.appendChild(image);
+        node.appendChild(cityDIV);
+        node.appendChild(date);
+        node.appendChild(moreDetails);
+        node.appendChild(cancel);
+
+        main.appendChild(node);
+
+        //we have to pass some variables to generate specific modals and make sure they're working
+        generateModal(bookingID, room_type, price, capacity, check_in, check_out, city);
+        runModal(bookingID);
+        runRemove(bookingID);
+        oopsDisplay();
     }
-    image.setAttribute("src", img);
 
-    let cityDIV = document.createElement("div");
-    cityDIV.className += "card-title";
-    cityDIV.innerHTML = city;
-
-    let date = document.createElement("div");
-    date.className += "card-date";
-    date.innerHTML = check_in + "-" + check_out;
-
-    let moreDetails = document.createElement("button");
-    moreDetails.id += "myBtn" + " " + bookingID;
-    moreDetails.innerHTML = "More details";
-
-    let cancel = document.createElement("button");
-    cancel.id += ("cancel" + " " + bookingID);
-    cancel.className += "cancel" + " " + bookingID;
-    cancel.innerHTML = "Cancel booking";
-
-    node.appendChild(image);
-    node.appendChild(cityDIV);
-    node.appendChild(date);
-    node.appendChild(moreDetails);
-    node.appendChild(cancel);
-
-    main.appendChild(node);
-
-    //we have to pass some variables to generate specific modals and make sure they're working
-    generateModal(bookingID, room_type, price, capacity, check_in, check_out, city);
-    runModal(bookingID);
-    runRemove(bookingID);
-    oopsDisplay();
 });
