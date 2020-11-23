@@ -4,10 +4,22 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Deque" %>
+<%@ page import="java.time.format.DateTimeFormatter"%>
+<%@ page import="java.time.LocalDateTime"%>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.Date" %>
 <% String employee_id = (String)session.getAttribute("userLogin"); %>
 <% String hotel_id = (String)session.getAttribute("userLogin"); %>
+<%SimpleDateFormat sdfDate = new SimpleDateFormat("dd/mm/yyyy"); %>
+<%Date now = new Date();%>
+<%String strDate = sdfDate.format(now);%>
+<%Date curDate=new SimpleDateFormat("dd/mm/yyyy").parse(strDate);%>
+<% %>
 <%
     List<Booking> list = (ArrayList<Booking>)request.getAttribute("bookingList");
+
+
+
     for(Booking b:list){
         System.out.println("email: " + b.getUser_email());
     }
@@ -82,12 +94,12 @@
 <div id="main">
     <div class="createBtn">
         <a href="create_booking.jsp">
-            <button id="create">Create a new booking</button>
+            <button id="create" >Create a new booking</button>
         </a>
     </div>
     <div class="title">
         <div class="city">
-            <%= city %> <%=employee_id %>
+            Paris
         </div>
         <div class="srch">
             <form id="searchForm" action="javascript:search();">
@@ -100,89 +112,45 @@
             </form>
         </div>
     </div>
-    <div class="guest-container">
-        <div class="guest"><%=employee_id %></div>
-        <div class="rects-cont">
-            <div class="rect">
-                <div class="card-title">
-                    2 - 10 Nov, 2020
-                </div>
-                <ul class="card">
-                    <ul class="main-inf">
-                        <li class="room-type">Room type: <span class="val">Double</span></li>
-                        <li class="room-id">Room ID: <span class="val">0123</span></li>
-                        <li class="occupancy">Occupancy: <span class="val">1 person(s)</span> </li>
+    <div id="guests-cont">
+        <% for(Booking b:list) {%>
+        <div class="guest"><%=b.getUser_email() %></div>
+        <div class="guest-container" >
+            <div class="rects-cont">
+                <%if(curDate.compareTo(sdfDate.parse(b.getCheck_out())) > 0){ %>
+                <div class="rect" id="<%=b.getRoom_id()%>">
+                    <div class="card-title">
+                        <%=b.getCheck_in() %> - <%=b.getCheck_out() %>
+                    </div>
+                    <ul class="card">
+                        <ul class="main-inf">
+                            <li class="room-id">Room ID: <span class="val"> <%=b.getRoom_id() %> </span></li>
+                            <li class="price">Total price: <span class="val">$<%=b.getTotal_cost() %></span></li>
+                        </ul>
+                        <li class="ed-b"><a class="edit" href="edit_booking.jsp">
+                            Edit booking
+                        </a>
+                            <a class="cancel" href="#">Cancel booking</a></li>
                     </ul>
-                    <li class="price">Total price: <span class="val">$1420</span></li>
-                    <li class="ed-b"><a class="edit" href="edit_booking.jsp">
-                        Edit booking
-                    </a>
-                        <a class="cancel" href="">Cancel booking</a></li>
-                </ul>
-            </div>
-            <div class="rect">
-                <div class="card-title">
-                    2 - 10 Nov, 2020
                 </div>
-                <ul class="card">
-                    <ul class="main-inf">
-                        <li class="room-type">Room type: <span class="val">Double</span></li>
-                        <li class="room-id">Room ID: <span class="val">0123</span></li>
-                        <li class="occupancy">Occupancy: <span class="val">1 person(s)</span> </li>
+                <%}else{%>
+                <div class="rect past">
+                    <div class="card-title">
+                        <%=b.getCheck_in() %> - <%=b.getCheck_out() %>
+                    </div>
+                    <ul class="card">
+                        <ul class="main-inf">
+                            <li class="room-id">Room ID: <span class="val"><%=b.getRoom_id() %></span></li>
+                            <li class="price">Total price: <span class="val">$<%=b.getTotal_cost() %></span></li>
+                        </ul>
+                        <li class="ed-b">
+                            <a class="rebook" href="rebooking.jsp">Rebook</a></li>
                     </ul>
-                    <li class="price">Total price: <span class="val">$1420</span></li>
-                    <li class="ed-b"><a class="edit" href="edit_booking.jsp">
-                        Edit booking
-                    </a>
-                        <a class="cancel" href="">Cancel booking</a></li>
-                </ul>
-            </div>
-            <div class="rect past">
-                <div class="card-title">
-                    2 - 10 Nov, 2020
                 </div>
-                <ul class="card">
-                    <ul class="main-inf">
-                        <li class="room-type">Room type: <span class="val">Double</span></li>
-                        <li class="room-id">Room ID: <span class="val">0123</span></li>
-                        <li class="occupancy">Occupancy: <span class="val">1 person(s)</span> </li>
-                    </ul>
-                    <li class="price">Total price: <span class="val">$1420</span></li>
-                    <li class="ed-b">
-                        <a class="rebook" href="rebooking.jsp">Rebook</a></li>
-                </ul>
-            </div>
-            <div class="rect past">
-                <div class="card-title">
-                    2 - 10 Nov, 2020
-                </div>
-                <ul class="card">
-                    <ul class="main-inf">
-                        <li class="room-type">Room type: <span class="val">Double</span></li>
-                        <li class="room-id">Room ID: <span class="val">0123</span></li>
-                        <li class="occupancy">Occupancy: <span class="val">1 person(s)</span> </li>
-                    </ul>
-                    <li class="price">Total price: <span class="val">$1420</span></li>
-                    <li class="ed-b">
-                        <a class="rebook" href="rebooking.jsp">Rebook</a></li>
-                </ul>
-            </div>
-            <div class="rect past">
-                <div class="card-title">
-                    2 - 10 Nov, 2020
-                </div>
-                <ul class="card">
-                    <ul class="main-inf">
-                        <li class="room-type">Room type: <span class="val">Double</span></li>
-                        <li class="room-id">Room ID: <span class="val">0123</span></li>
-                        <li class="occupancy">Occupancy: <span class="val">1 person(s)</span> </li>
-                    </ul>
-                    <li class="price">Total price: <span class="val">$1420</span></li>
-                    <li class="ed-b">
-                        <a class="rebook" href="rebooking.jsp">Rebook</a></li>
-                </ul>
+                <%}%>
             </div>
         </div>
+        <%} %>
     </div>
 </div>
 
@@ -219,21 +187,12 @@
                 break;
             }
         }
-        /*
-        var pattern = name.toLowerCase();
-        var targetId = "";
-
-        var divs = document.getElementsByClassName("guest");
-        for (var i = 0; i < divs.length; i++) {
-            var para = divs[i].getElementsByTagName("p");
-            var index = para[0].innerText.toLowerCase().indexOf(pattern);
-            if (index != -1) {
-                targetId = divs[i].parentNode.id;
-                document.getElementById(targetId).scrollIntoView();
-                break;
-            }
-        }*/
     }
+</script>
+<script>
+</script>
+<script>
+
 </script>
 </body>
 </html>
