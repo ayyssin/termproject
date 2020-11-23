@@ -15,6 +15,8 @@ function runModal(employeeID){
 
     var submitSave = document.getElementsByClassName("edit-submit" + " " + employeeID)[0];
 
+    var all = {};
+
     /*btn.onclick = function() {
         edit.style.display = "block";
     }*/
@@ -22,11 +24,30 @@ function runModal(employeeID){
     submitSave.onclick = function(){
         submitSave.style.backgroundColor = "#44D362";
         submitSave.innerHTML = "Saved";
+        console.log('hello');
+
+        all.id = employeeID;
+        console.log(all.id);
+        all.position = document.getElementsByClassName('positionOptions').innerHTML;
+        console.log(all.position);
+        var checkboxes = document.getElementsByName('days[]');
+        for (var checkbox of checkboxes){
+            if (checkbox.checked)
+                all.schedule += checkbox.value + ' ';
+        }
+        console.log(all.schedule);
+        all.hour = document.getElementsByClassName('hourChanged').value;
+        console.log(all.hour);
+        all.salary = document.getElementsByClassName('salariesChanged').value;
+        console.log(all.salary);
+        $.post("/employees", JSON.stringify(all),
+            function(response){
+
+            });
     }
 }
 
 function generateModal(employeeID, name, position, schedule, hours, salary){
-    var all = {};
 
     let main = document.getElementById("main");
     let node = document.createElement("div");
@@ -80,7 +101,6 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
     stafffID.disabled = true;
     staffID.appendChild(stafffID);
 
-    all.id = employeeID;
 
     let posClean = document.createElement("div");
     posClean.className += "flex";
@@ -274,13 +294,13 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
     salaries.value = salary;
     salar.appendChild(salaries);
 
-    let save = document.createElement("input");
-    save.type = 'submit';
+    let save = document.createElement("button");
+    /*save.type = 'submit';*/
     save.className += ("edit-submit" + " " + employeeID);
-    save.value = "Save";
+    save.innerHTML = "Save";
     form.appendChild(save);
-
-    save.onclick = () => {
+/*
+    document.getElementsByClassName('edit-submit').onclick = () => {
         all.position = document.getElementsByClassName('positionOptions').innerHTML;
         console.log(all.position);
         var checkboxes = document.getElementsByName('days[]');
@@ -297,7 +317,7 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
             function(response){
 
             });
-    }
+    }*/
 }
 function runEdit(el){
     displayEmployeeEdit.forEach(({id, name, position, schedule, hours, salary}) => {
