@@ -136,3 +136,4 @@ displayCards.forEach(({id, name, position, schedule, hours, salary, total_payrol
     generateModal(id, name, position, schedule, hours, salary, total_payroll);
     runModal(id);
 });
+

@@ -14,6 +14,7 @@ import seasons.season_model.season;
 import booking.booking_model.Booking;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 @WebServlet("/clerkLogin")
@@ -27,6 +28,7 @@ public class ClerkLoginServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        PrintWriter out = response.getWriter();
 
         String first_name = request.getParameter("firstname");
         String employee_id = request.getParameter("employee_id");
@@ -53,7 +55,10 @@ public class ClerkLoginServlet extends HttpServlet {
                 dispatcher.forward(request, response);
                 System.out.println("desk clerk is validated");
             } else {
-                response.sendRedirect("login-desk-clerk.jsp");
+                out.println("<script type=\"text/javascript\">");
+                out.println("alert('User or password incorrect');");
+                out.println("location='login-desk-clerk.jsp';");
+                out.println("</script>");
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();

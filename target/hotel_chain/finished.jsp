@@ -39,7 +39,7 @@
         My bookings
     </div>
     <div id="choose">
-        <a href="bookings.jsp">Upcoming</a>
+        <a href="<%= request.getContextPath() %>/bookingServlet">Upcoming</a>
         <a href="finished.jsp">Finished</a>
     </div>
     <div id="sorry">
