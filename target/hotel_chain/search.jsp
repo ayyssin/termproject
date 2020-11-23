@@ -43,9 +43,21 @@
             <li class="nav-item">
                 <a href="login-all.jsp" class="nav-link link">Login</a>
             </li>
+            <%
+                if(login != null){
+            %>
             <li class="nav-item">
                 <a href="<%= request.getContextPath() %>/bookingServlet" class="nav-link link">My bookings</a>
             </li>
+            <%
+            } else{
+            %>
+            <li class="nav-item">
+                <a href="signup.jsp" class="nav-link link">Sign-up</a>
+            </li>
+            <%
+                }
+            %>
         </ul>
     </div>
 </nav>
@@ -402,6 +414,12 @@ else if (Integer.parseInt(guests) >= 5){
         }
         <%} %>
     })
+
+    if(!<%=login%>){
+        document.getElementById("confirm-btn").onclick = function(){
+            alert("Please login to book a room.");
+        }
+    }
 
 </script>
 </body>
