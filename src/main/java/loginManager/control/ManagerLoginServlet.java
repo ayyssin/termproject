@@ -1,6 +1,7 @@
 
 package loginManager.control;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 
 import javax.servlet.RequestDispatcher;
@@ -28,6 +29,7 @@ public class ManagerLoginServlet extends HttpServlet{
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        PrintWriter out = response.getWriter();
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         Manager loginB = new Manager();
@@ -56,7 +58,10 @@ public class ManagerLoginServlet extends HttpServlet{
                 RequestDispatcher dispatcher = request.getRequestDispatcher(url);
                 dispatcher.forward(request, response);
             } else {
-                response.sendRedirect("login-manager.jsp");
+                out.println("<script type=\"text/javascript\">");
+                out.println("alert('User or password incorrect');");
+                out.println("location='login-manager.jsp';");
+                out.println("</script>");
 
             }
         } catch (ClassNotFoundException e) {
