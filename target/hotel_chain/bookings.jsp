@@ -133,6 +133,7 @@ pageEncoding="UTF-8"%>
     let json = '<%= request.getAttribute("jsonBooking")%>';
     let bookingsCatalog = JSON.parse(json);
     console.log(bookingsCatalog);
+
 </script>
 <script src="bookings.js"></script>
 </body>

@@ -1,5 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+<%@ page import="booking.booking_model.Booking" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Deque" %>
+
+<%
+    List<Booking> bookings = (ArrayList<Booking>)request.getAttribute("bookingList");
+    String s = (String) request.getAttribute("jsonBooking");
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,6 +79,13 @@
         </div>
     </div>
 </div>
+
+<script>
+    let json = '<%= request.getAttribute("jsonBooking")%>';
+    let bookingsCatalog = JSON.parse(json);
+    console.log(bookingsCatalog);
+
+</script>
 
 </body>
 </html>

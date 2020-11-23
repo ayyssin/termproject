@@ -39,6 +39,9 @@ function runRemove(bookingID){
     btn.onclick = function() {
         while(bookingCard.length > 0){
             bookingCard[0].parentNode.removeChild(bookingCard[0]);
+
+            let index = bookingsCatalog.indexOf(bookingID);
+            bookingsCatalog.splice(index, 1);
         }
     }
 }

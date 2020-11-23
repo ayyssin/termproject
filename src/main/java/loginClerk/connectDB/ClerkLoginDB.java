@@ -14,7 +14,7 @@ public class ClerkLoginDB {
         Class.forName("com.mysql.jdbc.Driver");
 
         try (Connection connection = DriverManager
-                .getConnection("jdbc:mysql://localhost:3306/swe_hotel?useSSL=false&allowPublicKeyRetrieval=true", "root", "741852963Hesoyam")) {
+                .getConnection("jdbc:mysql://localhost:3306/swe_hotel?useSSL=false&allowPublicKeyRetrieval=true", "root", "Zhanmsoul123.")) {
             //
             //just insert your username in MySQLWorkbench instead of root
             //insert your password in MySQLWorkbench instead of 741852963Hesoyam
