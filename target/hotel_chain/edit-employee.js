@@ -49,6 +49,10 @@ function runModal(employeeID){
 }
 
 function generateModal(employeeID, name, position, schedule, hours, salary){
+<<<<<<< HEAD
+    var all = {};
+=======
+>>>>>>> 0f4a428a141c0fada6472b83136d23dabcc8f59a
 
     let main = document.getElementById("main");
     let node = document.createElement("div");
@@ -102,6 +106,10 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
     stafffID.disabled = true;
     staffID.appendChild(stafffID);
 
+<<<<<<< HEAD
+    all.id = employeeID;
+=======
+>>>>>>> 0f4a428a141c0fada6472b83136d23dabcc8f59a
 
     let posClean = document.createElement("div");
     posClean.className += "flex";
@@ -304,8 +312,13 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
     save.className += ("edit-submit" + " " + employeeID);
     save.innerHTML = "Save";
     form.appendChild(save);
+<<<<<<< HEAD
+
+    save.onclick = () => {
+=======
 /*
     document.getElementsByClassName('edit-submit').onclick = () => {
+>>>>>>> 0f4a428a141c0fada6472b83136d23dabcc8f59a
         all.position = document.getElementsByClassName('positionOptions').innerHTML;
         console.log(all.position);
         var checkboxes = document.getElementsByName('days[]');
@@ -313,6 +326,15 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
             if (checkbox.checked)
                 all.schedule += checkbox.value + ' ';
         }
+<<<<<<< HEAD
+        all.hour = document.getElementsByClassName('hourChanged').value;
+        all.salary = document.getElementsByClassName('salariesChanged').value;
+        $.get("/employees", JSON.stringify(all),
+            function(response){
+
+            });
+    }
+=======
         console.log(all.schedule);
         all.hour = document.getElementsByClassName('hourChanged').value;
         console.log(all.hour);
@@ -323,6 +345,7 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
 
             });
     }*/
+>>>>>>> 0f4a428a141c0fada6472b83136d23dabcc8f59a
 }
 function runEdit(el){
     displayEmployeeEdit.forEach(({id, name, position, schedule, hours, salary}) => {
