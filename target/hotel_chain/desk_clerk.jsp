@@ -11,6 +11,37 @@
     for(Booking b:list){
         System.out.println("email: " + b.getUser_email());
     }
+    String city = null;
+    if(hotel_id == "1"){
+        city = "Moscow";
+    }
+    else if(hotel_id == "2"){
+        city = "Astana";
+    }
+    else if(hotel_id == "3"){
+        city = "Almaty";
+    }
+    else if(hotel_id == "4"){
+        city = "Atyrau";
+    }
+    else if(hotel_id == "5"){
+        city = "Petropavlovsk";
+    }
+    else if(hotel_id == "6"){
+        city = "Karaganda";
+    }
+    else if(hotel_id == "7"){
+        city = "Shymkent";
+    }
+    else if(hotel_id == "8"){
+        city = "Ust-Kamenogorsk";
+    }
+    else if(hotel_id == "9"){
+        city = "Taraz";
+    }
+    else if(hotel_id == "10"){
+        city = "Paris";
+    }
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,7 +87,7 @@
     </div>
     <div class="title">
         <div class="city">
-            City <%=employee_id %>
+            <%= city %> <%=employee_id %>
         </div>
         <div class="srch">
             <form id="searchForm" action="javascript:search();">
@@ -70,7 +101,7 @@
         </div>
     </div>
     <div class="guest-container">
-        <div class="guest">GuestName, GuestID</div>
+        <div class="guest"><%=employee_id %></div>
         <div class="rects-cont">
             <div class="rect">
                 <div class="card-title">

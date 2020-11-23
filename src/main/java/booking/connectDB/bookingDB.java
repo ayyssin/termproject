@@ -16,13 +16,14 @@ public class bookingDB {
         Class.forName("com.mysql.jdbc.Driver");
 
         try (Connection connection = DriverManager
-                .getConnection("jdbc:mysql://localhost:3306/swe_hotel?useSSL=false&allowPublicKeyRetrieval=true", "root", "741852963Hesoyam")){
+                .getConnection("jdbc:mysql://localhost:3306/swe_hotel?useSSL=false&allowPublicKeyRetrieval=true", "root", "intComm75")){
              //
              //just insert your username in MySQLWorkbench instead of root
              //insert your password in MySQLWorkbench instead of 741852963Hesoyam
              //
              //Booking booking = new Booking();
              //booking.setUser_email(login);
+            bookinglist.clear();
             try (PreparedStatement preparedStatement = connection
                     .prepareStatement("select * from Booking where User_email = ?")){
                 preparedStatement.setString(1, login);
@@ -60,7 +61,7 @@ public class bookingDB {
         boolean status = false;
         String city = null;
         try (Connection connection = DriverManager
-                .getConnection("jdbc:mysql://localhost:3306/swe_hotel?useSSL=false&allowPublicKeyRetrieval=true", "root", "741852963Hesoyam")){
+                .getConnection("jdbc:mysql://localhost:3306/swe_hotel?useSSL=false&allowPublicKeyRetrieval=true", "root", "intComm75")){
             try (PreparedStatement preparedStatement = connection
                     .prepareStatement("select City from Hotel where Hotel_id = ?")){
                 preparedStatement.setInt(1, hotel_id);
@@ -82,7 +83,7 @@ public class bookingDB {
         boolean status = false;
         String room_type = null;
         try (Connection connection = DriverManager
-                .getConnection("jdbc:mysql://localhost:3306/swe_hotel?useSSL=false&allowPublicKeyRetrieval=true", "root", "741852963Hesoyam")){
+                .getConnection("jdbc:mysql://localhost:3306/swe_hotel?useSSL=false&allowPublicKeyRetrieval=true", "root", "intComm75")){
             try (PreparedStatement preparedStatement = connection
                     .prepareStatement("select Room_type from Room where Room_id = ?")){
                 preparedStatement.setString(1, room_id);
@@ -103,7 +104,7 @@ public class bookingDB {
         boolean status = false;
         String capacity = null;
         try (Connection connection = DriverManager
-                .getConnection("jdbc:mysql://localhost:3306/swe_hotel?useSSL=false&allowPublicKeyRetrieval=true", "root", "741852963Hesoyam")){
+                .getConnection("jdbc:mysql://localhost:3306/swe_hotel?useSSL=false&allowPublicKeyRetrieval=true", "root", "intComm75")){
             try (PreparedStatement preparedStatement = connection
                     .prepareStatement("select Capacity from Room where Room_id = ?")){
                 preparedStatement.setString(1, room_id);
