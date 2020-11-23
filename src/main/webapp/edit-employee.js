@@ -28,17 +28,18 @@ function runModal(employeeID){
 
         all.id = employeeID;
         console.log(all.id);
-        all.position = document.getElementsByClassName('positionOptions').innerHTML;
+        all.position = document.getElementsByClassName('positionOptions')[0].innerHTML;
         console.log(all.position);
+        all.schedule = [];
         var checkboxes = document.getElementsByName('days[]');
         for (var checkbox of checkboxes){
             if (checkbox.checked)
-                all.schedule += checkbox.value + ' ';
+                all.schedule.push(checkbox.value);
         }
         console.log(all.schedule);
-        all.hour = document.getElementsByClassName('hourChanged').value;
+        all.hour = document.getElementsByClassName('hourChanged')[0].value;
         console.log(all.hour);
-        all.salary = document.getElementsByClassName('salariesChanged').value;
+        all.salary = document.getElementsByClassName('salariesChanged')[0].value;
         console.log(all.salary);
         $.post("/employees", JSON.stringify(all),
             function(response){
@@ -122,13 +123,17 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
     if (position === 'Cleaning staff'){
         let positionOptions2 = document.createElement('option');
         positionOptions2.innerHTML = position;
+        positionOptions2.value = position;
         positionOptions.innerHTML = 'Desk clerk';
+        positionOptions.value = 'Desk clerk';
         positionSelect.appendChild(positionOptions2);
     }
     else {
         let positionOptions2 = document.createElement('option');
         positionOptions2.innerHTML = position;
+        positionOptions2.value = position;
         positionOptions.innerHTML = 'Cleaning staff';
+        positionOptions.value = 'Cleaning staff';
         positionSelect.appendChild(positionOptions2);
     }
     positionSelect.appendChild(positionOptions);
