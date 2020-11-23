@@ -46,7 +46,7 @@
             <h2>Seasonal rates</h2>
         </div>
         <div id="seasons-list">
-            <form class="container" id="seasons-form">
+            <form action="<%= request.getContextPath() %>/saveSeasons" method="post" class="container" id="seasons-form">
 
                 <% for(season s:list) {%>
                 <div class="season">
@@ -57,7 +57,7 @@
                             </div>
                             <div class="row form-row">
                                 <label for="season-rate">Seasonal rate (in %):</label>
-                                <input type="text" name="season-rate"  id="input-<%=s.getSeason_name()%>-rate" placeholder="<%=s.getDiscount()%>">
+                                <input type="text" id="season-rate"  name="input-<%=s.getSeason_name()%>-rate" placeholder="<%=s.getDiscount()%>">
                             </div>
                             <div class="row form-row">
                                 <label for="on-off">On/Off</label>

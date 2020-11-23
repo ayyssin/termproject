@@ -1,7 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+<%@ page import="booking.booking_model.Booking" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Deque" %>
 <% String employee_id = (String)session.getAttribute("userLogin"); %>
 <% String hotel_id = (String)session.getAttribute("userLogin"); %>
+<%
+    List<Booking> list = (ArrayList<Booking>)request.getAttribute("bookingList");
+    for(Booking b:list){
+        System.out.println("email: " + b.getUser_email());
+    }
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
