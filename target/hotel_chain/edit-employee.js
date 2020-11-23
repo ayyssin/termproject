@@ -8,7 +8,7 @@ displayCards.forEach(({id, name, position, schedule, hours, salary}) => {
     displayEmployeeEdit.push({id, name, position, schedule, hours, salary});
 });
 
-function runModal(employeeID){
+function runModal(employeeID, position){
     var edit = document.getElementById("myEdit" + " " + employeeID);
 
     var btn = document.getElementById("editBtn" + " " + employeeID);
@@ -28,7 +28,7 @@ function runModal(employeeID){
 
         all.id = employeeID;
         console.log(all.id);
-        all.position = document.getElementsByClassName('positionOptions')[0].innerHTML;
+        all.position = position;
         console.log(all.position);
         all.schedule = [];
         var checkboxes = document.getElementsByName('days[]');
@@ -49,10 +49,6 @@ function runModal(employeeID){
 }
 
 function generateModal(employeeID, name, position, schedule, hours, salary){
-<<<<<<< HEAD
-    var all = {};
-=======
->>>>>>> 0f4a428a141c0fada6472b83136d23dabcc8f59a
 
     let main = document.getElementById("main");
     let node = document.createElement("div");
@@ -106,10 +102,6 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
     stafffID.disabled = true;
     staffID.appendChild(stafffID);
 
-<<<<<<< HEAD
-    all.id = employeeID;
-=======
->>>>>>> 0f4a428a141c0fada6472b83136d23dabcc8f59a
 
     let posClean = document.createElement("div");
     posClean.className += "flex";
@@ -123,28 +115,17 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
     let positions = document.createElement("div");
     posClean.appendChild(positions);
 
-    let positionSelect = document.createElement('select');
-    positions.className += 'positionOptions';
-    positions.appendChild(positionSelect);
-
-    let positionOptions = document.createElement('option');
+    let positionOptions = document.createElement('input');
     if (position === 'Cleaning staff'){
-        let positionOptions2 = document.createElement('option');
-        positionOptions2.innerHTML = position;
-        positionOptions2.value = position;
-        positionOptions.innerHTML = 'Desk clerk';
-        positionOptions.value = 'Desk clerk';
-        positionSelect.appendChild(positionOptions2);
+        positionOptions.value = position;
+        positionOptions.disabled = true;
+        positions.appendChild(positionOptions);
     }
     else {
-        let positionOptions2 = document.createElement('option');
-        positionOptions2.innerHTML = position;
-        positionOptions2.value = position;
-        positionOptions.innerHTML = 'Cleaning staff';
-        positionOptions.value = 'Cleaning staff';
-        positionSelect.appendChild(positionOptions2);
+        positionOptions.value = 'Desk clerk';
+        positionOptions.disabled = true;
+        positions.appendChild(positionOptions);
     }
-    positionSelect.appendChild(positionOptions);
 
     let sched = document.createElement("div");
     sched.className += "flex";
@@ -312,13 +293,8 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
     save.className += ("edit-submit" + " " + employeeID);
     save.innerHTML = "Save";
     form.appendChild(save);
-<<<<<<< HEAD
-
-    save.onclick = () => {
-=======
 /*
     document.getElementsByClassName('edit-submit').onclick = () => {
->>>>>>> 0f4a428a141c0fada6472b83136d23dabcc8f59a
         all.position = document.getElementsByClassName('positionOptions').innerHTML;
         console.log(all.position);
         var checkboxes = document.getElementsByName('days[]');
@@ -326,15 +302,6 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
             if (checkbox.checked)
                 all.schedule += checkbox.value + ' ';
         }
-<<<<<<< HEAD
-        all.hour = document.getElementsByClassName('hourChanged').value;
-        all.salary = document.getElementsByClassName('salariesChanged').value;
-        $.get("/employees", JSON.stringify(all),
-            function(response){
-
-            });
-    }
-=======
         console.log(all.schedule);
         all.hour = document.getElementsByClassName('hourChanged').value;
         console.log(all.hour);
@@ -345,7 +312,6 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
 
             });
     }*/
->>>>>>> 0f4a428a141c0fada6472b83136d23dabcc8f59a
 }
 function runEdit(el){
     displayEmployeeEdit.forEach(({id, name, position, schedule, hours, salary}) => {
@@ -358,7 +324,7 @@ function runEdit(el){
             cleaning.style.display = "none";
             reception.style.display = "none";
             generateModal(id, name, position, schedule, hours, salary);
-            runModal(id);
+            runModal(id, position);
         }
     });
 }
