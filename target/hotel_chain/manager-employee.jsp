@@ -127,7 +127,9 @@
     var list = JSON.parse(json);
 </script>
 <script src="manager-employee.js"></script>
+<script>var contextPath = "${pageContext.request.contextPath}";</script>
 <script src="edit-employee.js"></script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 
 
