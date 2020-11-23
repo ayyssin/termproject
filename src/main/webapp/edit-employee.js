@@ -26,6 +26,8 @@ function runModal(employeeID){
 }
 
 function generateModal(employeeID, name, position, schedule, hours, salary){
+    var all = {};
+
     let main = document.getElementById("main");
     let node = document.createElement("div");
     node.className += "edit";
@@ -78,6 +80,8 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
     stafffID.disabled = true;
     staffID.appendChild(stafffID);
 
+    all.id = employeeID;
+
     let posClean = document.createElement("div");
     posClean.className += "flex";
     form.appendChild(posClean);
@@ -91,6 +95,7 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
     posClean.appendChild(positions);
 
     let positionSelect = document.createElement('select');
+    positions.className += 'positionOptions';
     positions.appendChild(positionSelect);
 
     let positionOptions = document.createElement('option');
@@ -250,6 +255,7 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
     hourr.appendChild(hourDiv);
 
     let hour = document.createElement("input");
+    hour.className = 'hourChanged';
     hour.value = hours;
     hourr.appendChild(hour);
 
@@ -263,6 +269,7 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
     salar.appendChild(salariesDiv);
 
     let salaries = document.createElement("input");
+    salaries.className = 'salariesChanged';
     salaries.type = 'number';
     salaries.value = salary;
     salar.appendChild(salaries);
@@ -272,6 +279,22 @@ function generateModal(employeeID, name, position, schedule, hours, salary){
     save.className += ("edit-submit" + " " + employeeID);
     save.value = "Save";
     form.appendChild(save);
+
+    save.onclick = () => {
+        all.position = document.getElementsByClassName('positionOptions').innerHTML;
+        console.log(all.position);
+        var checkboxes = document.getElementsByName('days[]');
+        for (var checkbox of checkboxes){
+            if (checkbox.checked)
+                all.schedule += checkbox.value + ' ';
+        }
+        all.hour = document.getElementsByClassName('hourChanged').value;
+        all.salary = document.getElementsByClassName('salariesChanged').value;
+        $.post("/employees", JSON.stringify(all),
+            function(response){
+
+            });
+    }
 }
 function runEdit(el){
     displayEmployeeEdit.forEach(({id, name, position, schedule, hours, salary}) => {
